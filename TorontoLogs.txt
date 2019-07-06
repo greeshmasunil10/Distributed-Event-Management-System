@@ -1,0 +1,32 @@
+
+bookEventPerformed.
+Time: 2019/06/13 16:43:10
+CustomerID: NA
+EventID: TORA110519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/06/13 17:14:26
+CustomerID: NA
+EventID: OTWM110519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/07/06 18:55:50
+CustomerID: NA
+EventID: TORA110519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked
+
+getBookingSchedulePerformed.
+Time: 2019/07/06 18:55:53
+CustomerID: TORC12121
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded

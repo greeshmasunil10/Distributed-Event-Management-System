@@ -1,0 +1,16 @@
+
+bookEventPerformed.
+Time: 2019/07/06 18:39:05
+CustomerID: NA
+EventID: MTLE110519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/06 18:39:09
+CustomerID: MTLC1212
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded

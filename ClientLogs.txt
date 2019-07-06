@@ -1,0 +1,119 @@
+
+listEventAvailabilityPerformed.
+Time: 2019/06/13 16:26:40
+CustomerID: TORM121
+EventID: NA
+EventType: Sems
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/06/13 16:26:47
+CustomerID: TORM121
+EventID: NA
+EventType: Seminars
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/06/13 16:26:57
+CustomerID: TORM121
+EventID: NA
+EventType: 
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/06/13 16:34:49
+CustomerID: TORM121
+EventID: 
+EventType: 
+Status: Invalid input
+
+bookEventPerformed.
+Time: 2019/06/13 16:35:18
+CustomerID: TORM121
+EventID: TORA110519
+EventType: Seminars
+Status: Invalid input
+
+bookEventPerformed.
+Time: 2019/06/13 16:37:51
+CustomerID: TORM121
+EventID: TORA110519
+EventType: Seminars
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/06/13 16:42:48
+CustomerID: TORM121
+EventID: Seminars
+EventType: Semubars
+Status: Invalid input
+
+bookEventPerformed.
+Time: 2019/06/13 16:43:10
+CustomerID: TORM121
+EventID: TORA110519
+EventType: Seminars
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/06/13 16:44:21
+CustomerID: TORM121
+EventID: TORA110519
+EventType: Seminars
+Status: Invalid Customer ID!
+
+bookEventPerformed.
+Time: 2019/06/13 16:48:09
+CustomerID: TORM1212
+EventID: 
+EventType: 
+Status: Invalid Customer ID!
+
+bookEventPerformed.
+Time: 2019/06/13 16:51:27
+CustomerID: TORM1212
+EventID: Seminars
+EventType: 
+Status: Invalid input
+
+bookEventPerformed.
+Time: 2019/06/13 17:12:47
+CustomerID: TORM1212
+EventID: 
+EventType: 
+Status: Invalid Customer ID!
+
+bookEventPerformed.
+Time: 2019/06/13 17:14:26
+CustomerID: TORC121212
+EventID: OTWM110519
+EventType: Seminars
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/07/06 18:39:06
+CustomerID: MTLC1212
+EventID: MTLE110519
+EventType: Seminars
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/06 18:39:09
+CustomerID: MTLC1212
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/06 18:55:50
+CustomerID: TORC12121
+EventID: TORA110519
+EventType: Seminars
+Status: Booked
+
+getBookingSchedulePerformed.
+Time: 2019/07/06 18:55:53
+CustomerID: TORC12121
+EventID: NA
+EventType: NA
+Status: Succeeded
