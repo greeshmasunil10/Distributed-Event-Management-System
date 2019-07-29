@@ -1,4 +1,0 @@
-exception handling add event from different city
-event availbility should be returned
-change data structure
-client console
