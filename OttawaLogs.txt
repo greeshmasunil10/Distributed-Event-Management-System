@@ -1,0 +1,304 @@
+
+bookEventPerformed.
+Time: 2019/07/08 18:13:37
+CustomerID: NA
+EventID: MTLE000000
+EventType: Conferences
+Booking Capacity: NA
+Status: Booked!
+
+addEventPerformed.
+Time: 2019/07/08 18:40:26
+CustomerID: NA
+EventID: OTWE080619
+EventType: Conferences
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/08 18:40:49
+CustomerID: NA
+EventID: OTWE110619
+EventType: Conferences
+Booking Capacity: NA
+Status: Added!
+
+bookEventPerformed.
+Time: 2019/07/08 18:49:59
+CustomerID: NA
+EventID: OTWE080919
+EventType: Conferences
+Booking Capacity: NA
+Status: This event does not exist!
+
+bookEventPerformed.
+Time: 2019/07/08 18:50:21
+CustomerID: NA
+EventID: OTWE080619
+EventType: Conferences
+Booking Capacity: NA
+Status: This event does not exist!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:52:50
+CustomerID: OTWC7890
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/07/16 13:33:12
+CustomerID: NA
+EventID: OTWA190619
+EventType: Conferences
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 13:33:27
+CustomerID: NA
+EventID: OTWA250619
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+bookEventPerformed.
+Time: 2019/07/16 13:37:48
+CustomerID: NA
+EventID: TORE080619
+EventType: Conferences
+Booking Capacity: NA
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/16 13:38:06
+CustomerID: NA
+EventID: TORE110619
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/16 13:38:22
+CustomerID: NA
+EventID: MTLA090619
+EventType: Conferences
+Booking Capacity: NA
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/16 13:38:36
+CustomerID: NA
+EventID: OTWA190619
+EventType: Conferences
+Booking Capacity: NA
+Status: Booked!
+
+Swap PerformedPerformed.
+Time: 2019/07/16 13:39:45
+CustomerID: NA
+EventID: MTLA080619
+EventType: Trade Shows
+Booking Capacity: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 13:40:28
+CustomerID: OTWC1234
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/07/16 13:50:59
+CustomerID: NA
+EventID: OTWA190619
+EventType: Conferences
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 13:51:08
+CustomerID: NA
+EventID: OTWA250619
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+bookEventPerformed.
+Time: 2019/07/16 13:52:47
+CustomerID: NA
+EventID: TORE080619
+EventType: Conferences
+Booking Capacity: NA
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 13:52:50
+CustomerID: OTWC1234
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/16 13:53:00
+CustomerID: NA
+EventID: TORE110619
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 13:53:02
+CustomerID: OTWC1234
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/16 13:53:13
+CustomerID: NA
+EventID: MTLA090619
+EventType: Conferences
+Booking Capacity: NA
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 13:53:14
+CustomerID: OTWC1234
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/16 13:53:27
+CustomerID: NA
+EventID: OTWA190619
+EventType: Conferences
+Booking Capacity: NA
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 13:53:29
+CustomerID: OTWC1234
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+Swap PerformedPerformed.
+Time: 2019/07/16 13:53:57
+CustomerID: NA
+EventID: MTLA090619
+EventType: Trade Shows
+Booking Capacity: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 13:54:03
+CustomerID: OTWC1234
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/16 13:58:03
+CustomerID: NA
+EventID: OTWA190619
+EventType: Conferences
+Booking Capacity: NA
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 13:58:20
+CustomerID: OTWC1234
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+Swap PerformedPerformed.
+Time: 2019/07/16 14:00:38
+CustomerID: NA
+EventID: OTWA250619
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 14:00:41
+CustomerID: OTWC1234
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/07/16 14:13:02
+CustomerID: NA
+EventID: OTWA190619
+EventType: Conferences
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 14:13:14
+CustomerID: NA
+EventID: OTWA250619
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+bookEventPerformed.
+Time: 2019/07/16 14:14:18
+CustomerID: NA
+EventID: TORE080619
+EventType: Conferences
+Booking Capacity: NA
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/16 14:14:27
+CustomerID: NA
+EventID: TORE110619
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/16 14:14:43
+CustomerID: NA
+EventID: MTLA090619
+EventType: Conferences
+Booking Capacity: NA
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/16 14:14:55
+CustomerID: NA
+EventID: OTWA190619
+EventType: Conferences
+Booking Capacity: NA
+Status: Booked!
+
+Swap PerformedPerformed.
+Time: 2019/07/16 14:16:12
+CustomerID: NA
+EventID: OTWA250619
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 14:16:21
+CustomerID: OTWC1234
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded

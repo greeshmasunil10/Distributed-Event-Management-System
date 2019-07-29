@@ -1,119 +1,2037 @@
 
-listEventAvailabilityPerformed.
-Time: 2019/06/13 16:26:40
-CustomerID: TORM121
-EventID: NA
-EventType: Sems
-Status: Succeeded
-
-listEventAvailabilityPerformed.
-Time: 2019/06/13 16:26:47
-CustomerID: TORM121
-EventID: NA
-EventType: Seminars
-Status: Succeeded
-
-listEventAvailabilityPerformed.
-Time: 2019/06/13 16:26:57
-CustomerID: TORM121
-EventID: NA
-EventType: 
-Status: Succeeded
-
 bookEventPerformed.
-Time: 2019/06/13 16:34:49
-CustomerID: TORM121
-EventID: 
-EventType: 
-Status: Invalid input
-
-bookEventPerformed.
-Time: 2019/06/13 16:35:18
-CustomerID: TORM121
+Time: 2019/07/08 18:03:27
+CustomerID: TORC12121
 EventID: TORA110519
-EventType: Seminars
+EventType: Seminara
 Status: Invalid input
 
 bookEventPerformed.
-Time: 2019/06/13 16:37:51
-CustomerID: TORM121
+Time: 2019/07/08 18:03:33
+CustomerID: TORC12121
 EventID: TORA110519
 EventType: Seminars
 Status: Booked
 
 bookEventPerformed.
-Time: 2019/06/13 16:42:48
-CustomerID: TORM121
-EventID: Seminars
-EventType: Semubars
-Status: Invalid input
+Time: 2019/07/08 18:03:45
+CustomerID: TORC12121
+EventID: MTLE110519
+EventType: Seminars
+Status: Booked
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:03:50
+CustomerID: TORC12121
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/08 18:04:13
+CustomerID: TORC12121
+EventID: MTLE110519
+EventType: Seminars
+Status: Event succefully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:04:17
+CustomerID: TORC12121
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+cancelEventPerformed.
+Time: 2019/07/08 18:04:22
+CustomerID: TORC12121
+EventID: OTWM110519
+EventType: NA
+Status: Cancelled
+
+listEventAvailabilityPerformed.
+Time: 2019/07/08 18:04:36
+CustomerID: TORM45454
+EventID: NA
+EventType: Seminars
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/08 18:04:42
+CustomerID: TORM45454
+EventID: NA
+EventType: Conferences
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:05:00
+CustomerID: TORM45454
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+removeEventPerformed.
+Time: 2019/07/08 18:05:15
+CustomerID: TORM45454
+EventID: TORA110519
+EventType: Seminars
+Status: Removed!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:05:20
+CustomerID: TORM45454
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/08 18:11:01
+CustomerID: MTLM0000
+EventID: NA
+EventType: Conferences
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/08 18:11:55
+CustomerID: MTLM0000
+EventID: NA
+EventType: Trade Shows
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/07/08 18:12:58
+CustomerID: MTLM0000
+EventID: MTLE000000
+EventType: Conferences
+Status: Added!
+
+listEventAvailabilityPerformed.
+Time: 2019/07/08 18:13:05
+CustomerID: MTLM0000
+EventID: NA
+EventType: Conferences
+Status: Succeeded
 
 bookEventPerformed.
-Time: 2019/06/13 16:43:10
-CustomerID: TORM121
+Time: 2019/07/08 18:13:37
+CustomerID: MTLM0000
+EventID: MTLE000000
+EventType: Conferences
+Status: Booked!
+
+listEventAvailabilityPerformed.
+Time: 2019/07/08 18:15:13
+CustomerID: MTLM0000
+EventID: NA
+EventType: Conferences
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/08 18:20:07
+CustomerID: MTLM0000
+EventID: OTWM100519
+EventType: Conferences
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:20:42
+CustomerID: MTLM0000
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/08 18:21:42
+CustomerID: MTLM0000
+EventID: OTWM100519
+EventType: Conferences
+Status: Event succefully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:22:10
+CustomerID: MTLM0000
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:22:35
+CustomerID: MTLM0000
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/08 18:23:38
+CustomerID: MTLM0000
+EventID: OTWM100519
+EventType: Conferences
+Status: Event succefully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:23:46
+CustomerID: MTLM0000
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:24:21
+CustomerID: MTLM0000
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:24:36
+CustomerID: MTLM0000
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/08 18:26:11
+CustomerID: TORC4521
+EventID: MTLE110519
+EventType: Seminars
+Status: Booked
+
+Swap EventPerformed.
+Time: 2019/07/08 18:26:26
+CustomerID: TORC4521
+EventID: MTLE110519
+EventType: Seminars
+Status: Event succefully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:26:28
+CustomerID: TORC4521
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/08 18:27:30
+CustomerID: TORC4521
+EventID: OTWM100519
+EventType: Seminars
+Status: Event could not be swapped!
+
+Swap EventPerformed.
+Time: 2019/07/08 18:28:00
+CustomerID: TORC4521
+EventID: OTWM110519
+EventType: Seminars
+Status: Event could not be swapped!
+
+Swap EventPerformed.
+Time: 2019/07/08 18:30:51
+CustomerID: TORC12121
+EventID: MTLE110519
+EventType: Seminars
+Status: Event could not be swapped!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:30:52
+CustomerID: TORC12121
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/08 18:35:31
+CustomerID: TORM12121
+EventID: MTLE110519
+EventType: Seminars
+Status: Event could not be swapped!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:36:06
+CustomerID: TORM12121
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/08 18:36:27
+CustomerID: TORM12121
+EventID: MTLE110519
+EventType: Seminars
+Status: Event could not be swapped!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:36:32
+CustomerID: TORM12121
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/08 18:37:51
+CustomerID: TORM12121
+EventID: MTLE110519
+EventType: Seminars
+Status: Event could not be swapped!
+
+addEventPerformed.
+Time: 2019/07/08 18:40:26
+CustomerID: OTWM4560
+EventID: OTWE080619
+EventType: Conferences
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/08 18:40:49
+CustomerID: OTWM4560
+EventID: OTWE110619
+EventType: Conferences
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/08 18:41:40
+CustomerID: MTLM9087
+EventID: MTLA090619
+EventType: Conferences
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/08 18:41:56
+CustomerID: MTLM9087
+EventID: MTLA080619
+EventType: Trade Shows
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/08 18:42:11
+CustomerID: MTLM9087
+EventID: MTLE230719
+EventType: Seminars
+Status: Added!
+
+listEventAvailabilityPerformed.
+Time: 2019/07/08 18:42:44
+CustomerID: TORM6785
+EventID: NA
+EventType: Conferences
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/08 18:44:19
+CustomerID: TORM6785
+EventID: NA
+EventType: Trade Shows
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/08 18:44:29
+CustomerID: TORM6785
+EventID: NA
+EventType: Seminars
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/08 18:45:06
+CustomerID: TORC1234
+EventID: OTWE080619
+EventType: Conferences
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/07/08 18:45:22
+CustomerID: TORC1234
+EventID: MTLA090619
+EventType: Conferences
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/07/08 18:45:36
+CustomerID: TORC1234
+EventID: MTLA080619
+EventType: Trade Shows
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/07/08 18:46:05
+CustomerID: TORC1234
+EventID: OTWE110619
+EventType: Conferences
+Status: customer cannot book more than 3 outside city events in the same month
+
+bookEventPerformed.
+Time: 2019/07/08 18:46:21
+CustomerID: TORC1234
+EventID: MTLE230719
+EventType: Seminars
+Status: customer cannot book more than 3 outside city events in the same month
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:47:08
+CustomerID: TORC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/08 18:48:13
+CustomerID: TORC1234
+EventID: TORE050619
+EventType: Conferences
+Status: This event does not exist!
+
+cancelEventPerformed.
+Time: 2019/07/08 18:49:11
+CustomerID: TORM6785
+EventID: MTLA090619
+EventType: NA
+Status: Cancelled
+
+bookEventPerformed.
+Time: 2019/07/08 18:49:59
+CustomerID: OTWC7890
+EventID: OTWE080919
+EventType: Conferences
+Status: This event does not exist!
+
+bookEventPerformed.
+Time: 2019/07/08 18:50:21
+CustomerID: OTWC7890
+EventID: OTWE080619
+EventType: Conferences
+Status: This event does not exist!
+
+listEventAvailabilityPerformed.
+Time: 2019/07/08 18:51:16
+CustomerID: OTWM45412
+EventID: NA
+EventType: Conferences
+Status: Succeeded
+
+removeEventPerformed.
+Time: 2019/07/08 18:52:28
+CustomerID: MTLM9087
+EventID: MTLA080619
+EventType: Trade Shows
+Status: Removed Event
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:52:50
+CustomerID: OTWC7890
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:53:07
+CustomerID: TORC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/08 18:57:08
+CustomerID: OTWM4560
+EventID: NA
+EventType: Conferences
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/08 18:57:37
+CustomerID: OTWM4560
+EventID: NA
+EventType: Seminars
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/07/08 19:05:40
+CustomerID: TORM212
+EventID: TORA190519
+EventType: Seminars
+Status: Added!
+
+removeEventPerformed.
+Time: 2019/07/08 19:05:55
+CustomerID: TORM212
+EventID: TORA190519
+EventType: Seminars
+Status: Removed!
+
+addEventPerformed.
+Time: 2019/07/08 19:06:09
+CustomerID: TORM212
+EventID: TORA110519
+EventType: Semianrs
+Status: Invalid input
+
+addEventPerformed.
+Time: 2019/07/08 19:06:24
+CustomerID: TORM212
+EventID: TORA110619
+EventType: Seminars
+Status: Added!
+
+bookEventPerformed.
+Time: 2019/07/08 19:06:45
+CustomerID: TORC12121
+EventID: TORA110519
+EventType: Seminars
+Status: Booked
+
+addEventPerformed.
+Time: 2019/07/08 19:07:19
+CustomerID: TORM2323
+EventID: TORA190519
+EventType: Seminars
+Status: Added!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:07:32
+CustomerID: TORC12121
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/08 19:07:51
+CustomerID: TORC12121
+EventID: TORA190519
+EventType: Seminars
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/07/08 19:07:58
+CustomerID: TORC12121
+EventID: TORM110519
+EventType: Seminars
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/07/08 19:08:07
+CustomerID: TORC12121
+EventID: TORE110519
+EventType: Seminars
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/07/08 19:08:31
+CustomerID: MTLC21212
+EventID: TORA190519
+EventType: Seminars
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:08:46
+CustomerID: MTLC21212
+EventID: TORM110519
+EventType: Seminars
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:09:02
+CustomerID: MTLC21212
+EventID: TORE110519
+EventType: Seminars
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:09:18
+CustomerID: MTLC21212
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/08 19:09:38
+CustomerID: MTLC21212
+EventID: TORA110519
+EventType: Seminars
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:09:41
+CustomerID: MTLC21212
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/07/08 19:12:32
+CustomerID: TORM12121
+EventID: TORA180519
+EventType: Seminars
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/08 19:13:46
+CustomerID: TORM12121
+EventID: TORA180519
+EventType: Seminars
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/08 19:14:58
+CustomerID: TORM12121
+EventID: TORA210519
+EventType: Seminars
+Status: Added!
+
+bookEventPerformed.
+Time: 2019/07/08 19:15:15
+CustomerID: MTLC12121
+EventID: TORA110519
+EventType: Seminars
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:15:40
+CustomerID: MTLC12121
+EventID: TORM110519
+EventType: Seminars
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:15:50
+CustomerID: MTLC12121
+EventID: TORA210519
+EventType: Seminars
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:15:58
+CustomerID: MTLC12121
+EventID: TORE110519
+EventType: Seminars
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:16:00
+CustomerID: MTLC12121
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/07/08 19:17:23
+CustomerID: TORM12121
+EventID: TORA110519
+EventType: Seminars
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/08 19:17:43
+CustomerID: TORM12121
+EventID: TORA160519
+EventType: Seminars
+Status: Added!
+
+bookEventPerformed.
+Time: 2019/07/08 19:17:52
+CustomerID: TORC12121
 EventID: TORA110519
 EventType: Seminars
 Status: Booked
 
 bookEventPerformed.
-Time: 2019/06/13 16:44:21
-CustomerID: TORM121
+Time: 2019/07/08 19:18:03
+CustomerID: TORC12121
+EventID: TORM110519
+EventType: Seminars
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/07/08 19:18:19
+CustomerID: TORC12121
+EventID: TORA160519
+EventType: Seminars
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/07/08 19:18:27
+CustomerID: TORC12121
+EventID: TORE110519
+EventType: Seminars
+Status: Booked
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:18:29
+CustomerID: TORC12121
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/08 19:18:42
+CustomerID: MTLC1212121
+EventID: TORE110519
+EventType: Seminars
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:18:50
+CustomerID: MTLC1212121
+EventID: TORA160519
+EventType: Seminars
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:18:59
+CustomerID: MTLC1212121
+EventID: TORM110519
+EventType: Seminars
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:19:07
+CustomerID: MTLC1212121
 EventID: TORA110519
 EventType: Seminars
-Status: Invalid Customer ID!
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:19:09
+CustomerID: MTLC1212121
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/07/08 19:37:38
+CustomerID: TORM11212
+EventID: TORA220519
+EventType: Seminars
+Status: Added!
 
 bookEventPerformed.
-Time: 2019/06/13 16:48:09
-CustomerID: TORM1212
-EventID: 
-EventType: 
-Status: Invalid Customer ID!
+Time: 2019/07/08 19:37:57
+CustomerID: MTLC12121
+EventID: TORA220519
+EventType: Seminars
+Status: Booked!
 
 bookEventPerformed.
-Time: 2019/06/13 16:51:27
+Time: 2019/07/08 19:38:10
+CustomerID: MTLC12121
+EventID: TORA110519
+EventType: Seminars
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:38:23
+CustomerID: MTLC12121
+EventID: TORM110519
+EventType: Seminars
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:38:31
+CustomerID: MTLC12121
+EventID: TORE110519
+EventType: Seminars
+Status: customer cannot book more than 3 outside city events in the same month
+
+addEventPerformed.
+Time: 2019/07/08 19:40:32
+CustomerID: MTLM12212
+EventID: MTLE110519
+EventType: Seminars
+Status: Added!
+
+bookEventPerformed.
+Time: 2019/07/08 19:40:45
+CustomerID: TORC12121
+EventID: MTLE110519
+EventType: Seminars
+Status: Booked
+
+addEventPerformed.
+Time: 2019/07/08 19:41:23
+CustomerID: MTLM12121
+EventID: MTLA550519
+EventType: Seminars
+Status: Added!
+
+bookEventPerformed.
+Time: 2019/07/08 19:41:44
+CustomerID: TORC12128
+EventID: MTLA110519
+EventType: Seminars
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/07/08 19:41:54
+CustomerID: TORC12128
+EventID: MTLE110519
+EventType: Seminars
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/07/08 19:42:00
+CustomerID: TORC12128
+EventID: MTLA550519
+EventType: Seminars
+Status: Booked
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:42:05
+CustomerID: TORC12128
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/08 19:42:11
+CustomerID: TORC12128
+EventID: MTLM110519
+EventType: Seminars
+Status: customer cannot book more than 3 outside city events in the same month
+
+addEventPerformed.
+Time: 2019/07/08 19:43:16
+CustomerID: MTLM545412
+EventID: MTLA160619
+EventType: Seminars
+Status: Added!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:43:29
+CustomerID: TORC12128
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/08 19:44:39
+CustomerID: TORC12128
+EventID: MTLA160619
+EventType: Seminars
+Status: Booked
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:44:44
+CustomerID: TORC12128
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+removeEventPerformed.
+Time: 2019/07/08 19:46:43
+CustomerID: MTLM21121
+EventID: MTLA110519
+EventType: Seminars
+Status: Removed Event
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:46:57
+CustomerID: TORC12128
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/08 19:47:46
+CustomerID: TORC12128
+EventID: TORA110519
+EventType: Seminars
+Status: Booked
+
+removeEventPerformed.
+Time: 2019/07/08 19:47:55
 CustomerID: TORM1212
-EventID: Seminars
-EventType: 
+EventID: TORA110519
+EventType: Seminars
+Status: Removed!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:48:14
+CustomerID: TORC12128
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/08 19:54:36
+CustomerID: TORC12128
+EventID: TORE110519
+EventType: Seminars
+Status: Booked
+
+removeEventPerformed.
+Time: 2019/07/08 19:54:53
+CustomerID: TORM1212
+EventID: TORE110519
+EventType: Seminars
+Status: Removed!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:55:11
+CustomerID: TORC12128
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/07/08 19:57:02
+CustomerID: TORM12121
+EventID: TORC12228
+EventType: Seminars
 Status: Invalid input
 
-bookEventPerformed.
-Time: 2019/06/13 17:12:47
-CustomerID: TORM1212
-EventID: 
-EventType: 
-Status: Invalid Customer ID!
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:57:08
+CustomerID: TORC12121
+EventID: NA
+EventType: NA
+Status: Succeeded
 
 bookEventPerformed.
-Time: 2019/06/13 17:14:26
-CustomerID: TORC121212
+Time: 2019/07/08 19:57:26
+CustomerID: TORC12121
+EventID: TORC12228
+EventType: Seminars
+Status: Invalid input
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:57:39
+CustomerID: TORC12121
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/07/08 19:58:01
+CustomerID: TORM12121
+EventID: TORA12228
+EventType: Seminars
+Status: Invalid input
+
+addEventPerformed.
+Time: 2019/07/08 19:58:18
+CustomerID: TORM12121
+EventID: TORM110919
+EventType: Seminars
+Status: Added!
+
+bookEventPerformed.
+Time: 2019/07/08 19:58:35
+CustomerID: TORC12121
+EventID: TORM110919
+EventType: Seminars
+Status: Booked
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:58:36
+CustomerID: TORC12121
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/08 19:58:41
+CustomerID: TORC12121
+EventID: TORM110919
+EventType: Seminars
+Status: This event was already booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:59:01
+CustomerID: TORC78787
+EventID: TORM110919
+EventType: Seminars
+Status: This event does not exist!
+
+addEventPerformed.
+Time: 2019/07/08 20:01:12
+CustomerID: TORM1212
+EventID: TORA110559
+EventType: Seminars
+Status: Added!
+
+bookEventPerformed.
+Time: 2019/07/08 20:01:32
+CustomerID: TORC12121
+EventID: TORA110559
+EventType: Seminars
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/07/08 20:01:40
+CustomerID: TORC45120
+EventID: TORA110559
+EventType: Seminars
+Status: Event capacity is zero
+
+bookEventPerformed.
+Time: 2019/07/08 20:03:33
+CustomerID: TORC21211
+EventID: TORA110519
+EventType: Seminars
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/07/08 20:03:47
+CustomerID: TORC21211
+EventID: OTWM120519
+EventType: Trade Shows
+Status: Booked
+
+Swap EventPerformed.
+Time: 2019/07/08 20:04:11
+CustomerID: TORC21211
+EventID: OTWM120519
+EventType: Trade Shows
+Status: Event succefully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 20:04:14
+CustomerID: TORC21211
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/08 20:05:20
+CustomerID: TORC21211
+EventID: TORA110519
+EventType: Seminars
+Status: Event succefully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 20:05:22
+CustomerID: TORC21211
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 11:06:09
+CustomerID: TORC102121
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/07/16 11:06:58
+CustomerID: TORM1212
+EventID: TORA190719
+EventType: Seminars
+Status: Added!
+
+listEventAvailabilityPerformed.
+Time: 2019/07/16 11:07:03
+CustomerID: TORM1212
+EventID: NA
+EventType: Seminars
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/16 11:07:54
+CustomerID: TORC4545
+EventID: TORA190719
+EventType: Seminars
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/07/16 11:08:08
+CustomerID: TORC4545
 EventID: OTWM110519
 EventType: Seminars
 Status: Booked
 
 bookEventPerformed.
-Time: 2019/07/06 18:39:06
-CustomerID: MTLC1212
-EventID: MTLE110519
+Time: 2019/07/16 11:08:28
+CustomerID: TORC4545
+EventID: MTLA110519
 EventType: Seminars
-Status: Booked!
+Status: Booked
 
 getBookingSchedulePerformed.
-Time: 2019/07/06 18:39:09
-CustomerID: MTLC1212
+Time: 2019/07/16 11:08:32
+CustomerID: TORC4545
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/16 11:08:52
+CustomerID: TORC4545
+EventID: OTWM110519
+EventType: Seminars
+Status: Event succefully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 11:08:54
+CustomerID: TORC4545
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 11:09:06
+CustomerID: TORC4545
 EventID: NA
 EventType: NA
 Status: Succeeded
 
 bookEventPerformed.
-Time: 2019/07/06 18:55:50
+Time: 2019/07/16 11:13:36
+CustomerID: TORC12121
+EventID: TORA110519
+EventType: Seminars
+Status: Booked
+
+Swap EventPerformed.
+Time: 2019/07/16 11:20:20
+CustomerID: TORC12121
+EventID: TORA110519
+EventType: Seminars
+Status: Event succefully swapped
+
+Swap EventPerformed.
+Time: 2019/07/16 11:21:20
+CustomerID: TORC12121
+EventID: TOR
+EventType: Seminars
+Status: Event could not be swapped!
+
+bookEventPerformed.
+Time: 2019/07/16 11:23:19
+CustomerID: TORC12121
+EventID: TORM110519
+EventType: Seminars
+Status: Booked
+
+Swap EventPerformed.
+Time: 2019/07/16 11:24:04
+CustomerID: TORC12121
+EventID: TORM110519
+EventType: Seminars
+Status: Event could not be swapped!
+
+bookEventPerformed.
+Time: 2019/07/16 11:24:10
+CustomerID: TORC12121
+EventID: TORM110519
+EventType: Seminars
+Status: Booked
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 11:24:14
+CustomerID: TORC12121
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/16 11:25:59
+CustomerID: TORC23232
+EventID: TORM110519
+EventType: Seminars
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/07/16 11:26:34
+CustomerID: TORC12121
+EventID: TORM110519
+EventType: Seminars
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/07/16 11:26:49
+CustomerID: TORC12121
+EventID: TORM110519
+EventType: Seminars
+Status: This event was already booked!
+
+Swap EventPerformed.
+Time: 2019/07/16 11:27:04
+CustomerID: TORC12121
+EventID: TORM110519
+EventType: Seminars
+Status: Event succefully swapped
+
+bookEventPerformed.
+Time: 2019/07/16 11:28:59
+CustomerID: TORC12121
+EventID: TORA110519
+EventType: Seminars
+Status: Booked
+
+bookEventPerformed.
+Time: 2019/07/16 11:37:16
+CustomerID: TORC12121
+EventID: TORA110519
+EventType: Seminars
+Status: Booked
+
+Swap EventPerformed.
+Time: 2019/07/16 11:37:31
+CustomerID: TORC12121
+EventID: TORA110519
+EventType: Seminars
+Status: Event succefully swapped
+
+cancelEventPerformed.
+Time: 2019/07/16 11:37:43
+CustomerID: TORC12121
+EventID: TORA110519
+EventType: NA
+Status: The event doesn't exist/ not in your schedule!
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 11:37:47
+CustomerID: TORC12121
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/16 11:38:54
+CustomerID: TORC12121
+EventID: TORA110519
+EventType: Seminars
+Status: Event could not be swapped!
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 11:40:45
+CustomerID: TORC12121
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/16 11:42:44
+CustomerID: TORC12121
+EventID: TORA110519
+EventType: Seminars
+Status: Booked
+
+Swap EventPerformed.
+Time: 2019/07/16 11:43:10
+CustomerID: TORC12121
+EventID: TORA110519
+EventType: Seminars
+Status: Event succefully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 11:43:12
+CustomerID: TORC12121
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/07/16 13:30:59
+CustomerID: TORM3456
+EventID: TORE080619
+EventType: Coferences
+Status: Invalid input
+
+addEventPerformed.
+Time: 2019/07/16 13:31:14
+CustomerID: TORM3456
+EventID: TORE080619
+EventType: Conferences
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 13:31:28
+CustomerID: TORM3456
+EventID: TORE110619
+EventType: Seminars
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 13:32:19
+CustomerID: MTLM9000
+EventID: MTLA090619
+EventType: Conferences
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 13:32:42
+CustomerID: MTLM9000
+EventID: MTLA080619
+EventType: Trade Shows
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 13:33:12
+CustomerID: OTWM9000
+EventID: OTWA190619
+EventType: Conferences
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 13:33:27
+CustomerID: OTWM9000
+EventID: OTWA250619
+EventType: Seminars
+Status: Added!
+
+listEventAvailabilityPerformed.
+Time: 2019/07/16 13:34:57
+CustomerID: OTWM6785
+EventID: NA
+EventType: Conferences
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/16 13:35:54
+CustomerID: OTWM6785
+EventID: NA
+EventType: Seminars
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/16 13:36:46
+CustomerID: OTWM6785
+EventID: NA
+EventType: Trade Shows
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/16 13:37:48
+CustomerID: OTWC1234
+EventID: TORE080619
+EventType: Conferences
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/16 13:38:06
+CustomerID: OTWC1234
+EventID: TORE110619
+EventType: Seminars
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/16 13:38:22
+CustomerID: OTWC1234
+EventID: MTLA090619
+EventType: Conferences
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/16 13:38:36
+CustomerID: OTWC1234
+EventID: OTWA190619
+EventType: Conferences
+Status: Booked!
+
+Swap EventPerformed.
+Time: 2019/07/16 13:39:45
+CustomerID: OTWC1234
+EventID: OTWA190619
+EventType: Conferences
+Status: Event succefully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 13:40:28
+CustomerID: OTWC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/07/16 13:49:56
+CustomerID: TORM3456
+EventID: TORE080619
+EventType: Conferences
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 13:50:09
+CustomerID: TORM3456
+EventID: TORE110619
+EventType: Seminars
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 13:50:27
+CustomerID: MTLM9000
+EventID: MTLA090619
+EventType: Conferences
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 13:50:39
+CustomerID: MTLM9000
+EventID: MTLA080619
+EventType: Trade Shows
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 13:50:59
+CustomerID: OTWM9000
+EventID: OTWA190619
+EventType: Conferences
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 13:51:08
+CustomerID: OTWM9000
+EventID: OTWA250619
+EventType: Seminars
+Status: Added!
+
+listEventAvailabilityPerformed.
+Time: 2019/07/16 13:51:26
+CustomerID: OTWM6785
+EventID: NA
+EventType: Conferences
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/16 13:52:18
+CustomerID: OTWM6785
+EventID: NA
+EventType: Seminars
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/16 13:52:24
+CustomerID: OTWM6785
+EventID: NA
+EventType: Trade Shows
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/16 13:52:47
+CustomerID: OTWC1234
+EventID: TORE080619
+EventType: Conferences
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 13:52:50
+CustomerID: OTWC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/16 13:53:00
+CustomerID: OTWC1234
+EventID: TORE110619
+EventType: Seminars
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 13:53:02
+CustomerID: OTWC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/16 13:53:13
+CustomerID: OTWC1234
+EventID: MTLA090619
+EventType: Conferences
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 13:53:14
+CustomerID: OTWC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/16 13:53:27
+CustomerID: OTWC1234
+EventID: OTWA190619
+EventType: Conferences
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 13:53:29
+CustomerID: OTWC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/16 13:53:57
+CustomerID: OTWC1234
+EventID: OTWA190619
+EventType: Conferences
+Status: Event succefully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 13:54:03
+CustomerID: OTWC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/16 13:58:03
+CustomerID: OTWC1234
+EventID: OTWA190619
+EventType: Conferences
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 13:58:20
+CustomerID: OTWC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/16 13:59:17
+CustomerID: OTWC1234
+EventID: OTWA190619
+EventType: Conferences
+Status: Event cannot be swapped
+
+Swap EventPerformed.
+Time: 2019/07/16 14:00:38
+CustomerID: OTWC1234
+EventID: TORE080619
+EventType: Conferences
+Status: Event succefully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 14:00:41
+CustomerID: OTWC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/16 14:01:42
+CustomerID: TORM3456
+EventID: MTLA080619
+EventType: Trade Shows
+Status: Booked
+
+Swap EventPerformed.
+Time: 2019/07/16 14:02:15
+CustomerID: TORM3456
+EventID: MTLA080619
+EventType: Trade Shows
+Status: Event could not be swapped!
+
+Swap EventPerformed.
+Time: 2019/07/16 14:02:57
+CustomerID: TORM3456
+EventID: MTLA090619
+EventType: Conferences
+Status: Event could not be swapped!
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 14:03:07
+CustomerID: TORM3456
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/16 14:03:41
+CustomerID: MTLM9000
+EventID: NA
+EventType: Conferences
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/16 14:03:45
+CustomerID: MTLM9000
+EventID: NA
+EventType: Seminars
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/16 14:03:51
+CustomerID: MTLM9000
+EventID: NA
+EventType: Trade Shows
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/07/16 14:11:47
+CustomerID: TORM3456
+EventID: TORE080619
+EventType: Conferences
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 14:12:04
+CustomerID: TORM3456
+EventID: TORE110619
+EventType: Seminars
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 14:12:26
+CustomerID: MTLM9000
+EventID: MTLA090619
+EventType: Conferences
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 14:12:38
+CustomerID: MTLM9000
+EventID: MTLA080619
+EventType: Trade Shows
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 14:13:02
+CustomerID: OTWM9000
+EventID: OTWA190619
+EventType: Conferences
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 14:13:14
+CustomerID: OTWM9000
+EventID: OTWA250619
+EventType: Seminars
+Status: Added!
+
+listEventAvailabilityPerformed.
+Time: 2019/07/16 14:13:29
+CustomerID: OTWM6785
+EventID: NA
+EventType: Conferences
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/16 14:13:32
+CustomerID: OTWM6785
+EventID: NA
+EventType: Seminars
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/16 14:13:39
+CustomerID: OTWM6785
+EventID: NA
+EventType: Trade Shows
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/16 14:14:18
+CustomerID: OTWC1234
+EventID: TORE080619
+EventType: Conferences
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/16 14:14:27
+CustomerID: OTWC1234
+EventID: TORE110619
+EventType: Seminars
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/16 14:14:43
+CustomerID: OTWC1234
+EventID: MTLA090619
+EventType: Conferences
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/16 14:14:55
+CustomerID: OTWC1234
+EventID: OTWA190619
+EventType: Conferences
+Status: Booked!
+
+Swap EventPerformed.
+Time: 2019/07/16 14:15:41
+CustomerID: OTWC1234
+EventID: OTWA190619
+EventType: Conferences
+Status: Event cannot be swapped
+
+Swap EventPerformed.
+Time: 2019/07/16 14:16:12
+CustomerID: OTWC1234
+EventID: TORE080619
+EventType: Conferences
+Status: Event succefully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 14:16:21
+CustomerID: OTWC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/16 14:17:31
+CustomerID: TORM3456
+EventID: MTLA080619
+EventType: Trade Shows
+Status: Booked
+
+Swap EventPerformed.
+Time: 2019/07/16 14:18:08
+CustomerID: TORM3456
+EventID: MTLA080619
+EventType: Trade Shows
+Status: Event could not be swapped!
+
+Swap EventPerformed.
+Time: 2019/07/16 14:18:43
+CustomerID: TORM3456
+EventID: MTLA090619
+EventType: Conferences
+Status: Event could not be swapped!
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 14:18:54
+CustomerID: TORM3456
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/16 14:19:27
+CustomerID: MTLM9000
+EventID: NA
+EventType: Conferences
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/16 14:19:30
+CustomerID: MTLM9000
+EventID: NA
+EventType: Seminars
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/07/16 14:19:36
+CustomerID: MTLM9000
+EventID: NA
+EventType: Trade Shows
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 14:38:16
+CustomerID: TORC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 14:40:27
+CustomerID: TORC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/16 14:44:17
+CustomerID: TORC1234
+EventID: TORE110519
+EventType: Seminars
+Status: null
+
+Swap EventPerformed.
+Time: 2019/07/16 14:44:17
+CustomerID: TORC1234
+EventID: MTLA080619
+EventType: Trade Shows
+Status: null
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 14:44:24
+CustomerID: TORC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/16 14:46:04
+CustomerID: TORC1234
+EventID: MTLA080619
+EventType: Trade Shows
+Status: null
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 14:46:14
+CustomerID: TORC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/16 14:46:57
+CustomerID: TORC1234
+EventID: TORE110519
+EventType: Seminars
+Status: null
+
+Swap EventPerformed.
+Time: 2019/07/16 14:46:57
+CustomerID: TORC1234
+EventID: TORA110519
+EventType: Trade Shows
+Status: null
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 14:46:59
+CustomerID: TORC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/16 14:48:23
+CustomerID: TORC1234
+EventID: TORA110519
+EventType: Trade Shows
+Status: null
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 14:48:26
+CustomerID: TORC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/16 14:50:09
+CustomerID: TORC1324
+EventID: TORE110519
+EventType: Seminars
+Status: null
+
+Swap EventPerformed.
+Time: 2019/07/16 14:50:09
+CustomerID: TORC1324
+EventID: TORA110519
+EventType: Trade Shows
+Status: null
+
+Swap EventPerformed.
+Time: 2019/07/16 14:50:30
+CustomerID: TORC1234
+EventID: TORA110519
+EventType: Trade Shows
+Status: null
+
+Swap EventPerformed.
+Time: 2019/07/16 14:50:30
+CustomerID: TORC1234
+EventID: TORE110519
+EventType: Seminars
+Status: null
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 14:50:32
+CustomerID: TORC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/16 14:51:36
+CustomerID: TORC1234
+EventID: TORE110519
+EventType: Seminars
+Status: Event could not be swapped!
+
+Swap EventPerformed.
+Time: 2019/07/16 14:51:36
+CustomerID: TORC1234
+EventID: TORA110519
+EventType: Trade Shows
+Status: Event could not be swapped!
+
+Swap EventPerformed.
+Time: 2019/07/16 14:52:26
+CustomerID: TORC1234
+EventID: TORA110519
+EventType: Trade Shows
+Status: Event could not be swapped!
+
+Swap EventPerformed.
+Time: 2019/07/16 14:52:26
+CustomerID: TORC1234
+EventID: TORE110519
+EventType: Seminars
+Status: Event could not be swapped!
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 14:52:47
+CustomerID: TORC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/16 14:55:27
+CustomerID: TORC1234
+EventID: TORE110519
+EventType: Seminars
+Status: Event could not be swapped!
+
+Swap EventPerformed.
+Time: 2019/07/16 14:55:27
+CustomerID: TORC1234
+EventID: TORA110519
+EventType: Trade Shows
+Status: Event could not be swapped!
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 14:55:32
+CustomerID: TORC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/16 15:51:05
+CustomerID: TORC1234
+EventID: TORA110519
+EventType: Trade Shows
+Status: Event could not be swapped!
+
+Swap EventPerformed.
+Time: 2019/07/16 15:51:05
+CustomerID: TORC1234
+EventID: TORE110519
+EventType: Seminars
+Status: Event could not be swapped!
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 15:51:51
+CustomerID: TORC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/16 15:52:23
+CustomerID: TORC1234
+EventID: TORA110519
+EventType: Trade Shows
+Status: Event could not be swapped!
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 15:52:34
+CustomerID: TORC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/16 15:53:21
+CustomerID: TORC1234
+EventID: TORA110519
+EventType: Seminars
+Status: Event succefully swapped
+
+Swap EventPerformed.
+Time: 2019/07/16 15:53:21
+CustomerID: TORC1234
+EventID: TORE110519
+EventType: Seminars
+Status: Event succefully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/07/16 15:53:23
+CustomerID: TORC1234
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/21 19:51:15
+CustomerID: TORC12121
+EventID: TORA110519
+EventType: Seminars
+Status: Event succefully swapped
+
+Swap EventPerformed.
+Time: 2019/07/21 19:51:15
+CustomerID: TORC12121
+EventID: TORE110519
+EventType: Seminars
+Status: Event succefully swapped
+
+bookEventPerformed.
+Time: 2019/07/21 19:52:09
 CustomerID: TORC12121
 EventID: TORA110519
 EventType: Seminars
 Status: Booked
 
 getBookingSchedulePerformed.
-Time: 2019/07/06 18:55:53
+Time: 2019/07/21 19:52:11
 CustomerID: TORC12121
 EventID: NA
 EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/07/25 20:06:10
+CustomerID: TORC12121
+EventID: TORA110519
+EventType: Seminars
+Status: Event succefully swapped
+
+Swap EventPerformed.
+Time: 2019/07/25 20:06:10
+CustomerID: TORC12121
+EventID: TORE110519
+EventType: Seminars
+Status: Event succefully swapped
+
+bookEventPerformed.
+Time: 2019/07/25 20:06:25
+CustomerID: TORC12121
+EventID: TORM100519
+EventType: Conferences
+Status: Booked
+
+getBookingSchedulePerformed.
+Time: 2019/07/25 20:06:30
+CustomerID: TORC12121
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/25 20:06:53
+CustomerID: TORC12121
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+cancelEventPerformed.
+Time: 2019/07/25 20:07:18
+CustomerID: TORC12121
+EventID: TORM100519
+EventType: NA
+Status: Cancelled
+
+Swap EventPerformed.
+Time: 2019/07/29 17:02:51
+CustomerID: TORC12121
+EventID: TORA110519
+EventType: Seminars
+Status: Event succefully swapped
+
+Swap EventPerformed.
+Time: 2019/07/29 17:02:51
+CustomerID: TORC12121
+EventID: TORE110519
+EventType: Seminars
+Status: Event succefully swapped
+
+addEventPerformed.
+Time: 2019/07/29 17:03:23
+CustomerID: TORM121212
+EventID: TORM210619
+EventType: Seminars
+Status: Added!
+
+listEventAvailabilityPerformed.
+Time: 2019/07/29 17:03:28
+CustomerID: TORM121212
+EventID: NA
+EventType: Seminars
 Status: Succeeded
