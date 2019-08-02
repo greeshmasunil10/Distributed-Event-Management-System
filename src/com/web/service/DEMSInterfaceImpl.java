@@ -17,7 +17,7 @@ public class DEMSInterfaceImpl implements DEMSInterface {
 	}
 
 	@Override
-	public String addEvent(String eventID, String eventType, int bookingCapacity)  {
+	public synchronized String addEvent(String eventID, String eventType, int bookingCapacity)  {
 		String res = "Invalid input";
 		if (isValid(eventID, eventType, bookingCapacity)) {
 			if (eventID.contains("TOR")) {
@@ -35,7 +35,7 @@ public class DEMSInterfaceImpl implements DEMSInterface {
 	}
 
 	@Override
-	public String removeEvent(String eventID, String eventType)  {
+	public synchronized String removeEvent(String eventID, String eventType)  {
 		String res = "Invalid input";
 		if(isValid(eventID, eventType)) {
 			if (eventID.contains("TOR")) {
@@ -53,14 +53,14 @@ public class DEMSInterfaceImpl implements DEMSInterface {
 	}
 
 	@Override
-	public String listEventAvailability(String eventType)  {
+	public synchronized String listEventAvailability(String eventType)  {
 			String msg=DEMSTorontoServer.dispEventAvailability(eventType);
 			DEMSTorontoServer.logOperation("bookEvent", "NA", eventType,"NA","NA", "Succeeded");
 	return msg;
 	}
 
 	@Override
-	public String bookEvent(String customerID, String eventID, String eventType)  {
+	public synchronized String bookEvent(String customerID, String eventID, String eventType)  {
 		String res = "Invalid input";
 		if( !isValid(customerID))
 			return("Invalid Customer ID!");
@@ -101,7 +101,7 @@ public class DEMSInterfaceImpl implements DEMSInterface {
 	}
 
 	@Override
-	public String cancelEvent(String customerID, String eventID)  {
+	public synchronized String cancelEvent(String customerID, String eventID)  {
 		String res = "Invalid input";
 		if(customerID.contains("TOR")) {
 			res = DEMSTorontoServer.cancelEvent(customerID, eventID);
@@ -119,7 +119,7 @@ public class DEMSInterfaceImpl implements DEMSInterface {
 	}
 	
 	@Override
-	public String swapEvent(String customerID, String newEventID, String newEventType, String oldEventID,
+	public synchronized String swapEvent(String customerID, String newEventID, String newEventType, String oldEventID,
 			String oldEventType)  {
 		String res = "Invalid input";
 		if(customerID.contains("TOR")) {

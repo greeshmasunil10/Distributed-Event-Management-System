@@ -49,25 +49,27 @@ public class DEMSTorontoServer {
 		
 //		Seminars, Conferences and Trade Shows keys are populated with dummy event data
 		torManagers.addAll(Arrays.asList("TORM1221", "TORM1000", "TORM2222"));
+		
 		HashMap<String, Integer> dummyValsConf = new HashMap<>();
-		dummyValsConf.put("TORM100519", 5);
-		dummyValsConf.put("TORA100519", 10);
-		dummyValsConf.put("TORE100519", 15);
+//		dummyValsConf.put("TORM100519", 5);
+//		dummyValsConf.put("TORA100519", 10);
+//		dummyValsConf.put("TORE100519", 15);
 		torDb.put(eventTypes[0], dummyValsConf);
 
 		HashMap<String, Integer> dummyValsSem = new HashMap<>();
-		dummyValsSem.put("TORM110519", 5);
-		dummyValsSem.put("TORA110519", 10);
-		dummyValsSem.put("TORE110519", 15);
+//		dummyValsSem.put("TORM111111", 10);
+//		dummyValsSem.put("TORM222222", 20);
+//		dummyValsSem.put("TORM333333", 30);
+//		dummyValsSem.put("TORM444444", 40);
 		torDb.put(eventTypes[1], dummyValsSem);
 
 		HashMap<String, Integer> dummyValsTS = new HashMap<>();
-		dummyValsTS.put("TORM120519", 5);
-		dummyValsTS.put("TORA120519", 10);
-		dummyValsTS.put("TORE120519", 15);
+//		dummyValsTS.put("TORM120519", 5);
+//		dummyValsTS.put("TORA120519", 10);
+//		dummyValsTS.put("TORE120519", 15);
 		torDb.put(eventTypes[2], dummyValsTS);
-		sample = "greeshma";
-		System.out.println("added:" + sample);
+//		sample = "greeshma";
+//		System.out.println("added:" + sample);
 
 		displayTorDbContents();
 		System.out.println("Toronto Server ready.");
@@ -118,41 +120,32 @@ public class DEMSTorontoServer {
 				.clone();
 		if (temp1.containsKey(oldEventID) || temp2.containsKey(oldEventID) || temp3.containsKey(oldEventID)) {
 			if (torCustomerInfo.containsKey(customerID) && torCustomerInfo.get(customerID).contains(oldEventID)) {
-				String temp=bookEvent(customerID, newEventID,newEventType );
-				if(temp.equals("customer cannot book more than 3 outside city events in the same month"))
+				String msg1=bookEvent(customerID, newEventID,newEventType );
+				System.out.println("***"+msg1);
+				if(!msg1.equals("Event successfully Booked"))
 				{
-					res="Event cannot be swapped";
+//					res="Event cannot be swapped since customer cannot book more than 3 outside city events in the same month";
+					return "Event could not be swapped since:"+msg1;
+				}				
+				String msg2=cancelEvent(customerID, oldEventID);
+				if(!msg2.equals("Event successfully cancelled")) {
+					res="Event could not be swapped: "+msg2;
+					cancelEvent(customerID, oldEventID);
 					return res;
-				}				cancelEvent(customerID, oldEventID);
-				res = "Event succefully swapped";
+				}
+					
+				res = "Event succesfully swapped";
 				logOperation("Swap Performed", newEventID, newEventType, "NA", "NA", "Succeeded");
 				displayTorDbContents();
 				displayCustomerInfo();
 			}
+			else {
+				 res = "Event could not be swapped since this event wasnt booked!";
+			}
 		}
-//		else if(newEventID.contains("MTL")) {
-//			if (temp1.containsKey(oldEventID)) {
-//				bookEvent(customerID, newEventID,newEventType );
-//				res+="booked";
-//				cancelEvent(customerID,oldEventID );
-//				res+="cancelled";
-//				res+="Event succefully swapped";
-//				logOperation(" Event which has been swapped!", newEventID, newEventType, "NA", "NA", "Succeeded");
-//				displayTorDbContents();
-//				displayCustomerInfo();
-//			}
-//		} else if(newEventID.contains("OTW")) {
-//			if (temp1.containsKey(oldEventID)) {
-//				bookEvent(customerID, newEventID,newEventType );
-//				res+="booked";
-//				cancelEvent(customerID,oldEventID );
-//				res+="cancelled";
-//				res+="Event succefully swapped";
-//				logOperation(" Event which has been swapped!", newEventID, newEventType, "NA", "NA", "Succeeded");
-//				displayTorDbContents();
-//				displayCustomerInfo();
-//			}
-//		} 
+		else {
+			 res = "Event could not be swapped since this event wasnt booked!";
+		}
 
 		return res;
 	}
@@ -194,7 +187,7 @@ public class DEMSTorontoServer {
 		torDb.put(eventType, temp);
 		displayTorDbContents();
 		displayCustomerInfo();
-		return "Removed!";
+		return "Event successfully removed!";
 	}
 
 	public synchronized static String dispEventAvailability(String eventType) {
@@ -220,8 +213,10 @@ public class DEMSTorontoServer {
 
 		System.out.println("-----------------------------------");
 		msg += "\n" + "-----------------------------------";
-		UDPclient("MTL", "MTL", eventType, "disp");
-		UDPclient("OTW", "OTW", eventType, "disp");
+		msg+=DEMSMontrealServer.dispEventAvailability(eventType);
+		msg+=DEMSOttawaServer.dispEventAvailability(eventType);
+//		UDPclient("MTL", "MTL", eventType, "disp");
+//		UDPclient("OTW", "OTW", eventType, "disp");
 		return msg;
 	}
 
@@ -246,6 +241,7 @@ public class DEMSTorontoServer {
 
 			if (count >= 3) {
 				return "customer cannot book more than 3 outside city events in the same month";
+				
 			}
 
 		}
@@ -270,7 +266,7 @@ public class DEMSTorontoServer {
 		torCustomerInfo.put(customerID, temp1);
 		displayTorDbContents();
 		displayCustomerInfo();
-		return "Booked";
+		return "Event successfully Booked";
 
 	}
 
@@ -294,7 +290,7 @@ public class DEMSTorontoServer {
 							temp.put(eID, temp.get(eID) + 1);
 							torDb.put(eType, temp);
 							displayTorDbContents();
-							return "Cancelled";
+							return "Event successfully cancelled";
 						}
 					}
 				}

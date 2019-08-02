@@ -49,21 +49,21 @@ public class DEMSMontrealServer {
 		
 		
 		HashMap<String, Integer> dummyValsConf = new HashMap<>();
-		dummyValsConf.put("MTLM100519", 5);
-		dummyValsConf.put("MTLA100519", 10);
-		dummyValsConf.put("MTLE100519", 15);
+//		dummyValsConf.put("MTLM100519", 5);
+//		dummyValsConf.put("MTLA100519", 10);
+//		dummyValsConf.put("MTLE100519", 15);
 		mtlDb.put(eventTypes[0], dummyValsConf);
 
 		HashMap<String, Integer> dummyValsSem = new HashMap<>();
-		dummyValsSem.put("MTLM110519", 5);
-		dummyValsSem.put("MTLA110519", 10);
-		dummyValsSem.put("MTLE110519", 15);
+//		dummyValsSem.put("MTLM110519", 5);
+//		dummyValsSem.put("MTLA110519", 10);
+//		dummyValsSem.put("MTLE110519", 15);
 		mtlDb.put(eventTypes[1], dummyValsSem);
 
 		HashMap<String, Integer> dummyValsTS = new HashMap<>();
-		dummyValsTS.put("MTLM120519", 5);
-		dummyValsTS.put("MTLA120519", 10);
-		dummyValsTS.put("MTLE120519", 15);
+//		dummyValsTS.put("MTLM120519", 5);
+//		dummyValsTS.put("MTLA120519", 10);
+//		dummyValsTS.put("MTLE120519", 15);
 		mtlDb.put(eventTypes[2], dummyValsTS);
 
 		displaymtlDbContents();
@@ -107,6 +107,7 @@ public class DEMSMontrealServer {
 			if (temp1.containsKey(oldEventID) || temp2.containsKey(oldEventID)
 					|| temp3.containsKey(oldEventID)) {
 				String temp=bookEvent(customerID, newEventID,newEventType );
+				System.out.println("here3: "+temp);
 				if(temp.equals("customer cannot book more than 3 outside city events in the same month"))
 				{
 					res="Event cannot be swapped";
@@ -141,7 +142,7 @@ public class DEMSMontrealServer {
 		mtlDb.put(eventType, temp);
 		displaymtlDbContents();
 		displayCustomerInfo();
-		return "Removed Event";
+		return "Event successfully removed!";
 	}
 
 	public synchronized static String getBookingSchedule(String customerID) {
@@ -199,7 +200,7 @@ public class DEMSMontrealServer {
 		mtlCustomerInfo.put(customerID, temp1);
 		displaymtlDbContents();
 		displayCustomerInfo();
-		return "Booked!";
+		return "Event successfully Booked";
 	}
 
 	public synchronized static String cancelEvent(String customerID, String eventID) {
@@ -224,7 +225,7 @@ public class DEMSMontrealServer {
 							mtlDb.put(eType, temp);
 							displaymtlDbContents();
 							displayCustomerInfo();
-							return "Cancelled";
+							return "Event successfully cancelled";
 						}
 					}
 				}

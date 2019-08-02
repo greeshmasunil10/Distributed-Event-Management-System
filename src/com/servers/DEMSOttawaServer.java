@@ -43,27 +43,27 @@ public class DEMSOttawaServer {
 		
 		System.out.println("Web Service Server Started...");
 		ImpObj = new DEMSInterfaceImpl();
-		Endpoint endpoint = Endpoint.publish("http://localhost:8083/city", ImpObj);
+		Endpoint endpoint = Endpoint.publish("http://localhost:8083/addition", ImpObj);
 		
 		
 
 //		Seminars, Conferences and Trade Shows keys are populated with dummy event data
 		HashMap<String, Integer> dummyValsConf = new HashMap<>();
-		dummyValsConf.put("OTWM100519", 5);
-		dummyValsConf.put("OTWA100519", 10);
-		dummyValsConf.put("OTWE100519", 15);
+//		dummyValsConf.put("OTWM100519", 5);
+//		dummyValsConf.put("OTWA100519", 10);
+//		dummyValsConf.put("OTWE100519", 15);
 		otwDb.put(eventTypes[0], dummyValsConf);
 
 		HashMap<String, Integer> dummyValsSem = new HashMap<>();
-		dummyValsSem.put("OTWM110519", 5);
-		dummyValsSem.put("OTWA110519", 10);
-		dummyValsSem.put("OTWE110519", 15);
+//		dummyValsSem.put("OTWM110519", 5);
+//		dummyValsSem.put("OTWA110519", 10);
+//		dummyValsSem.put("OTWE110519", 15);
 		otwDb.put(eventTypes[1], dummyValsSem);
 
 		HashMap<String, Integer> dummyValsTS = new HashMap<>();
-		dummyValsTS.put("OTWM120519", 5);
-		dummyValsTS.put("OTWA120519", 10);
-		dummyValsTS.put("OTWE120519", 15);
+//		dummyValsTS.put("OTWM120519", 5);
+//		dummyValsTS.put("OTWA120519", 10);
+//		dummyValsTS.put("OTWE120519", 15);
 		otwDb.put(eventTypes[2], dummyValsTS);
 
 		displayotwDbContents();
@@ -143,7 +143,7 @@ public class DEMSOttawaServer {
 		otwDb.put(eventType, temp);
 		displayotwDbContents();
 		displayCustomerInfo();
-		return "removeEvent Succeed";
+		return "Event successfully removed!";
 	}
 	
 	public synchronized static String dispEventAvailability(String eventType) {
@@ -217,7 +217,7 @@ public class DEMSOttawaServer {
 		temp1.add(eventID);
 		otwCustomerInfo.put(customerID, temp1);
 		displayCustomerInfo();
-		return "Booked!";
+		return "Event successfully Booked";
 
 	}
 	
@@ -230,13 +230,14 @@ public class DEMSOttawaServer {
 			if (temp1.containsKey(oldEventID) || temp2.containsKey(oldEventID)
 					|| temp3.containsKey(oldEventID)) {
 				String temp=bookEvent(customerID, newEventID,newEventType );
-				if(temp.equals("customer cannot book more than 3 outside city events in the same month"))
+				System.out.println("here1:"+temp);
+				if(!temp.equals("Event successfully Booked"))
 				{
 					res="Event cannot be swapped";
 					return res;
 				}
 				cancelEvent(customerID,oldEventID );
-				res="Event succefully swapped";
+				res=temp+"Event succefully swapped";
 				logOperation("Swap Performed", newEventID, newEventType, "NA", "NA", "Succeeded");
 				displayotwDbContents();
 				displayCustomerInfo();
@@ -266,7 +267,7 @@ public class DEMSOttawaServer {
 								temp.put(eID, temp.get(eID) + 1);
 								otwDb.put(eType, temp);
 								displayotwDbContents();
-								return "Cancelled!";
+								return "Event successfully cancelled";
 							}
 						}
 					}

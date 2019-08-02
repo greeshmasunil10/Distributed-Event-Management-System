@@ -17,6 +17,8 @@ import org.omg.CosNaming.NamingContextExtHelper;
 import org.omg.CosNaming.NamingContextPackage.CannotProceed;
 import org.omg.CosNaming.NamingContextPackage.NotFound;
 
+import Helpers.ThreadTestCases;
+
 
 public class DEMSClient {
 
@@ -25,8 +27,6 @@ public class DEMSClient {
 	static String res;
 	Scanner sc;
 	static PrintWriter writer;
-//	static ORB orb;
-//	static CorbaServer serverobj;
 	static DEMSInterface serverobj;
 
 
@@ -37,65 +37,14 @@ public class DEMSClient {
 	public static void main(String args[]) throws IOException, NotBoundException, InvalidName {
 		DEMSClient obj = new DEMSClient();
 		
-//		orb = ORB.init(args, null);
 		obj.getID();
-		Runnable task1 = () -> {
-			bookthread();
-		};
-		Runnable task2 = () -> {
-			threadswap();
-		};
-		Runnable task3 = () -> {
-			threadswap2();
-		};
-
-		Thread thread1 = new Thread(task1);
-		Thread thread2 = new Thread(task2);
-		Thread thread3 = new Thread(task3);
-//		thread1.start();
-		thread2.start();
-		thread3.start();
-//		DEMSTorontoServer.startServer();
+//		ThreadTestCases t= new ThreadTestCases();
+//		t.startThreads(serverobj);
+//		obj.sc.nextLine();	
 		obj.init();
 	}
-
-	private synchronized static void bookthread() {
-		String customerID = "TORC1234";
-		System.out.println("booked");
-
-		serverobj.bookEvent(customerID, "TORA110519", "Seminars");
-
-	}
-
-	private synchronized static void threadswap() {
-
-		String oldEventID, oldEventType, customerID, newEventID, newEventType;
-		System.out.println("thread 1 starting");
-		customerID = "TORC1234";
-		serverobj.bookEvent(customerID, "TORA110519", "Seminars");
-		oldEventID = "TORA110519";
-		oldEventType = "Seminars";
-		newEventID = "TORE110519";
-		newEventType = "Seminars";
-//		serverobj.swapEvent(customerID, "TORA110519", "Seminars");	
-		String res = serverobj.swapEvent(customerID, newEventID, newEventType, oldEventID, oldEventType);
-		System.out.println(res);
-		logOperation("Swap Event", oldEventID, oldEventType, userID, res);
-	}
-
-	private synchronized static void threadswap2() {
-		String oldEventID, oldEventType, customerID, newEventID, newEventType;
-		System.out.println("thread 2 starting:");
-		customerID = "TORC1234";
-		oldEventID = "TORE110519";
-		oldEventType = "Seminars";
-		newEventID = "TORM110519";
-		newEventType = "Seminars";
-		String res = serverobj.swapEvent(customerID, newEventID, newEventType, oldEventID, oldEventType);
-		System.out.println(res);
-
-		logOperation("Swap Event", oldEventID, oldEventType, userID, res);
-	}
+	
+	
 
 	private void getID() throws IOException, InvalidName {
 //		String sample="greeshma";
@@ -354,8 +303,13 @@ public class DEMSClient {
 			return;
 		}
 		if (!eventID.substring(0, 3).equals(this.userID.substring(0, 3))) {
+			if(!eventID.substring(0, 3).equals("TOR")
+					&&!eventID.substring(0, 3).equals("MTL")&&
+					!eventID.substring(0, 3).equals("OTW")) {
+				System.out.println("invalid event id!");
+			}else {
 			System.out.println("Event Manager of this city cannot add event in the another city");
-			manager();
+			}manager();
 		}
 		System.out.print("Event Type:");
 		eventType = this.sc.nextLine();
