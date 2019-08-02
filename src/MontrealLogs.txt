@@ -1,0 +1,872 @@
+
+addEventPerformed.
+Time: 2019/07/08 18:12:58
+CustomerID: NA
+EventID: MTLE000000
+EventType: Conferences
+Booking Capacity: NA
+Status: Added!
+
+bookEventPerformed.
+Time: 2019/07/08 18:20:07
+CustomerID: NA
+EventID: OTWM100519
+EventType: Conferences
+Booking Capacity: NA
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:20:42
+CustomerID: MTLC0000
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+Swap PerformedPerformed.
+Time: 2019/07/08 18:21:42
+CustomerID: NA
+EventID: OTWM100519
+EventType: Conferences
+Booking Capacity: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:22:10
+CustomerID: MTLC0000
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:22:35
+CustomerID: MTLC0000
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+Swap PerformedPerformed.
+Time: 2019/07/08 18:23:38
+CustomerID: NA
+EventID: MTLA100519
+EventType: Conferences
+Booking Capacity: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:23:46
+CustomerID: MTLC0000
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:24:21
+CustomerID: MTLC1234
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:24:36
+CustomerID: MTLC1234
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 18:36:06
+CustomerID: 7
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/07/08 18:41:40
+CustomerID: NA
+EventID: MTLA090619
+EventType: Conferences
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/08 18:41:56
+CustomerID: NA
+EventID: MTLA080619
+EventType: Trade Shows
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/08 18:42:11
+CustomerID: NA
+EventID: MTLE230719
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+removeEventPerformed.
+Time: 2019/07/08 18:52:28
+CustomerID: NA
+EventID: MTLA080619
+EventType: Trade Shows
+Booking Capacity: NA
+Status: Removed Event
+
+bookEventPerformed.
+Time: 2019/07/08 19:08:31
+CustomerID: NA
+EventID: TORA190519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:08:46
+CustomerID: NA
+EventID: TORM110519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:09:02
+CustomerID: NA
+EventID: TORE110519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:09:18
+CustomerID: MTLC21212
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/08 19:09:38
+CustomerID: NA
+EventID: TORA110519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:09:40
+CustomerID: MTLC21212
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/08 19:15:15
+CustomerID: NA
+EventID: TORA110519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:15:40
+CustomerID: NA
+EventID: TORM110519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:15:50
+CustomerID: NA
+EventID: TORA210519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:15:58
+CustomerID: NA
+EventID: TORE110519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:16:00
+CustomerID: MTLC12121
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/08 19:18:42
+CustomerID: NA
+EventID: TORE110519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:18:50
+CustomerID: NA
+EventID: TORA160519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:18:59
+CustomerID: NA
+EventID: TORM110519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:19:07
+CustomerID: NA
+EventID: TORA110519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/07/08 19:19:09
+CustomerID: MTLC1212121
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/07/08 19:37:57
+CustomerID: NA
+EventID: TORA220519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:38:10
+CustomerID: NA
+EventID: TORA110519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:38:23
+CustomerID: NA
+EventID: TORM110519
+EventType: Seminars
+Booking Capacity: NA
+Status: Booked!
+
+bookEventPerformed.
+Time: 2019/07/08 19:38:31
+CustomerID: NA
+EventID: TORE110519
+EventType: Seminars
+Booking Capacity: NA
+Status: customer cannot book more than 3 outside city events in the same month
+
+addEventPerformed.
+Time: 2019/07/08 19:40:32
+CustomerID: NA
+EventID: MTLE110519
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/08 19:41:23
+CustomerID: NA
+EventID: MTLA550519
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/08 19:43:16
+CustomerID: NA
+EventID: MTLA160619
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+Deleted Event which has been booked!Performed.
+Time: 2019/07/08 19:46:43
+CustomerID: NA
+EventID: MTLA110519
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded
+
+removeEventPerformed.
+Time: 2019/07/08 19:46:43
+CustomerID: NA
+EventID: MTLA110519
+EventType: Seminars
+Booking Capacity: NA
+Status: Removed Event
+
+addEventPerformed.
+Time: 2019/07/16 13:32:19
+CustomerID: NA
+EventID: MTLA090619
+EventType: Conferences
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 13:32:42
+CustomerID: NA
+EventID: MTLA080619
+EventType: Trade Shows
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 13:50:27
+CustomerID: NA
+EventID: MTLA090619
+EventType: Conferences
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 13:50:39
+CustomerID: NA
+EventID: MTLA080619
+EventType: Trade Shows
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 14:12:26
+CustomerID: NA
+EventID: MTLA090619
+EventType: Conferences
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/07/16 14:12:38
+CustomerID: NA
+EventID: MTLA080619
+EventType: Trade Shows
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 11:47:32
+CustomerID: NA
+EventID: MTLM111111
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 11:47:38
+CustomerID: NA
+EventID: MTLM222222
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 11:47:49
+CustomerID: NA
+EventID: MTLM333333
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 11:48:56
+CustomerID: NA
+EventID: MTLM110211
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 11:49:09
+CustomerID: NA
+EventID: MTLM220211
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 11:49:19
+CustomerID: NA
+EventID: MTLM330211
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 11:49:32
+CustomerID: NA
+EventID: MTLM330211
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 11:55:02
+CustomerID: NA
+EventID: MTLM110211
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 11:55:14
+CustomerID: NA
+EventID: MTLM220211
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 11:55:25
+CustomerID: NA
+EventID: MTLM330211
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 11:55:36
+CustomerID: NA
+EventID: MTLM440211
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+bookEventPerformed.
+Time: 2019/08/01 12:27:58
+CustomerID: NA
+EventID: TORM111111
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/01 12:28:09
+CustomerID: NA
+EventID: TORM221122
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/01 12:28:14
+CustomerID: NA
+EventID: TORM331133
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/01 12:28:26
+CustomerID: NA
+EventID: TORM441144
+EventType: Seminars
+Booking Capacity: NA
+Status: customer cannot book more than 3 outside city events in the same month
+
+getBookingSchedulePerformed.
+Time: 2019/08/01 12:28:29
+CustomerID: MTLC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+swapEventPerformed.
+Time: 2019/08/01 12:28:49
+CustomerID: MTLC123
+EventID: TORM456456
+EventType: TORM111111
+Booking Capacity: NA
+Status: Event could not be swapped since this event wasnt booked!
+
+bookEventPerformed.
+Time: 2019/08/01 12:29:42
+CustomerID: NA
+EventID: TORM111111
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/01 12:29:47
+CustomerID: NA
+EventID: TORM221122
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/01 12:29:52
+CustomerID: NA
+EventID: TORM331133
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/01 12:29:53
+CustomerID: MTLC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+swapEventPerformed.
+Time: 2019/08/01 12:30:07
+CustomerID: MTLC123
+EventID: TORM456456
+EventType: TORM221122
+Booking Capacity: NA
+Status: Event could not be swapped since this event wasnt booked!
+
+swapEventPerformed.
+Time: 2019/08/01 12:31:40
+CustomerID: MTLC123
+EventID: TORM441144
+EventType: TORM111111
+Booking Capacity: NA
+Status: Event could not be swapped since this event wasnt booked!
+
+bookEventPerformed.
+Time: 2019/08/01 12:33:43
+CustomerID: NA
+EventID: TORM221122
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/01 12:33:53
+CustomerID: NA
+EventID: TORM331133
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/01 12:33:55
+CustomerID: MTLC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+swapEventPerformed.
+Time: 2019/08/01 12:34:11
+CustomerID: MTLC123
+EventID: TORM331133
+EventType: TORM221122
+Booking Capacity: NA
+Status: Event could not be swapped since this event wasnt booked!
+
+addEventPerformed.
+Time: 2019/08/01 12:37:28
+CustomerID: NA
+EventID: MTLA080819
+EventType: Conferences
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 12:37:56
+CustomerID: NA
+EventID: MTLM110819
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 12:44:44
+CustomerID: NA
+EventID: MTLA080819
+EventType: Conferences
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 12:44:58
+CustomerID: NA
+EventID: MTLM110819
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 12:51:15
+CustomerID: NA
+EventID: MTLA080819
+EventType: Conferences
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 12:51:26
+CustomerID: NA
+EventID: MTLM110819
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 12:53:51
+CustomerID: NA
+EventID: MTLA080819
+EventType: Conferences
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 12:54:02
+CustomerID: NA
+EventID: MTLM110819
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+Swap PerformedPerformed.
+Time: 2019/08/01 13:02:24
+CustomerID: NA
+EventID: TORE150819
+EventType: Trade Shows
+Booking Capacity: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/08/01 13:11:03
+CustomerID: NA
+EventID: MTLM121212
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 13:11:18
+CustomerID: NA
+EventID: MTLM232323
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 13:11:30
+CustomerID: NA
+EventID: MTLM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 13:11:39
+CustomerID: NA
+EventID: MTLM222222
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 13:11:48
+CustomerID: NA
+EventID: MTLM332233
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 13:12:01
+CustomerID: NA
+EventID: MTLM552255
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+Swap PerformedPerformed.
+Time: 2019/08/01 13:14:28
+CustomerID: NA
+EventID: MTLM552255
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/08/01 13:22:54
+CustomerID: NA
+EventID: MTLM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 13:23:01
+CustomerID: NA
+EventID: MTLM222222
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 13:23:10
+CustomerID: NA
+EventID: MTLM332233
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 13:23:15
+CustomerID: NA
+EventID: MTLM442244
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+Swap PerformedPerformed.
+Time: 2019/08/01 13:24:20
+CustomerID: NA
+EventID: MTLM442244
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/08/01 13:29:41
+CustomerID: NA
+EventID: MTLM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 13:29:48
+CustomerID: NA
+EventID: MTLM222222
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 13:29:53
+CustomerID: NA
+EventID: MTLM332233
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 13:30:00
+CustomerID: NA
+EventID: MTLM442244
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+Swap PerformedPerformed.
+Time: 2019/08/01 13:31:01
+CustomerID: NA
+EventID: MTLM442244
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/08/01 13:34:33
+CustomerID: NA
+EventID: MTLA080819
+EventType: Conferences
+Booking Capacity: NA
+Status: Added!
+
+addEventPerformed.
+Time: 2019/08/01 13:34:46
+CustomerID: NA
+EventID: MTLM110819
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+Swap PerformedPerformed.
+Time: 2019/08/01 13:39:04
+CustomerID: NA
+EventID: TORE150819
+EventType: Trade Shows
+Booking Capacity: NA
+Status: Succeeded
+
+Deleted Event which has been booked!Performed.
+Time: 2019/08/01 13:39:54
+CustomerID: NA
+EventID: MTLM110819
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded
+
+removeEventPerformed.
+Time: 2019/08/01 13:39:54
+CustomerID: NA
+EventID: MTLM110819
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully removed!
+
+Swap PerformedPerformed.
+Time: 2019/08/01 13:42:01
+CustomerID: NA
+EventID: TORA250819
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded
+
+Swap PerformedPerformed.
+Time: 2019/08/01 13:52:43
+CustomerID: NA
+EventID: TORA250819
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/08/01 13:54:26
+CustomerID: NA
+EventID: MTLM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
+
+Swap PerformedPerformed.
+Time: 2019/08/01 13:55:35
+CustomerID: NA
+EventID: MTLM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/08/01 14:03:53
+CustomerID: NA
+EventID: MTLM332233
+EventType: Seminars
+Booking Capacity: NA
+Status: Added!
