@@ -1,4 +1,5 @@
 package com.servers;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -29,23 +30,19 @@ public class DEMSOttawaServer {
 	static PrintWriter writer;
 	public static DEMSInterfaceImpl ImpObj;
 
-
 	public static void main(String args[]) {
 
-
 	}
-	
-	public static HashMap<String, HashMap<String, Integer>> returnDb(){
+
+	public static HashMap<String, HashMap<String, Integer>> returnDb() {
 		return otwDb;
 	}
 
 	public static void startServer() {
-		
+
 		System.out.println("Web Service Server Started...");
 		ImpObj = new DEMSInterfaceImpl();
 		Endpoint endpoint = Endpoint.publish("http://localhost:8083/addition", ImpObj);
-		
-		
 
 //		Seminars, Conferences and Trade Shows keys are populated with dummy event data
 		HashMap<String, Integer> dummyValsConf = new HashMap<>();
@@ -55,9 +52,10 @@ public class DEMSOttawaServer {
 		otwDb.put(eventTypes[0], dummyValsConf);
 
 		HashMap<String, Integer> dummyValsSem = new HashMap<>();
-//		dummyValsSem.put("OTWM110519", 5);
-//		dummyValsSem.put("OTWA110519", 10);
-//		dummyValsSem.put("OTWE110519", 15);
+		dummyValsSem.put("OTWM112211", 5);
+		dummyValsSem.put("OTWM222222", 10);
+		dummyValsSem.put("OTWM332233", 15);
+		dummyValsSem.put("OTWM442244", 15);
 		otwDb.put(eventTypes[1], dummyValsSem);
 
 		HashMap<String, Integer> dummyValsTS = new HashMap<>();
@@ -80,6 +78,7 @@ public class DEMSOttawaServer {
 		thread2.start();
 		thread3.start();
 	}
+
 	/*
 	 * This method starts a RMI registry on the local host, if it does not already
 	 * exists at the specified port number.
@@ -91,7 +90,7 @@ public class DEMSOttawaServer {
 								// if the registry does not already exist
 		} catch (RemoteException e) {
 			// No valid registry at that port.
-			System.out.println("RMI registry cannot be located at port "+ RMIPortNum);
+			System.out.println("RMI registry cannot be located at port " + RMIPortNum);
 			Registry registry = LocateRegistry.createRegistry(RMIPortNum);
 			System.out.println(/**/ "RMI registry created at port " + RMIPortNum);
 		}
@@ -106,7 +105,7 @@ public class DEMSOttawaServer {
 		for (int i = 0; i < names.length; i++)
 			System.out.println(names[i]);
 	}
-	
+
 	public synchronized static String addEvent(String eventID, String eventType, int bookingCapacity) {
 		HashMap<String, Integer> temp = (HashMap<String, Integer>) otwDb.get(eventType).clone();
 
@@ -145,7 +144,7 @@ public class DEMSOttawaServer {
 		displayCustomerInfo();
 		return "Event successfully removed!";
 	}
-	
+
 	public synchronized static String dispEventAvailability(String eventType) {
 		System.out.println("entered ottawa");
 		String msg = "";
@@ -154,27 +153,26 @@ public class DEMSOttawaServer {
 		System.out.println(eventType + ": ");
 		msg += "\n" + eventType + ": ";
 		HashMap<String, Integer> temp = otwDb.getOrDefault(eventType, new HashMap<String, Integer>());
-		
-		for(String EventID:temp.keySet()) {
-			msg+= "\n"+EventID + " "+ temp.get(EventID);
+
+		for (String EventID : temp.keySet()) {
+			msg += "\n" + EventID + " " + temp.get(EventID);
 		}
-	
-		
+
 //		System.out.println(temp.keySet().toString());
-		
+
 //		msg += "\n" + temp.keySet().toString();
-		
+
 //		System.out.println(temp.values());
-		
+
 //		msg += "\n" + temp.values();
-		
+
 		System.out.println("-----------------------------------");
 		msg += "\n" + "-----------------------------------";
 //		UDPclient("MTL", "MTL", eventType, "disp");
 //		UDPclient("OTW", "OTW", eventType, "disp");
 		return msg;
 	}
-	
+
 	public synchronized static String bookEvent(String customerID, String eventID, String eventType) {
 		if (otwCustomerInfo.containsKey(customerID) && otwCustomerInfo.get(customerID) != null
 				&& otwCustomerInfo.get(customerID).contains(eventID)) {
@@ -201,10 +199,9 @@ public class DEMSOttawaServer {
 		}
 		if (eventID.contains("OTW")) {
 			HashMap<String, Integer> temp = (HashMap<String, Integer>) otwDb.get(eventType).clone();
-			if (!temp.containsKey(eventID) ) {
+			if (!temp.containsKey(eventID)) {
 				return "This event does not exist!";
-			}
-			else if(temp.get(eventID) == 0)
+			} else if (temp.get(eventID) == 0)
 				return "Event capacity is zero";
 			temp.put(eventID, temp.get(eventID) - 1);
 			otwDb.put(eventType, temp);
@@ -220,28 +217,42 @@ public class DEMSOttawaServer {
 		return "Event successfully Booked";
 
 	}
-	
-	public synchronized static String swapEvent(String customerID, String newEventID, String newEventType, String oldEventID,
-			String oldEventType) {
-		String res= "Event could not be swapped!";
+
+	public synchronized static String swapEvent(String customerID, String newEventID, String newEventType,
+			String oldEventID, String oldEventType) {
+		String res = "Event could not be swapped!";
 		HashMap<String, Integer> temp1 = (HashMap<String, Integer>) otwDb.get(oldEventType).clone();
-		HashMap<String, Integer> temp2 = (HashMap<String, Integer>) DEMSMontrealServer.returnDb().get(oldEventType).clone();
-		HashMap<String, Integer> temp3 = (HashMap<String, Integer>) DEMSTorontoServer.returnDb().get(oldEventType).clone();
-			if (temp1.containsKey(oldEventID) || temp2.containsKey(oldEventID)
-					|| temp3.containsKey(oldEventID)) {
-				String temp=bookEvent(customerID, newEventID,newEventType );
-				System.out.println("here1:"+temp);
-				if(!temp.equals("Event successfully Booked"))
-				{
-					res="Event cannot be swapped";
-					return res;
-				}
-				cancelEvent(customerID,oldEventID );
-				res=temp+"Event succefully swapped";
-				logOperation("Swap Performed", newEventID, newEventType, "NA", "NA", "Succeeded");
-				displayotwDbContents();
-				displayCustomerInfo();
+		HashMap<String, Integer> temp2 = (HashMap<String, Integer>) DEMSMontrealServer.returnDb().get(oldEventType)
+				.clone();
+		HashMap<String, Integer> temp3 = (HashMap<String, Integer>) DEMSTorontoServer.returnDb().get(oldEventType)
+				.clone();
+		if (temp1.containsKey(oldEventID) || temp2.containsKey(oldEventID) 
+				|| temp3.containsKey(oldEventID)) {
+			if (otwCustomerInfo.containsKey(customerID) 
+					&& otwCustomerInfo.get(customerID).contains(oldEventID)) {
+			String msg1 = bookEvent(customerID, newEventID, newEventType);
+			if (!msg1.equals("Event successfully Booked")) {
+//				res = "Event cannot be swapped";
+				return msg1;
 			}
+			String msg2=cancelEvent(customerID, oldEventID);
+			if(!msg2.equals("Event successfully cancelled")) {
+				res="Event could not be swapped: "+msg2;
+				cancelEvent(customerID, oldEventID);
+				return res;
+			}
+			res =" Event succefully swapped";
+			logOperation("Swap Performed", newEventID, newEventType, "NA", "NA", "Succeeded");
+			displayotwDbContents();
+			displayCustomerInfo();
+		}
+			else {
+				 res = "Event could not be swapped since this event wasnt booked!";
+			}
+		}
+		else {
+			 res = "Event could not be swapped since this event wasnt booked!";
+		}
 		return res;
 	}
 
@@ -296,14 +307,14 @@ public class DEMSOttawaServer {
 	}
 
 	public synchronized static String getBookingSchedule(String customerID) {
-		String msg="";
+		String msg = "";
 		if (!otwCustomerInfo.containsKey(customerID)) {
 			System.out.println("No events to display!");
 			return "No events to display!";
 		}
 		System.out.println(customerID + ":" + otwCustomerInfo.get(customerID).toString());
-	 msg +="\n"+customerID + ":" + otwCustomerInfo.get(customerID).toString();
- return msg;
+		msg += "\n" + customerID + ":" + otwCustomerInfo.get(customerID).toString();
+		return msg;
 	}
 
 	public static void displayotwDbContents() {

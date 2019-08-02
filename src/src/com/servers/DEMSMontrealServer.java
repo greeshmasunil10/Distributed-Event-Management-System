@@ -100,24 +100,35 @@ public class DEMSMontrealServer {
 	
 	public synchronized static String swapEvent(String customerID, String newEventID, String newEventType, String oldEventID,
 			String oldEventType) {
-		String res= "Event could not be swapped!";
+		String res = "Event could not be swapped!";
 		HashMap<String, Integer> temp1 = (HashMap<String, Integer>) mtlDb.get(oldEventType).clone();
-		HashMap<String, Integer> temp2 = (HashMap<String, Integer>) DEMSTorontoServer.returnDb().get(oldEventType).clone();
-		HashMap<String, Integer> temp3 = (HashMap<String, Integer>) DEMSOttawaServer.returnDb().get(oldEventType).clone();
-			if (temp1.containsKey(oldEventID) || temp2.containsKey(oldEventID)
-					|| temp3.containsKey(oldEventID)) {
-				String temp=bookEvent(customerID, newEventID,newEventType );
-				System.out.println("here3: "+temp);
-				if(temp.equals("customer cannot book more than 3 outside city events in the same month"))
-				{
-					res="Event cannot be swapped";
+		HashMap<String, Integer> temp2 = (HashMap<String, Integer>) DEMSOttawaServer.returnDb().get(oldEventType)
+				.clone();
+		HashMap<String, Integer> temp3 = (HashMap<String, Integer>) DEMSTorontoServer.returnDb().get(oldEventType)
+				.clone();
+		if (temp1.containsKey(oldEventID) || temp2.containsKey(oldEventID) || temp3.containsKey(oldEventID)) {
+			if (mtlCustomerInfo.containsKey(customerID) && mtlCustomerInfo.get(customerID).contains(oldEventID)) {
+				String msg1 = bookEvent(customerID, newEventID, newEventType);
+				if (!msg1.equals("Event successfully Booked")) {
+//				res = "Event cannot be swapped";
+					return msg1;
+				}
+				String msg2 = cancelEvent(customerID, oldEventID);
+				if (!msg2.equals("Event successfully cancelled")) {
+					res = "Event could not be swapped: " + msg2;
+					cancelEvent(customerID, oldEventID);
 					return res;
-				}				cancelEvent(customerID,oldEventID );
-				res="Event succefully swapped";
+				}
+				res = " Event succefully swapped";
 				logOperation("Swap Performed", newEventID, newEventType, "NA", "NA", "Succeeded");
 				displaymtlDbContents();
 				displayCustomerInfo();
+			} else {
+				res = "Event could not be swapped since this event wasnt booked!";
 			}
+		} else {
+			res = "Event could not be swapped since this event wasnt booked!";
+		}
 		return res;
 	}
 

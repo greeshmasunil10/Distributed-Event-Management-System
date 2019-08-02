@@ -870,3 +870,19 @@ EventID: MTLM332233
 EventType: Seminars
 Booking Capacity: NA
 Status: Added!
+
+Swap PerformedPerformed.
+Time: 2019/08/02 00:03:35
+CustomerID: NA
+EventID: OTWM332233
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded
+
+Swap PerformedPerformed.
+Time: 2019/08/02 00:15:08
+CustomerID: NA
+EventID: OTWM442244
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded

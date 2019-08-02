@@ -127,11 +127,11 @@ public class DEMSInterfaceImpl implements DEMSInterface {
 			 DEMSOttawaServer.logOperation("swapEvent",newEventID, oldEventID,customerID,"NA", res);
 		}
 		else if(customerID.contains("OTW")) {
-			res=DEMSMontrealServer.swapEvent( customerID,  newEventID,  newEventType,  oldEventID, oldEventType);
+			res=DEMSOttawaServer.swapEvent( customerID,  newEventID,  newEventType,  oldEventID, oldEventType);
 			DEMSOttawaServer.logOperation("swapEvent",newEventID, oldEventID,customerID,"NA", res);
 		}
 		else if(customerID.contains("MTL")){
-			res=DEMSOttawaServer.swapEvent( customerID,  newEventID,  newEventType,  oldEventID, oldEventType);
+			res=DEMSMontrealServer.swapEvent( customerID,  newEventID,  newEventType,  oldEventID, oldEventType);
 			DEMSMontrealServer.logOperation("swapEvent", newEventID, oldEventID,customerID,"NA", res);
 		}
 		return res;

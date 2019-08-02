@@ -57,10 +57,10 @@ public class DEMSTorontoServer {
 		torDb.put(eventTypes[0], dummyValsConf);
 
 		HashMap<String, Integer> dummyValsSem = new HashMap<>();
-//		dummyValsSem.put("TORM111111", 10);
-//		dummyValsSem.put("TORM222222", 20);
-//		dummyValsSem.put("TORM333333", 30);
-//		dummyValsSem.put("TORM444444", 40);
+		dummyValsSem.put("TORM112211", 10);
+		dummyValsSem.put("TORM222222", 20);
+		dummyValsSem.put("TORM332233", 30);
+		dummyValsSem.put("TORM442244", 40);
 		torDb.put(eventTypes[1], dummyValsSem);
 
 		HashMap<String, Integer> dummyValsTS = new HashMap<>();
@@ -118,10 +118,11 @@ public class DEMSTorontoServer {
 				.clone();
 		HashMap<String, Integer> temp3 = (HashMap<String, Integer>) DEMSOttawaServer.returnDb().get(oldEventType)
 				.clone();
-		if (temp1.containsKey(oldEventID) || temp2.containsKey(oldEventID) || temp3.containsKey(oldEventID)) {
-			if (torCustomerInfo.containsKey(customerID) && torCustomerInfo.get(customerID).contains(oldEventID)) {
+		if (temp1.containsKey(oldEventID) || temp2.containsKey(oldEventID) 
+				|| temp3.containsKey(oldEventID)) {
+			if (torCustomerInfo.containsKey(customerID) 
+					&& torCustomerInfo.get(customerID).contains(oldEventID)) {
 				String msg1=bookEvent(customerID, newEventID,newEventType );
-				System.out.println("***"+msg1);
 				if(!msg1.equals("Event successfully Booked"))
 				{
 //					res="Event cannot be swapped since customer cannot book more than 3 outside city events in the same month";
@@ -221,7 +222,8 @@ public class DEMSTorontoServer {
 	}
 
 	public synchronized static String bookEvent(String customerID, String eventID, String eventType) {
-		if (torCustomerInfo.containsKey(customerID) && torCustomerInfo.get(customerID) != null
+		if (torCustomerInfo.containsKey(customerID) 
+				&& torCustomerInfo.get(customerID) != null
 				&& torCustomerInfo.get(customerID).contains(eventID)) {
 			return "This event was already booked!";
 		}

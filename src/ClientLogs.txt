@@ -3792,3 +3792,199 @@ CustomerID: TORC123
 EventID: TORM332233
 EventType: Seminars
 Status: Event could not be swapped since:customer cannot book more than 3 outside city events in the same month
+
+addEventPerformed.
+Time: 2019/08/01 23:44:57
+CustomerID: TORM132465
+EventID: TORM121212
+EventType: Seminars
+Status: Added!
+
+listEventAvailabilityPerformed.
+Time: 2019/08/01 23:45:02
+CustomerID: TORM132465
+EventID: NA
+EventType: Seminars
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/02 00:03:06
+CustomerID: OTWC123
+EventID: OTWM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/02 00:03:15
+CustomerID: OTWC123
+EventID: OTWM222222
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/02 00:03:16
+CustomerID: OTWC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/08/02 00:03:35
+CustomerID: OTWC123
+EventID: OTWM112211
+EventType: Seminars
+Status: Event succefully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/08/02 00:03:37
+CustomerID: OTWC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/02 00:14:34
+CustomerID: OTWC123
+EventID: OTWM112211
+EventType: if (torCustomerInfo.containsKey(customerID) 
+Status: Invalid input
+
+bookEventPerformed.
+Time: 2019/08/02 00:14:49
+CustomerID: OTWC123
+EventID: OTWM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/02 00:14:55
+CustomerID: OTWC123
+EventID: OTWM332233
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/02 00:14:55
+CustomerID: OTWC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/08/02 00:15:08
+CustomerID: OTWC123
+EventID: OTWM332233
+EventType: Seminars
+Status: Event succefully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/08/02 00:15:13
+CustomerID: OTWC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/02 00:17:57
+CustomerID: TORC123
+EventID: 
+EventType: 
+Status: Invalid input
+
+bookEventPerformed.
+Time: 2019/08/02 00:18:16
+CustomerID: OTWC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/02 00:18:22
+CustomerID: OTWC123
+EventID: TORM222222
+EventType: Seminars
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/02 00:18:31
+CustomerID: OTWC123
+EventID: TORM332233
+EventType: Seminars
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/02 00:18:39
+CustomerID: OTWC123
+EventID: OTWM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/02 00:18:40
+CustomerID: OTWC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/08/02 00:20:11
+CustomerID: OTWC123
+EventID: OTWM112211
+EventType: Seminars
+Status: Event cannot be swapped
+
+bookEventPerformed.
+Time: 2019/08/02 00:26:34
+CustomerID: TORC123
+EventID: TORM112211
+EventType: 
+Status: Invalid input
+
+bookEventPerformed.
+Time: 2019/08/02 00:26:47
+CustomerID: OTWC123
+EventID: TORM112211
+EventType: if(!msg2.equals("Event successfully cancelled")) {
+Status: Invalid input
+
+bookEventPerformed.
+Time: 2019/08/02 00:27:22
+CustomerID: OTWC123
+EventID: OTWM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/02 00:27:27
+CustomerID: OTWC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/02 00:27:31
+CustomerID: OTWC123
+EventID: TORM222222
+EventType: Seminars
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/02 00:27:35
+CustomerID: OTWC123
+EventID: TORM332233
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/02 00:27:36
+CustomerID: OTWC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/08/02 00:27:56
+CustomerID: OTWC123
+EventID: OTWM112211
+EventType: Seminars
+Status: customer cannot book more than 3 outside city events in the same month
