@@ -1,4 +1,4 @@
-package com.servers;
+package Servers;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -21,14 +21,14 @@ import java.util.HashMap;
 
 import javax.xml.ws.Endpoint;
 
-import com.web.service.DEMSInterfaceImpl;
+import RMI.RDEMSInterfaceImpl;
 
-public class DEMSOttawaServer {
+public class RDEMSOttawaServer {
 	private static HashMap<String, HashMap<String, Integer>> otwDb = new HashMap<>();
 	private static HashMap<String, ArrayList<String>> otwCustomerInfo = new HashMap<>();
 	static String[] eventTypes = { "Conferences", "Seminars", "Trade Shows" };
 	static PrintWriter writer;
-	public static DEMSInterfaceImpl ImpObj;
+	public static RDEMSInterfaceImpl ImpObj;
 
 	public static void main(String args[]) {
 
@@ -38,11 +38,10 @@ public class DEMSOttawaServer {
 		return otwDb;
 	}
 
-	public static void startServer() {
+	public static void startServer() throws RemoteException {
 
-		System.out.println("Web Service Server Started...");
-		ImpObj = new DEMSInterfaceImpl();
-		Endpoint endpoint = Endpoint.publish("http://localhost:8083/addition", ImpObj);
+		System.out.println("Starting Ottawa Server...");
+		ImpObj = new RDEMSInterfaceImpl();
 
 //		Seminars, Conferences and Trade Shows keys are populated with dummy event data
 		HashMap<String, Integer> dummyValsConf = new HashMap<>();
@@ -65,6 +64,25 @@ public class DEMSOttawaServer {
 		otwDb.put(eventTypes[2], dummyValsTS);
 
 		displayotwDbContents();
+		
+
+		String portNum, registryURL;
+		try {
+			System.out.println("Enter the RMIregistry port number:");
+//			portNum = (br.readLine()).trim();
+//			int RMIPortNum = Integer.parseInt(portNum);
+			int RMIPortNum = 4003;
+			startRegistry(RMIPortNum);
+			RDEMSInterfaceImpl exportedObj = new RDEMSInterfaceImpl();
+			registryURL = "rmi://localhost:4003/ottawa";
+			Naming.rebind(registryURL, exportedObj);
+			System.out.println("Server registered.  Registry currently contains:");
+			listRegistry(registryURL);
+			System.out.println("Ottawa Server ready.");
+		} catch (Exception re) {
+			System.out.println("Exception in Ottawa Server.main: " + re);
+		}
+
 
 		Runnable task2 = () -> {
 			torontoListener();
@@ -230,9 +248,9 @@ public class DEMSOttawaServer {
 			String oldEventID, String oldEventType) {
 		String res = "Event could not be swapped!";
 		HashMap<String, Integer> temp1 = (HashMap<String, Integer>) otwDb.get(oldEventType).clone();
-		HashMap<String, Integer> temp2 = (HashMap<String, Integer>) DEMSMontrealServer.returnDb().get(oldEventType)
+		HashMap<String, Integer> temp2 = (HashMap<String, Integer>) RDEMSMontrealServer.returnDb().get(oldEventType)
 				.clone();
-		HashMap<String, Integer> temp3 = (HashMap<String, Integer>) DEMSTorontoServer.returnDb().get(oldEventType)
+		HashMap<String, Integer> temp3 = (HashMap<String, Integer>) RDEMSTorontoServer.returnDb().get(oldEventType)
 				.clone();
 		if (temp1.containsKey(oldEventID) || temp2.containsKey(oldEventID) || temp3.containsKey(oldEventID)) {
 			if (otwCustomerInfo.containsKey(customerID) && otwCustomerInfo.get(customerID).contains(oldEventID)) {

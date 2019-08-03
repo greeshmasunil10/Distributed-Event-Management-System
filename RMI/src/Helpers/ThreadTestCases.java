@@ -2,7 +2,7 @@ package Helpers;
 
 import java.util.Scanner;
 
-import com.web.service.WDEMSInterface;
+import com.web.service.DEMSInterface;
 
 public class ThreadTestCases {
 	static Scanner sc = new Scanner(System.in);
@@ -12,7 +12,7 @@ public class ThreadTestCases {
 	}
 
 	
-	public  void startThreads(WDEMSInterface serverobj) {
+	public  void startThreads(DEMSInterface serverobj) {
 		threads t = new threads();
 		synchronized (t) {
 
@@ -45,13 +45,13 @@ public class ThreadTestCases {
 		}
 	}
 class threads{
-	private synchronized void bookthread(WDEMSInterface serverobj) {
+	private synchronized void bookthread(DEMSInterface serverobj) {
 		System.out.println("\nThread booked starting....");
 		String res = serverobj.bookEvent("TORC1234", "TORA110519", "Seminars");
 		System.out.println(res);
 	}
 
-	private synchronized void swapthread1(WDEMSInterface serverobj) {
+	private synchronized void swapthread1(DEMSInterface serverobj) {
 		System.out.println("\nThread 1 starting..");
 		serverobj.bookEvent("TORC1234", "TORA110519", "Seminars");
 
@@ -59,14 +59,14 @@ class threads{
 		System.out.println(res + " by thread 1!");
 	}
 
-	private synchronized void swapthread2(WDEMSInterface serverobj) {
+	private synchronized void swapthread2(DEMSInterface serverobj) {
 		System.out.println("\nThread 2 starting..");
 		String res = serverobj.swapEvent("TORC1234", "TORM110519", "Seminars", "TORE110519", "Seminars");
 		System.out.println(res + " by thread 2!");
 
 	}
 
-	private synchronized void schedthread(WDEMSInterface serverobj) {
+	private synchronized void schedthread(DEMSInterface serverobj) {
 		String res = serverobj.getBookingSchedule("TORC1234");
 		System.out.println(res);
 	}

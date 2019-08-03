@@ -1,23 +1,15 @@
-package com.web.service;
-import javax.jws.WebService;
-import javax.jws.soap.SOAPBinding;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+import java.util.HashMap;
 
-import com.servers.DEMSMontrealServer;
-import com.servers.DEMSOttawaServer;
-import com.servers.DEMSTorontoServer;
+public class DEMSInterfaceImpl extends UnicastRemoteObject implements DEMSInterface {
 
-
-@WebService(endpointInterface = "com.web.service.DEMSInterface")
-
-@SOAPBinding(style = SOAPBinding.Style.RPC)
-public class DEMSInterfaceImpl implements DEMSInterface {
-
-	public DEMSInterfaceImpl() {
+	protected DEMSInterfaceImpl() throws RemoteException {
 		super();
 	}
 
 	@Override
-	public synchronized String addEvent(String eventID, String eventType, int bookingCapacity)  {
+	public String addEvent(String eventID, String eventType, int bookingCapacity) throws RemoteException {
 		String res = "Invalid input";
 		if (isValid(eventID, eventType, bookingCapacity)) {
 			if (eventID.contains("TOR")) {
@@ -35,7 +27,7 @@ public class DEMSInterfaceImpl implements DEMSInterface {
 	}
 
 	@Override
-	public synchronized String removeEvent(String eventID, String eventType)  {
+	public String removeEvent(String eventID, String eventType) throws RemoteException {
 		String res = "Invalid input";
 		if(isValid(eventID, eventType)) {
 			if (eventID.contains("TOR")) {
@@ -53,14 +45,13 @@ public class DEMSInterfaceImpl implements DEMSInterface {
 	}
 
 	@Override
-	public synchronized String listEventAvailability(String eventType)  {
-			String msg=DEMSTorontoServer.dispEventAvailability(eventType);
+	public void listEventAvailability(String eventType) throws RemoteException {
+			DEMSTorontoServer.dispEventAvailability(eventType);
 			DEMSTorontoServer.logOperation("bookEvent", "NA", eventType,"NA","NA", "Succeeded");
-	return msg;
 	}
 
 	@Override
-	public synchronized String bookEvent(String customerID, String eventID, String eventType)  {
+	public String bookEvent(String customerID, String eventID, String eventType) throws RemoteException {
 		String res = "Invalid input";
 		if( !isValid(customerID))
 			return("Invalid Customer ID!");
@@ -82,26 +73,24 @@ public class DEMSInterfaceImpl implements DEMSInterface {
 	}
 
 	@Override
-	public synchronized String getBookingSchedule(String customerID) {
-		String msg="";
+	public synchronized void getBookingSchedule(String customerID) throws RemoteException {
 		if(customerID.contains("TOR")) {
-			msg+=DEMSTorontoServer.getBookingSchedule(customerID);
+			DEMSTorontoServer.getBookingSchedule(customerID);
 			DEMSTorontoServer.logOperation("getBookingSchedule", "NA", "NA",customerID,"NA", "Succeeded");
 		}
 		else if(customerID.contains("OTW")) {
-			msg+=DEMSOttawaServer.getBookingSchedule(customerID);
+			DEMSOttawaServer.getBookingSchedule(customerID);
 			DEMSOttawaServer.logOperation("getBookingSchedule", "NA", "NA",customerID,"NA", "Succeeded");
 		}
 		else{
-			msg+=DEMSMontrealServer.getBookingSchedule(customerID);
+			DEMSMontrealServer.getBookingSchedule(customerID);
 			DEMSMontrealServer.logOperation("getBookingSchedule", "NA", "NA",customerID,"NA", "Succeeded");
 			
 		}
-		return msg;
 	}
 
 	@Override
-	public synchronized String cancelEvent(String customerID, String eventID)  {
+	public String cancelEvent(String customerID, String eventID) throws RemoteException {
 		String res = "Invalid input";
 		if(customerID.contains("TOR")) {
 			res = DEMSTorontoServer.cancelEvent(customerID, eventID);
@@ -118,24 +107,6 @@ public class DEMSInterfaceImpl implements DEMSInterface {
 		return res;
 	}
 	
-	@Override
-	public synchronized String swapEvent(String customerID, String newEventID, String newEventType, String oldEventID,
-			String oldEventType)  {
-		String res = "Invalid input";
-		if(customerID.contains("TOR")) {
-			 res=DEMSTorontoServer.swapEvent( customerID,  newEventID,  newEventType,  oldEventID, oldEventType);
-			 DEMSOttawaServer.logOperation("swapEvent",newEventID, oldEventID,customerID,"NA", res);
-		}
-		else if(customerID.contains("OTW")) {
-			res=DEMSOttawaServer.swapEvent( customerID,  newEventID,  newEventType,  oldEventID, oldEventType);
-			DEMSOttawaServer.logOperation("swapEvent",newEventID, oldEventID,customerID,"NA", res);
-		}
-		else if(customerID.contains("MTL")){
-			res=DEMSMontrealServer.swapEvent( customerID,  newEventID,  newEventType,  oldEventID, oldEventType);
-			DEMSMontrealServer.logOperation("swapEvent", newEventID, oldEventID,customerID,"NA", res);
-		}
-		return res;
-	}
 	
 	private boolean isValid(String eventID, String eventType, int bookingCapacity) {
 		return (eventType.equalsIgnoreCase("Conferences") || eventType.equalsIgnoreCase("Seminars")
@@ -155,6 +126,5 @@ public class DEMSInterfaceImpl implements DEMSInterface {
 		return (!customerID.isEmpty() &&(customerID.substring(0, 3).equals("TOR") || customerID.substring(0, 3).equals("MTL")
 						|| customerID.substring(0, 3).equals("OTW")) && customerID.charAt(3) == 'C' );
 	}
-
 	
 }

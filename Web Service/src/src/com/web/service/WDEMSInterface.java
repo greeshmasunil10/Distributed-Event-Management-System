@@ -5,7 +5,7 @@ import javax.jws.soap.SOAPBinding;
 
 @WebService
 @SOAPBinding(style = SOAPBinding.Style.RPC)
-public interface DEMSInterface {
+public interface WDEMSInterface {
 	public String addEvent(String eventID, String eventType, int bookingCapacity) ;
 
 	public String removeEvent(String eventID, String eventType) ;

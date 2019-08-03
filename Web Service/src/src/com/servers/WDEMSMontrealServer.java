@@ -2,7 +2,7 @@ package com.servers;
 import java.io.BufferedReader;
 import javax.xml.ws.Endpoint;
 
-import com.web.service.DEMSInterfaceImpl;
+import com.web.service.WDEMSInterfaceImpl;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -26,13 +26,13 @@ import java.util.HashMap;
 
 import javax.xml.ws.Endpoint;
 
-public class DEMSMontrealServer {
+public class WDEMSMontrealServer {
 	private static HashMap<String, HashMap<String, Integer>> mtlDb = new HashMap<>();
 	private static HashMap<String, ArrayList<String>> mtlCustomerInfo = new HashMap<>();
 	static String[] eventTypes = { "Conferences", "Seminars", "Trade Shows" };
 	static PrintWriter writer;
 
-	public static DEMSInterfaceImpl ImpObj;
+	public static WDEMSInterfaceImpl ImpObj;
 
 	public static void main(String args[]) {		
 	}
@@ -43,7 +43,7 @@ public class DEMSMontrealServer {
 	
 	public static void startServer() {
 		System.out.println("Web Service Server Started...");
-		ImpObj = new DEMSInterfaceImpl();
+		ImpObj = new WDEMSInterfaceImpl();
 		Endpoint endpoint = Endpoint.publish("http://localhost:8081/addition", ImpObj);
 		
 		
@@ -102,9 +102,9 @@ public class DEMSMontrealServer {
 			String oldEventType) {
 		String res = "Event could not be swapped!";
 		HashMap<String, Integer> temp1 = (HashMap<String, Integer>) mtlDb.get(oldEventType).clone();
-		HashMap<String, Integer> temp2 = (HashMap<String, Integer>) DEMSOttawaServer.returnDb().get(oldEventType)
+		HashMap<String, Integer> temp2 = (HashMap<String, Integer>) WDEMSOttawaServer.returnDb().get(oldEventType)
 				.clone();
-		HashMap<String, Integer> temp3 = (HashMap<String, Integer>) DEMSTorontoServer.returnDb().get(oldEventType)
+		HashMap<String, Integer> temp3 = (HashMap<String, Integer>) WDEMSTorontoServer.returnDb().get(oldEventType)
 				.clone();
 		if (temp1.containsKey(oldEventID) || temp2.containsKey(oldEventID) || temp3.containsKey(oldEventID)) {
 			if (mtlCustomerInfo.containsKey(customerID) && mtlCustomerInfo.get(customerID).contains(oldEventID)) {

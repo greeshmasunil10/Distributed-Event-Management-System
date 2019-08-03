@@ -20,22 +20,22 @@ import org.omg.CosNaming.NamingContextPackage.NotFound;
 import Helpers.ThreadTestCases;
 
 
-public class DEMSClient {
+public class WDEMSClient {
 
 	static String userID;
 	String city;
 	static String res;
 	Scanner sc;
 	static PrintWriter writer;
-	static DEMSInterface serverobj;
+	static WDEMSInterface serverobj;
 
 
-	public DEMSClient() {
+	public WDEMSClient() {
 		this.sc = new Scanner(System.in);
 	}
 
 	public static void main(String args[]) throws IOException, NotBoundException, InvalidName {
-		DEMSClient obj = new DEMSClient();
+		WDEMSClient obj = new WDEMSClient();
 		
 		obj.getID();
 //		ThreadTestCases t= new ThreadTestCases();
@@ -77,10 +77,10 @@ public class DEMSClient {
 				getID();
 				return;
 			}
-		QName addQName = new QName("http://service.web.com/", "DEMSInterfaceImplService");
+		QName addQName = new QName("http://service.web.com/", "WDEMSInterfaceImplService");
 		
 		Service serviceObj = Service.create(addURL, addQName);
-		serverobj = serviceObj.getPort(DEMSInterface.class);
+		serverobj = serviceObj.getPort(WDEMSInterface.class);
 
 	}
 
