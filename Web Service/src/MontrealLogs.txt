@@ -886,3 +886,35 @@ EventID: OTWM442244
 EventType: Seminars
 Booking Capacity: NA
 Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/02 00:47:04
+CustomerID: NA
+EventID: MTLM456789
+EventType: Seminars
+Booking Capacity: NA
+Status: This event does not exist!
+
+bookEventPerformed.
+Time: 2019/08/02 00:47:54
+CustomerID: NA
+EventID: MTLM456789
+EventType: Seminars
+Booking Capacity: NA
+Status: This event does not exist!
+
+bookEventPerformed.
+Time: 2019/08/02 00:54:21
+CustomerID: NA
+EventID: MTLM786564
+EventType: Seminars
+Booking Capacity: NA
+Status: This event does not exist!
+
+bookEventPerformed.
+Time: 2019/08/02 00:57:07
+CustomerID: NA
+EventID: MTLM456456
+EventType: Seminars
+Booking Capacity: NA
+Status: This event does not exist!

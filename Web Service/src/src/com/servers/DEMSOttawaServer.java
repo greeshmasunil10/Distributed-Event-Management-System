@@ -207,7 +207,15 @@ public class DEMSOttawaServer {
 			otwDb.put(eventType, temp);
 			displayotwDbContents();
 		} else {
-			UDPclient(customerID, eventID, eventType, "book");
+			String res=UDPclient(customerID, eventID, eventType, "book");
+			if(res.equals("Event successfully Booked")) {
+				ArrayList<String> temp1 = otwCustomerInfo.get(customerID) == null ? (new ArrayList<>())
+						: otwCustomerInfo.get(customerID);
+				temp1.add(eventID);
+				otwCustomerInfo.put(customerID, temp1);
+				displayCustomerInfo();
+			}
+			return res;
 		}
 		ArrayList<String> temp1 = otwCustomerInfo.get(customerID) == null ? (new ArrayList<>())
 				: otwCustomerInfo.get(customerID);
@@ -226,32 +234,28 @@ public class DEMSOttawaServer {
 				.clone();
 		HashMap<String, Integer> temp3 = (HashMap<String, Integer>) DEMSTorontoServer.returnDb().get(oldEventType)
 				.clone();
-		if (temp1.containsKey(oldEventID) || temp2.containsKey(oldEventID) 
-				|| temp3.containsKey(oldEventID)) {
-			if (otwCustomerInfo.containsKey(customerID) 
-					&& otwCustomerInfo.get(customerID).contains(oldEventID)) {
-			String msg1 = bookEvent(customerID, newEventID, newEventType);
-			if (!msg1.equals("Event successfully Booked")) {
+		if (temp1.containsKey(oldEventID) || temp2.containsKey(oldEventID) || temp3.containsKey(oldEventID)) {
+			if (otwCustomerInfo.containsKey(customerID) && otwCustomerInfo.get(customerID).contains(oldEventID)) {
+				String msg1 = bookEvent(customerID, newEventID, newEventType);
+				if (!msg1.equals("Event successfully Booked")) {
 //				res = "Event cannot be swapped";
-				return msg1;
+					return msg1;
+				}
+				String msg2 = cancelEvent(customerID, oldEventID);
+				if (!msg2.equals("Event successfully cancelled")) {
+					res = "Event could not be swapped: " + msg2;
+					cancelEvent(customerID, oldEventID);
+					return res;
+				}
+				res = " Event succefully swapped";
+				logOperation("Swap Performed", newEventID, newEventType, "NA", "NA", "Succeeded");
+				displayotwDbContents();
+				displayCustomerInfo();
+			} else {
+				res = "Event could not be swapped since this event wasnt booked!";
 			}
-			String msg2=cancelEvent(customerID, oldEventID);
-			if(!msg2.equals("Event successfully cancelled")) {
-				res="Event could not be swapped: "+msg2;
-				cancelEvent(customerID, oldEventID);
-				return res;
-			}
-			res =" Event succefully swapped";
-			logOperation("Swap Performed", newEventID, newEventType, "NA", "NA", "Succeeded");
-			displayotwDbContents();
-			displayCustomerInfo();
-		}
-			else {
-				 res = "Event could not be swapped since this event wasnt booked!";
-			}
-		}
-		else {
-			 res = "Event could not be swapped since this event wasnt booked!";
+		} else {
+			res = "Event could not be swapped since this event wasnt booked!";
 		}
 		return res;
 	}
@@ -353,16 +357,16 @@ public class DEMSOttawaServer {
 		writer.close();
 	}
 
-	private static boolean UDPclient(String customerID, String eventID, String eventType, String action) {
+	private static String UDPclient(String customerID, String eventID, String eventType, String action) {
 		int serverPort;// agreed upon port
 		if (eventID.contains("MTL")) {
 			System.out.println("\n\nRequesting Montreal Server...");
-			serverPort = 1001;
+			serverPort = 1002;
 		} else if (eventID.contains("TOR")) {
 			System.out.println("\n\nRequesting Toronto Server...");
 			serverPort = 3001;
 		} else {
-			return false;
+			return "null";
 		}
 		String send = action + "," + customerID + "," + eventID + "," + eventType + ",";
 		DatagramSocket aSocket = null;
@@ -386,10 +390,10 @@ public class DEMSOttawaServer {
 			// received-----------------------------------------------------------------------
 			aSocket.receive(reply);// reply received and will populate reply packet now.
 			System.out.println("Reply received from the server is: " + new String(reply.getData()));// print reply
-																									// message after
-																									// converting it to
-																									// a string from
-																									// bytes
+			String res=		new String(reply.getData())			;															// message after
+			return res; // converting it to
+			// a string from
+			// bytes
 		} catch (SocketException e) {
 			System.out.println("Socket: " + e.getMessage());
 		} catch (IOException e) {
@@ -402,7 +406,7 @@ public class DEMSOttawaServer {
 								// resource leakage, therefore, close the socket after it's use is completed to
 								// release resources.
 		}
-		return false;
+		return "null";
 	}
 
 	public static boolean torontoListener() {

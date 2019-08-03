@@ -3638,3 +3638,27 @@ EventID: NA
 EventType: Seminars
 Booking Capacity: NA
 Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/02 00:40:10
+CustomerID: NA
+EventID: TORM123456
+EventType: Seminars
+Booking Capacity: NA
+Status: This event does not exist!
+
+bookEventPerformed.
+Time: 2019/08/02 00:46:35
+CustomerID: NA
+EventID: NA
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/02 00:47:39
+CustomerID: NA
+EventID: NA
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded

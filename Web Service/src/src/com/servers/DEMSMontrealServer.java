@@ -55,7 +55,7 @@ public class DEMSMontrealServer {
 		mtlDb.put(eventTypes[0], dummyValsConf);
 
 		HashMap<String, Integer> dummyValsSem = new HashMap<>();
-//		dummyValsSem.put("MTLM110519", 5);
+//		dummyValsSem.put("MTLM112211", 5);
 //		dummyValsSem.put("MTLA110519", 10);
 //		dummyValsSem.put("MTLE110519", 15);
 		mtlDb.put(eventTypes[1], dummyValsSem);
@@ -192,9 +192,14 @@ public class DEMSMontrealServer {
 			}
 
 		}
+		System.out.println("greeshma: "+eventType);
 		if (eventID.contains("MTL")) {
+			
+			System.out.println("greeshma: "+"enetered inside");
 			HashMap<String, Integer> temp = (HashMap<String, Integer>) mtlDb.get(eventType).clone();
+			System.out.println(temp);
 			if (!temp.containsKey(eventID) ) {
+				System.out.println("greeshma here");
 				return "This event does not exist!";
 			}
 			else if(temp.get(eventID) == 0)
@@ -404,7 +409,7 @@ public class DEMSMontrealServer {
 					reply = new DatagramPacket(replied, replied.length, request.getAddress(), request.getPort());// reply
 				} else if (list[0].equals("cancel")) {
 					cancelEvent(list[1], list[2]);
-					String buff = list[3] + ":" + list[2] + " successfully cancelled for " + list[1];
+					String buff = list[3] + ":" + list[2] + " successfully cancelled by tor to mon for " + list[1];
 					byte[] replied = buff.getBytes();
 					reply = new DatagramPacket(replied, replied.length, request.getAddress(), request.getPort());// reply
 				}else if (list[0].equals("disp")) {
@@ -428,8 +433,9 @@ public class DEMSMontrealServer {
 		return false;
 	}
 
-	public static boolean ottawaListener() {
+	public static String ottawaListener() {
 		DatagramSocket aSocket = null;
+		String res="null";
 		try {
 			aSocket = new DatagramSocket(1002);
 			byte[] buffer = new byte[1000];// to stored the received data from
@@ -448,8 +454,8 @@ public class DEMSMontrealServer {
 				DatagramPacket reply = null;
 				if (list[0].equals("book")) {
 					System.out.println("listener booked for :" + list[1] + list[2] + list[3]);
-					bookEvent(list[1], list[2], list[3]);
-					String buff = list[3] + ":" + list[2] + " successfully booked for " + list[1];
+					 res=bookEvent(list[1], list[2], list[3]);
+					String buff = res;
 					byte[] replied = buff.getBytes();
 					reply = new DatagramPacket(replied, replied.length, request.getAddress(), request.getPort());// reply
 																													// packet
@@ -474,7 +480,7 @@ public class DEMSMontrealServer {
 				aSocket.close();
 
 		}
-		return false;
+		return res;
 	}
 
 	

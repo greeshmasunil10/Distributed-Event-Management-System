@@ -248,8 +248,6 @@ public class DEMSTorontoServer {
 
 		}
 		if (eventID.contains("TOR")) {
-			System.out.println(eventTypes[0]);
-			System.out.println(sample);
 			HashMap<String, Integer> temp = (HashMap<String, Integer>) torDb.get(eventType).clone();
 			if (!temp.containsKey(eventID) ) {
 				return "This event does not exist!";

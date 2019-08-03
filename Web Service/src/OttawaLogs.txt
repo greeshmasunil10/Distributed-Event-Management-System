@@ -1806,3 +1806,259 @@ EventID: TORM442244
 EventType: OTWM112211
 Booking Capacity: NA
 Status: customer cannot book more than 3 outside city events in the same month
+
+bookEventPerformed.
+Time: 2019/08/02 00:37:50
+CustomerID: NA
+EventID: OTWM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/02 00:37:51
+CustomerID: OTWC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/02 00:37:59
+CustomerID: NA
+EventID: OTWM332233
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/02 00:38:00
+CustomerID: OTWC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+Swap PerformedPerformed.
+Time: 2019/08/02 00:38:11
+CustomerID: NA
+EventID: TORM332233
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded
+
+swapEventPerformed.
+Time: 2019/08/02 00:38:11
+CustomerID: OTWC123
+EventID: TORM332233
+EventType: OTWM332233
+Booking Capacity: NA
+Status:  Event succefully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/08/02 00:38:13
+CustomerID: OTWC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+swapEventPerformed.
+Time: 2019/08/02 00:38:31
+CustomerID: OTWC123
+EventID: MTLM332233
+EventType: TORM332233
+Booking Capacity: NA
+Status: Event could not be swapped: Cancelled
+
+getBookingSchedulePerformed.
+Time: 2019/08/02 00:38:36
+CustomerID: OTWC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+cancelEventPerformed.
+Time: 2019/08/02 00:39:35
+CustomerID: OTWC123
+EventID: MTLM332233
+EventType: NA
+Booking Capacity: NA
+Status: Cancelled
+
+getBookingSchedulePerformed.
+Time: 2019/08/02 00:39:38
+CustomerID: OTWC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/02 00:39:45
+CustomerID: NA
+EventID: MTLM332233
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/02 00:39:47
+CustomerID: OTWC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/02 00:39:56
+CustomerID: NA
+EventID: MTLM456789
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/02 00:39:58
+CustomerID: OTWC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/02 00:48:40
+CustomerID: NA
+EventID: OTWM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/02 00:48:51
+CustomerID: NA
+EventID: OTWM332233
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/02 00:48:52
+CustomerID: OTWC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+Swap PerformedPerformed.
+Time: 2019/08/02 00:49:04
+CustomerID: NA
+EventID: MTLM456789
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded
+
+swapEventPerformed.
+Time: 2019/08/02 00:49:04
+CustomerID: OTWC123
+EventID: MTLM456789
+EventType: OTWM332233
+Booking Capacity: NA
+Status:  Event succefully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/08/02 00:49:10
+CustomerID: OTWC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/02 00:54:35
+CustomerID: NA
+EventID: MTLM456456
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/02 00:57:21
+CustomerID: NA
+EventID: MTLM456456
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/02 00:58:00
+CustomerID: OTWC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/02 01:07:26
+CustomerID: NA
+EventID: MTLM468654
+EventType: Seminars
+Booking Capacity: NA
+Status: Seminars:MTLM468654 successfully booked for OTWC123                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+
+bookEventPerformed.
+Time: 2019/08/02 01:08:36
+CustomerID: NA
+EventID: OTWM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/02 01:08:37
+CustomerID: OTWC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/02 01:08:51
+CustomerID: NA
+EventID: MTLM144545
+EventType: Seminars
+Booking Capacity: NA
+Status: Seminars:MTLM144545 successfully booked for OTWC123                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+
+bookEventPerformed.
+Time: 2019/08/02 01:11:51
+CustomerID: NA
+EventID: MTLM465456
+EventType: Seminars
+Booking Capacity: NA
+Status: Seminars:MTLM465456 successfully booked for OTWC123                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+
+bookEventPerformed.
+Time: 2019/08/02 01:15:14
+CustomerID: NA
+EventID: MTLM456789
+EventType: Seminars
+Booking Capacity: NA
+Status: Seminars:MTLM456789 successfully booked for OTWC123                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+
+bookEventPerformed.
+Time: 2019/08/02 01:17:17
+CustomerID: NA
+EventID: MTLM121212
+EventType: Seminars
+Booking Capacity: NA
+Status: This event does not exist!                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+
+bookEventPerformed.
+Time: 2019/08/02 01:24:18
+CustomerID: NA
+EventID: MTLM123123
+EventType: Seminars
+Booking Capacity: NA
+Status: This event does not exist!                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
