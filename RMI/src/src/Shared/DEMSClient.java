@@ -1,4 +1,4 @@
-package RMI;
+package Shared;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -17,28 +17,31 @@ import org.omg.CosNaming.NamingContextExtHelper;
 import org.omg.CosNaming.NamingContextPackage.CannotProceed;
 import org.omg.CosNaming.NamingContextPackage.NotFound;
 
-import Helpers.ThreadTestCases;
+import Helper.Ports;
+import Helper.Response;
+import Helper.ThreadTestCases;
 
 
-public class RDEMSClient {
+public class DEMSClient {
 
 	static String userID;
 	String city;
-	static String res;
+	static Response res;
 	Scanner sc;
 	static PrintWriter writer;
 	int RMIPort;
 
-	static RDEMSInterface serverobj;
+	static DEMSInterface serverobj;
 
 
-	public RDEMSClient() {
+	public DEMSClient() {
 		this.sc = new Scanner(System.in);
 	}
 
 	public static void main(String args[]) throws IOException, NotBoundException, InvalidName {
-		RDEMSClient obj = new RDEMSClient();
+//		boolean ch=DMTORMEMSStartServers.startServers();
 		
+		DEMSClient obj = new DEMSClient();
 		obj.getID();
 //		ThreadTestCases t= new ThreadTestCases();
 //		t.startThreads(serverobj);
@@ -63,13 +66,13 @@ public class RDEMSClient {
 //		int c=intObj.add(5, 3);
 		URL addURL=new URL("http://localhost:8081/addition?wsdl");
 		if (userID.contains("MTL")) {
-			this.RMIPort = 4002;
+			this.RMIPort = Ports.MONTREAL_SERVER_PORT;
 			city = "montreal";
 		} else if (userID.contains("OTW")) {
-			this.RMIPort = 4003;
+			this.RMIPort = Ports.OTTAWA_SERVER_PORT;
 			city = "ottawa";
 		} else if (userID.contains("TOR")) {
-			this.RMIPort = 4001;
+			this.RMIPort = Ports.TORONTO_SERVER_PORT;
 			city = "toronto";
 		}else {
 			System.out.println("Invalid ID");
@@ -82,7 +85,7 @@ public class RDEMSClient {
 		
 		String hostName = "localhost";
 		String registryURL = "rmi://" + hostName + ":" + RMIPort + "/" + this.city;
-		this.serverobj = (RDEMSInterface) Naming.lookup(registryURL);
+		this.serverobj = (DEMSInterface) Naming.lookup(registryURL);
 		if (this.userID.charAt(3) == 'M') {
 			System.out.print("\nYou are logged in Manager:" + city);
 			manager();
@@ -216,8 +219,8 @@ public class RDEMSClient {
 			return;
 		}
 
-		logOperation("Swap Event", oldEventID, oldEventType, this.userID, this.res);
-		System.out.println(this.res);
+		logOperation("Swap Event", oldEventID, oldEventType, this.userID, this.res.getMessage());
+		System.out.println(this.res.getMessage());
 	}
 
 	private void bookEvent(boolean check) throws RemoteException {
@@ -237,8 +240,8 @@ public class RDEMSClient {
 
 		this.res = this.serverobj.bookEvent(customerID, eventID, eventType);
 
-		logOperation("bookEvent", eventID, eventType, this.userID, this.res);
-		System.out.println(this.res);
+		logOperation("bookEvent", eventID, eventType, this.userID, this.res.getMessage());
+		System.out.println(this.res.getMessage());
 	}
 
 	private void cancelEvent(boolean check) throws RemoteException {
@@ -253,10 +256,9 @@ public class RDEMSClient {
 			customerID = this.userID;
 		}
 
-		res = "not entered";
 		this.res = this.serverobj.cancelEvent(customerID, eventID);
-		logOperation("cancelEvent", eventID, "NA", this.userID, this.res);
-		System.out.println(this.res);
+		logOperation("cancelEvent", eventID, "NA", this.userID, this.res.getMessage());
+		System.out.println(this.res.getMessage());
 	}
 
 	private void getBookingSchedule(boolean check) throws RemoteException {
@@ -267,10 +269,10 @@ public class RDEMSClient {
 		} else {
 			customerID = this.userID;
 		}
-		String msg = "Unsuccessfull";
+		Response msg = new Response("Unsuccessfull",false);
 		msg = this.serverobj.getBookingSchedule(customerID);
 		logOperation("getBookingSchedule", "NA", "NA", this.userID, "Succeeded");
-		System.out.println(msg);
+		System.out.println(msg.getMessage());
 //		System.out.println("Shown in the " + city + " server console!");
 	}
 
@@ -285,8 +287,8 @@ public class RDEMSClient {
 		System.out.print("Event Type:");
 		eventType = this.sc.nextLine();
 		this.res = this.serverobj.removeEvent(eventID, eventType);
-		logOperation("removeEvent", eventID, eventType, this.userID, this.res);
-		System.out.println(this.res);
+		logOperation("removeEvent", eventID, eventType, this.userID, this.res.getMessage());
+		System.out.println(this.res.getMessage());
 	}
 
 	public void addEvent() throws IOException, NotBoundException, InvalidName {
@@ -320,13 +322,13 @@ public class RDEMSClient {
 			return;
 		}
 		this.res = this.serverobj.addEvent(eventID, eventType, bookingCapacity);
-		logOperation("addEvent", eventID, eventType, this.userID, this.res);
-		System.out.println(this.res);
+		logOperation("addEvent", eventID, eventType, this.userID, this.res.getMessage());
+		System.out.println(this.res.getMessage());
 	}
 
 // 	TODO: Get HashMap and print it
 	public void listEventAvailability() throws RemoteException {
-		String msg = "asdsfsdf";
+		Response msg ;
 		String eventType;
 		System.out.print("\nEvent Type:");
 		eventType = this.sc.nextLine();
@@ -337,7 +339,7 @@ public class RDEMSClient {
 			return;
 		}
 		msg = this.serverobj.listEventAvailability(eventType);
-		System.out.println(msg);
+		System.out.println(msg.getMessage());
 		logOperation("listEventAvailability", "NA", eventType, this.userID, "Succeeded");
 	}
 

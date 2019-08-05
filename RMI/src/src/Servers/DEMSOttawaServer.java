@@ -21,14 +21,18 @@ import java.util.HashMap;
 
 import javax.xml.ws.Endpoint;
 
-import RMI.RDEMSInterfaceImpl;
+import Helper.Ports;
+import Helper.Response;
+import Servers.DEMSMontrealServer;
+import Servers.DEMSTorontoServer;
+import Shared.DEMSInterfaceImpl;
 
-public class RDEMSOttawaServer {
+public class DEMSOttawaServer {
 	private static HashMap<String, HashMap<String, Integer>> otwDb = new HashMap<>();
 	private static HashMap<String, ArrayList<String>> otwCustomerInfo = new HashMap<>();
 	static String[] eventTypes = { "Conferences", "Seminars", "Trade Shows" };
 	static PrintWriter writer;
-	public static RDEMSInterfaceImpl ImpObj;
+	public static DEMSInterfaceImpl ImpObj;
 
 	public static void main(String args[]) {
 
@@ -40,8 +44,8 @@ public class RDEMSOttawaServer {
 
 	public static void startServer() throws RemoteException {
 
-		System.out.println("Starting Ottawa Server...");
-		ImpObj = new RDEMSInterfaceImpl();
+//		System.out.println("Starting Ottawa Server...");
+		ImpObj = new DEMSInterfaceImpl();
 
 //		Seminars, Conferences and Trade Shows keys are populated with dummy event data
 		HashMap<String, Integer> dummyValsConf = new HashMap<>();
@@ -63,26 +67,24 @@ public class RDEMSOttawaServer {
 //		dummyValsTS.put("OTWE120519", 15);
 		otwDb.put(eventTypes[2], dummyValsTS);
 
-		displayotwDbContents();
-		
+//		displayotwDbContents();
 
 		String portNum, registryURL;
 		try {
-			System.out.println("Enter the RMIregistry port number:");
+//			System.out.println("Enter the RMIregistry port number:");
 //			portNum = (br.readLine()).trim();
 //			int RMIPortNum = Integer.parseInt(portNum);
-			int RMIPortNum = 4003;
+			int RMIPortNum = Ports.OTTAWA_SERVER_PORT;
 			startRegistry(RMIPortNum);
-			RDEMSInterfaceImpl exportedObj = new RDEMSInterfaceImpl();
-			registryURL = "rmi://localhost:4003/ottawa";
+			DEMSInterfaceImpl exportedObj = new DEMSInterfaceImpl();
+			registryURL = "rmi://localhost:"+RMIPortNum+"/ottawa";
 			Naming.rebind(registryURL, exportedObj);
-			System.out.println("Server registered.  Registry currently contains:");
+//			System.out.println("Server registered.  Registry currently contains:");
 			listRegistry(registryURL);
 			System.out.println("Ottawa Server ready.");
 		} catch (Exception re) {
 			System.out.println("Exception in Ottawa Server.main: " + re);
 		}
-
 
 		Runnable task2 = () -> {
 			torontoListener();
@@ -108,9 +110,9 @@ public class RDEMSOttawaServer {
 								// if the registry does not already exist
 		} catch (RemoteException e) {
 			// No valid registry at that port.
-			System.out.println("RMI registry cannot be located at port " + RMIPortNum);
+//			System.out.println("RMI registry cannot be located at port " + RMIPortNum);
 			Registry registry = LocateRegistry.createRegistry(RMIPortNum);
-			System.out.println(/**/ "RMI registry created at port " + RMIPortNum);
+//			System.out.println(/**/ "RMI registry created at port " + RMIPortNum);
 		}
 	}
 
@@ -118,13 +120,13 @@ public class RDEMSOttawaServer {
 	 * This method lists the names registered with a Registry object
 	 */
 	private static void listRegistry(String registryURL) throws RemoteException, MalformedURLException {
-		System.out.println("Registry " + registryURL + " contains: ");
+//		System.out.println("Registry " + registryURL + " contains: ");
 		String[] names = Naming.list(registryURL);
-		for (int i = 0; i < names.length; i++)
-			System.out.println(names[i]);
+//		for (int i = 0; i < names.length; i++)
+//			System.out.println(names[i]);
 	}
 
-	public synchronized static String addEvent(String eventID, String eventType, int bookingCapacity) {
+	public synchronized static Response addEvent(String eventID, String eventType, int bookingCapacity) {
 		HashMap<String, Integer> temp = (HashMap<String, Integer>) otwDb.get(eventType).clone();
 
 		if (temp.containsKey(eventID)) {
@@ -137,15 +139,15 @@ public class RDEMSOttawaServer {
 		otwDb.put(eventType, temp);
 		displayotwDbContents();
 		displayCustomerInfo();
-		return "Added!";
+		return new Response("Event " + eventID + " Added!", true);
 	}
 
-	public synchronized static String removeEvent(String eventID, String eventType) {
+	public synchronized static Response removeEvent(String eventID, String eventType) {
 //		dummyVals always stored in the DB so no need to check for an empty sub-HashMap for any eventType
 		HashMap<String, Integer> temp = (HashMap<String, Integer>) otwDb.get(eventType).clone();
 
 		if (!temp.containsKey(eventID)) {
-			return "Event doesn't exist";
+			return new Response("Event doesn't exist", false);
 		}
 		for (ArrayList<String> al : otwCustomerInfo.values()) {
 			if (al.contains(eventID)) {
@@ -160,41 +162,27 @@ public class RDEMSOttawaServer {
 		otwDb.put(eventType, temp);
 		displayotwDbContents();
 		displayCustomerInfo();
-		return "Event successfully removed!";
+		return new Response(eventID + " successfully removed", true);
 	}
 
-	public synchronized static String dispEventAvailability(String eventType) {
-		System.out.println("entered ottawa");
+	public synchronized static Response dispEventAvailability(String eventType) {
 		String msg = "";
-		System.out.println("\n------------EVENTS------------");
-		msg += "\n------------EVENTS------------";
-		System.out.println(eventType + ": ");
-		msg += "\n" + eventType + ": ";
 		HashMap<String, Integer> temp = otwDb.getOrDefault(eventType, new HashMap<String, Integer>());
-
+		msg += "OTW|";
 		for (String EventID : temp.keySet()) {
-			msg += "\n" + EventID + " " + temp.get(EventID);
+			msg += EventID + ":" + temp.get(EventID)+",";
 		}
-
-//		System.out.println(temp.keySet().toString());
-
-//		msg += "\n" + temp.keySet().toString();
-
-//		System.out.println(temp.values());
-
-//		msg += "\n" + temp.values();
-
-		System.out.println("-----------------------------------");
-		msg += "\n" + "-----------------------------------";
-//		UDPclient("MTL", "MTL", eventType, "disp");
-//		UDPclient("OTW", "OTW", eventType, "disp");
-		return msg;
+		msg+="||";
+		msg += DEMSTorontoServer.dispEventAvailability(eventType).getMessage();
+		msg += DEMSMontrealServer.dispEventAvailability(eventType).getMessage();
+		return new Response(msg, true);
 	}
 
-	public synchronized static String bookEvent(String customerID, String eventID, String eventType) {
+	public synchronized static Response bookEvent(String customerID, String eventID, String eventType) {
+
 		if (otwCustomerInfo.containsKey(customerID) && otwCustomerInfo.get(customerID) != null
 				&& otwCustomerInfo.get(customerID).contains(eventID)) {
-			return "This event was already booked!";
+			return new Response("This event was already booked!", false);
 		}
 		String month = eventID.substring(6, 8);
 		if (otwCustomerInfo.containsKey(customerID) && !eventID.contains("OTW")) {
@@ -211,74 +199,57 @@ public class RDEMSOttawaServer {
 			}
 
 			if (count >= 3) {
-				return "customer cannot book more than 3 outside city events in the same month";
+				return new Response("customer cannot book more than 3 outside city events in the same month", false);
 			}
 
 		}
 		if (eventID.contains("OTW")) {
 			HashMap<String, Integer> temp = (HashMap<String, Integer>) otwDb.get(eventType).clone();
 			if (!temp.containsKey(eventID)) {
-				return "This event does not exist!";
+				return new Response("This event does not exist!", false);
 			} else if (temp.get(eventID) == 0)
-				return "Event capacity is zero";
+				return new Response("Event capacity is zero", false);
 			temp.put(eventID, temp.get(eventID) - 1);
 			otwDb.put(eventType, temp);
 			displayotwDbContents();
 		} else {
-			String res=UDPclient(customerID, eventID, eventType, "book");
-			if(res.equals("Event successfully Booked")) {
-				ArrayList<String> temp1 = otwCustomerInfo.get(customerID) == null ? (new ArrayList<>())
-						: otwCustomerInfo.get(customerID);
-				temp1.add(eventID);
-				otwCustomerInfo.put(customerID, temp1);
-				displayCustomerInfo();
-			}
-			return res;
+			UDPclient(customerID, eventID, eventType, "book");
 		}
 		ArrayList<String> temp1 = otwCustomerInfo.get(customerID) == null ? (new ArrayList<>())
 				: otwCustomerInfo.get(customerID);
 		temp1.add(eventID);
 		otwCustomerInfo.put(customerID, temp1);
 		displayCustomerInfo();
-		return "Event successfully Booked";
+		return new Response("Event successfully Booked", true);
 
 	}
 
-	public synchronized static String swapEvent(String customerID, String newEventID, String newEventType,
+	public synchronized static Response swapEvent(String customerID, String newEventID, String newEventType,
 			String oldEventID, String oldEventType) {
-		String res = "Event could not be swapped!";
+		Response res = new Response("Event could not be swapped!", false);
 		HashMap<String, Integer> temp1 = (HashMap<String, Integer>) otwDb.get(oldEventType).clone();
-		HashMap<String, Integer> temp2 = (HashMap<String, Integer>) RDEMSMontrealServer.returnDb().get(oldEventType)
+		HashMap<String, Integer> temp2 = (HashMap<String, Integer>) DEMSMontrealServer.returnDb().get(oldEventType)
 				.clone();
-		HashMap<String, Integer> temp3 = (HashMap<String, Integer>) RDEMSTorontoServer.returnDb().get(oldEventType)
+		HashMap<String, Integer> temp3 = (HashMap<String, Integer>) DEMSMontrealServer.returnDb().get(oldEventType)
 				.clone();
 		if (temp1.containsKey(oldEventID) || temp2.containsKey(oldEventID) || temp3.containsKey(oldEventID)) {
-			if (otwCustomerInfo.containsKey(customerID) && otwCustomerInfo.get(customerID).contains(oldEventID)) {
-				String msg1 = bookEvent(customerID, newEventID, newEventType);
-				if (!msg1.equals("Event successfully Booked")) {
-//				res = "Event cannot be swapped";
-					return msg1;
-				}
-				String msg2 = cancelEvent(customerID, oldEventID);
-				if (!msg2.equals("Event successfully cancelled")) {
-					res = "Event could not be swapped: " + msg2;
-					cancelEvent(customerID, oldEventID);
-					return res;
-				}
-				res = " Event succefully swapped";
-				logOperation("Swap Performed", newEventID, newEventType, "NA", "NA", "Succeeded");
-				displayotwDbContents();
-				displayCustomerInfo();
-			} else {
-				res = "Event could not be swapped since this event wasnt booked!";
+			Response temp = bookEvent(customerID, newEventID, newEventType);
+			if (temp.getMessage().equals("customer cannot book more than 3 outside city events in the same month")) {
+				res = new Response(
+						"Event cannot be swapped since customer cannot book more than 3 outside city events in the same month",
+						false);
+				return res;
 			}
-		} else {
-			res = "Event could not be swapped since this event wasnt booked!";
+			cancelEvent(customerID, oldEventID);
+			res = new Response("Event succefully swapped", true);
+			logOperation("Swap Performed", newEventID, newEventType, "NA", "NA", "Succeeded");
+			displayotwDbContents();
+			displayCustomerInfo();
 		}
 		return res;
 	}
 
-	public synchronized static String cancelEvent(String customerID, String eventID) {
+	public synchronized static Response cancelEvent(String customerID, String eventID) {
 
 		if (otwCustomerInfo.containsKey(customerID) && otwCustomerInfo.get(customerID) != null
 				&& otwCustomerInfo.get(customerID).contains(eventID)) {
@@ -300,7 +271,7 @@ public class RDEMSOttawaServer {
 								temp.put(eID, temp.get(eID) + 1);
 								otwDb.put(eType, temp);
 								displayotwDbContents();
-								return "Event successfully cancelled";
+								return new Response("Event successfully cancelled", true);
 							}
 						}
 					}
@@ -320,23 +291,23 @@ public class RDEMSOttawaServer {
 				ArrayList<String> temp1 = otwCustomerInfo.get(customerID);
 				temp1.remove(eventID);
 				displayCustomerInfo();
-				return "Cancelled";
+				return new Response("Event successfully cancelled", true);
 
 			}
-			return "This event cannot be cancelled";
+			return new Response("This event cannot be cancelled", false);
 		}
-		return "The event doesn't exist";
+		return new Response("The event doesn't exist", false);
 	}
 
-	public synchronized static String getBookingSchedule(String customerID) {
+	public synchronized static Response getBookingSchedule(String customerID) {
 		String msg = "";
 		if (!otwCustomerInfo.containsKey(customerID)) {
 			System.out.println("No events to display!");
-			return "No events to display!";
+			return new Response("No events to display!", false);
 		}
 		System.out.println(customerID + ":" + otwCustomerInfo.get(customerID).toString());
 		msg += "\n" + customerID + ":" + otwCustomerInfo.get(customerID).toString();
-		return msg;
+		return new Response(msg, true);
 	}
 
 	public static void displayotwDbContents() {
@@ -375,16 +346,16 @@ public class RDEMSOttawaServer {
 		writer.close();
 	}
 
-	private static String UDPclient(String customerID, String eventID, String eventType, String action) {
+	private static boolean UDPclient(String customerID, String eventID, String eventType, String action) {
 		int serverPort;// agreed upon port
 		if (eventID.contains("MTL")) {
 			System.out.println("\n\nRequesting Montreal Server...");
-			serverPort = 1002;
+			serverPort = 1001;
 		} else if (eventID.contains("TOR")) {
 			System.out.println("\n\nRequesting Toronto Server...");
 			serverPort = 3001;
 		} else {
-			return "null";
+			return false;
 		}
 		String send = action + "," + customerID + "," + eventID + "," + eventType + ",";
 		DatagramSocket aSocket = null;
@@ -408,10 +379,10 @@ public class RDEMSOttawaServer {
 			// received-----------------------------------------------------------------------
 			aSocket.receive(reply);// reply received and will populate reply packet now.
 			System.out.println("Reply received from the server is: " + new String(reply.getData()));// print reply
-			String res=		new String(reply.getData())			;															// message after
-			return res; // converting it to
-			// a string from
-			// bytes
+																									// message after
+																									// converting it to
+																									// a string from
+																									// bytes
 		} catch (SocketException e) {
 			System.out.println("Socket: " + e.getMessage());
 		} catch (IOException e) {
@@ -424,7 +395,7 @@ public class RDEMSOttawaServer {
 								// resource leakage, therefore, close the socket after it's use is completed to
 								// release resources.
 		}
-		return "null";
+		return false;
 	}
 
 	public static boolean torontoListener() {
@@ -433,7 +404,7 @@ public class RDEMSOttawaServer {
 			aSocket = new DatagramSocket(2001);
 			byte[] buffer = new byte[1000];// to stored the received data from
 			// the client.
-			System.out.println("Listener Server Started for Toronto...");
+//			System.out.println("Listener Server Started for Toronto...");
 			while (true) {// non-terminating loop as the server is always in listening mode.
 				DatagramPacket request = new DatagramPacket(buffer, buffer.length);
 
@@ -482,7 +453,7 @@ public class RDEMSOttawaServer {
 			aSocket = new DatagramSocket(2002);
 			byte[] buffer = new byte[1000];// to stored the received data from
 			// the client.
-			System.out.println("Listener Server Started for Montreal...");
+//			System.out.println("Listener Server Started for Montreal...");
 			while (true) {// non-terminating loop as the server is always in listening mode.
 				DatagramPacket request = new DatagramPacket(buffer, buffer.length);
 
@@ -527,5 +498,4 @@ public class RDEMSOttawaServer {
 		}
 		return false;
 	}
-
 }

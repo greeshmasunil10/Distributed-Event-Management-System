@@ -2,7 +2,11 @@ package Servers;
 import java.io.BufferedReader;
 import javax.xml.ws.Endpoint;
 
-import RMI.RDEMSInterfaceImpl;
+import Helper.Ports;
+import Helper.Response;
+import Servers.DEMSOttawaServer;
+import Servers.DEMSTorontoServer;
+import Shared.DEMSInterfaceImpl;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -24,13 +28,13 @@ import java.util.Calendar;
 import java.util.HashMap;
 
 
-public class RDEMSMontrealServer {
+public class DEMSMontrealServer {
 	private static HashMap<String, HashMap<String, Integer>> mtlDb = new HashMap<>();
 	private static HashMap<String, ArrayList<String>> mtlCustomerInfo = new HashMap<>();
 	static String[] eventTypes = { "Conferences", "Seminars", "Trade Shows" };
 	static PrintWriter writer;
 
-	public static RDEMSInterfaceImpl ImpObj;
+	public static DEMSInterfaceImpl ImpObj;
 
 	public static void main(String args[]) {		
 	}
@@ -40,8 +44,8 @@ public class RDEMSMontrealServer {
 	}
 	
 	public static void startServer() throws RemoteException {
-		System.out.println("Starting Montreal Server...");
-		ImpObj = new RDEMSInterfaceImpl();
+//		System.out.println("Starting Montreal Server...");
+		ImpObj = new DEMSInterfaceImpl();
 		
 		
 		
@@ -52,9 +56,10 @@ public class RDEMSMontrealServer {
 		mtlDb.put(eventTypes[0], dummyValsConf);
 
 		HashMap<String, Integer> dummyValsSem = new HashMap<>();
-//		dummyValsSem.put("MTLM112211", 5);
-//		dummyValsSem.put("MTLA110519", 10);
-//		dummyValsSem.put("MTLE110519", 15);
+		dummyValsSem.put("MTLM112211", 5);
+		dummyValsSem.put("MTLM222222", 10);
+		dummyValsSem.put("MTLM332233", 10);
+		dummyValsSem.put("MTLM442244", 10);
 		mtlDb.put(eventTypes[1], dummyValsSem);
 
 		HashMap<String, Integer> dummyValsTS = new HashMap<>();
@@ -63,17 +68,17 @@ public class RDEMSMontrealServer {
 //		dummyValsTS.put("MTLE120519", 15);
 		mtlDb.put(eventTypes[2], dummyValsTS);
 
-		displaymtlDbContents();
+//		displaymtlDbContents();
 		String registryURL;
 		try {
 			int RMIPortNum, portNum;
-			portNum = RMIPortNum = 4002;
+			portNum = RMIPortNum = Ports.MONTREAL_SERVER_PORT;
 			startRegistry(RMIPortNum);
-			RDEMSInterfaceImpl exportedObj = new RDEMSInterfaceImpl();
+			DEMSInterfaceImpl exportedObj = new DEMSInterfaceImpl();
 			registryURL = "rmi://localhost:" + portNum + "/montreal";
 			Naming.rebind(registryURL, exportedObj);
-			/**/ System.out.println
-			/**/ ("Server registered.  Registry currently contains:");
+//			/**/ System.out.println
+//			/**/ ("Server registered.  Registry currently contains:");
 			/**/ listRegistry(registryURL);
 			System.out.println("Montreal Server ready.");
 		} // end try
@@ -101,78 +106,70 @@ public class RDEMSMontrealServer {
 								// if the registry does not already exist
 		} catch (RemoteException e) {
 			// No valid registry at that port.
-			/**/ System.out.println
-			/**/ ("RMI registry cannot be located at port "/**/ + RMIPortNum);
+//			/**/ System.out.println
+//			/**/ ("RMI registry cannot be located at port "/**/ + RMIPortNum);
 			Registry registry = LocateRegistry.createRegistry(RMIPortNum);
-			/**/ System.out.println(/**/ "RMI registry created at port " + RMIPortNum);
+//			/**/ System.out.println(/**/ "RMI registry created at port " + RMIPortNum);
 		}
 	}
 
 	// This method lists the names registered with a Registry object
 	private static void listRegistry(String registryURL) throws RemoteException, MalformedURLException {
-		System.out.println("Registry " + registryURL + " contains: ");
+//		System.out.println("Registry " + registryURL + " contains: ");
 		String[] names = Naming.list(registryURL);
-		for (int i = 0; i < names.length; i++)
-			System.out.println(names[i]);
+//		for (int i = 0; i < names.length; i++)
+//			System.out.println(names[i]);
 	} // end listRegistry
 	
-	public synchronized static String addEvent(String eventID, String eventType, int bookingCapacity) {
+	public synchronized static Response addEvent(String eventID, String eventType, int bookingCapacity) {
+
 		HashMap<String, Integer> temp = (HashMap<String, Integer>) mtlDb.get(eventType).clone();
 
 		if (temp.containsKey(eventID)) {
-			int newCap = temp.get(eventID)+ bookingCapacity;
+			int newCap = temp.get(eventID) + bookingCapacity;
 			temp.put(eventID, newCap);
-		}else {
+		} else {
 			temp.put(eventID, bookingCapacity);
 		}
 		temp.put(eventID, bookingCapacity);
 		mtlDb.put(eventType, temp);
 		displaymtlDbContents();
 		displayCustomerInfo();
-		return "Added!";
+		return new Response("Event " + eventID + " Added!", true);
 	}
-	
-	public synchronized static String swapEvent(String customerID, String newEventID, String newEventType, String oldEventID,
-			String oldEventType) {
-		String res = "Event could not be swapped!";
+
+	public synchronized static Response swapEvent(String customerID, String newEventID, String newEventType,
+			String oldEventID, String oldEventType) {
+		Response res = new Response("Event could not be swapped!", false);
 		HashMap<String, Integer> temp1 = (HashMap<String, Integer>) mtlDb.get(oldEventType).clone();
-		HashMap<String, Integer> temp2 = (HashMap<String, Integer>) RDEMSOttawaServer.returnDb().get(oldEventType)
+		HashMap<String, Integer> temp2 = (HashMap<String, Integer>) DEMSTorontoServer.returnDb().get(oldEventType)
 				.clone();
-		HashMap<String, Integer> temp3 = (HashMap<String, Integer>) RDEMSTorontoServer.returnDb().get(oldEventType)
+		HashMap<String, Integer> temp3 = (HashMap<String, Integer>) DEMSOttawaServer.returnDb().get(oldEventType)
 				.clone();
 		if (temp1.containsKey(oldEventID) || temp2.containsKey(oldEventID) || temp3.containsKey(oldEventID)) {
-			if (mtlCustomerInfo.containsKey(customerID) && mtlCustomerInfo.get(customerID).contains(oldEventID)) {
-				String msg1 = bookEvent(customerID, newEventID, newEventType);
-				if (!msg1.equals("Event successfully Booked")) {
-//				res = "Event cannot be swapped";
-					return msg1;
-				}
-				String msg2 = cancelEvent(customerID, oldEventID);
-				if (!msg2.equals("Event successfully cancelled")) {
-					res = "Event could not be swapped: " + msg2;
-					cancelEvent(customerID, oldEventID);
-					return res;
-				}
-				res = " Event succefully swapped";
-				logOperation("Swap Performed", newEventID, newEventType, "NA", "NA", "Succeeded");
-				displaymtlDbContents();
-				displayCustomerInfo();
-			} else {
-				res = "Event could not be swapped since this event wasnt booked!";
+			Response temp = bookEvent(customerID, newEventID, newEventType);
+			if (temp.getMessage().equals("customer cannot book more than 3 outside city events in the same month")) {
+				res = new Response(
+						"Event cannot be swapped since customer cannot book more than 3 outside city events in the same month",
+						false);
+				return res;
 			}
-		} else {
-			res = "Event could not be swapped since this event wasnt booked!";
+			cancelEvent(customerID, oldEventID);
+			res = new Response("Event succefully swapped",true);
+			logOperation("Swap Performed", newEventID, newEventType, "NA", "NA", "Succeeded");
+			displaymtlDbContents();
+			displayCustomerInfo();
 		}
 		return res;
 	}
 
-	public synchronized static String removeEvent(String eventID, String eventType) {
+	public synchronized static Response removeEvent(String eventID, String eventType) {
 //		dummyVals always smtled in the DB so no need to check for an empty sub-HashMap for any eventType
 
 		HashMap<String, Integer> temp = (HashMap<String, Integer>) mtlDb.get(eventType).clone();
 
 		if (!temp.containsKey(eventID)) {
-			return "Event doesn't exist";
+			return new Response("Event doesn't exist",false);
 		}
 		for (ArrayList<String> al : mtlCustomerInfo.values()) {
 			if (al.contains(eventID)) {
@@ -187,25 +184,25 @@ public class RDEMSMontrealServer {
 		mtlDb.put(eventType, temp);
 		displaymtlDbContents();
 		displayCustomerInfo();
-		return "Event successfully removed!";
+		return new Response(eventID+" successfulyy removed!",true);
 	}
 
-	public synchronized static String getBookingSchedule(String customerID) {
-		String msg="";
+	public synchronized static Response getBookingSchedule(String customerID) {
+		String msg = "";
 		if (!mtlCustomerInfo.containsKey(customerID)) {
 			System.out.println("No events to display!");
-			return "No events to display!";
+			return new Response("No events to display!",false);
 		}
 //		TODO: Get events from other servers for this customerID.
 		System.out.println(customerID + ":" + mtlCustomerInfo.get(customerID).toString());
-		msg+= "\n" + customerID + ":" + mtlCustomerInfo.get(customerID).toString();
-		return msg;
+		msg += "\n" + customerID + ":" + mtlCustomerInfo.get(customerID).toString();
+		return new Response(msg,true);
 	}
-	
-	public synchronized static String bookEvent(String customerID, String eventID, String eventType) {
+
+	public synchronized static Response bookEvent(String customerID, String eventID, String eventType) {
 		if (mtlCustomerInfo.containsKey(customerID) && mtlCustomerInfo.get(customerID) != null
 				&& mtlCustomerInfo.get(customerID).contains(eventID)) {
-			return "This event was already booked!";
+			return new Response("This event was already booked!",false);
 		}
 		String month = eventID.substring(6, 8);
 		if (mtlCustomerInfo.containsKey(customerID) && !eventID.contains("MTL")) {
@@ -222,22 +219,16 @@ public class RDEMSMontrealServer {
 			}
 
 			if (count >= 3) {
-				return "customer cannot book more than 3 outside city events in the same month";
+				return new Response( "customer cannot book more than 3 outside city events in the same month",false);
 			}
 
 		}
-		System.out.println("greeshma: "+eventType);
 		if (eventID.contains("MTL")) {
-			
-			System.out.println("greeshma: "+"enetered inside");
 			HashMap<String, Integer> temp = (HashMap<String, Integer>) mtlDb.get(eventType).clone();
-			System.out.println(temp);
-			if (!temp.containsKey(eventID) ) {
-				System.out.println("greeshma here");
-				return "This event does not exist!";
-			}
-			else if(temp.get(eventID) == 0)
-				return "Event capacity is zero";
+			if (!temp.containsKey(eventID)) {
+				return new Response("This event does not exist!",false);
+			} else if (temp.get(eventID) == 0)
+				return new Response("Event capacity is zero",false);
 			temp.put(eventID, temp.get(eventID) - 1);
 			mtlDb.put(eventType, temp);
 			displayCustomerInfo();
@@ -250,86 +241,67 @@ public class RDEMSMontrealServer {
 		mtlCustomerInfo.put(customerID, temp1);
 		displaymtlDbContents();
 		displayCustomerInfo();
-		return "Event successfully Booked";
+		return new Response("Event successfully Booked",true);
 	}
 
-	public synchronized static String cancelEvent(String customerID, String eventID) {
+	public synchronized static Response cancelEvent(String customerID, String eventID) {
 		if (mtlCustomerInfo.containsKey(customerID) && mtlCustomerInfo.get(customerID) != null
 				&& mtlCustomerInfo.get(customerID).contains(eventID)) {
-			
-		if (eventID.contains("MTL")) {
-			if (mtlCustomerInfo.containsKey(customerID) && mtlCustomerInfo.get(customerID) != null
-					&& mtlCustomerInfo.get(customerID).contains(eventID)) {
-				for (String eType : mtlDb.keySet()) {
-					for (String eID : mtlDb.get(eType).keySet()) {
-						if (eID.equalsIgnoreCase(eventID)) {
-							System.out.println("entered");
-							ArrayList<String> temp1 = mtlCustomerInfo.get(customerID);
-							temp1.remove(eventID);
-							if (temp1.size() == 0)
-								mtlCustomerInfo.remove(customerID);
-							else
-								mtlCustomerInfo.put(customerID, temp1);
-							HashMap<String, Integer> temp = (HashMap<String, Integer>) mtlDb.get(eType).clone();
-							temp.put(eID, temp.get(eID) + 1);
-							mtlDb.put(eType, temp);
-							displaymtlDbContents();
-							displayCustomerInfo();
-							return "Event successfully cancelled";
+
+			if (eventID.contains("MTL")) {
+				if (mtlCustomerInfo.containsKey(customerID) && mtlCustomerInfo.get(customerID) != null
+						&& mtlCustomerInfo.get(customerID).contains(eventID)) {
+					for (String eType : mtlDb.keySet()) {
+						for (String eID : mtlDb.get(eType).keySet()) {
+							if (eID.equalsIgnoreCase(eventID)) {
+								System.out.println("entered");
+								ArrayList<String> temp1 = mtlCustomerInfo.get(customerID);
+								temp1.remove(eventID);
+								if (temp1.size() == 0)
+									mtlCustomerInfo.remove(customerID);
+								else
+									mtlCustomerInfo.put(customerID, temp1);
+								HashMap<String, Integer> temp = (HashMap<String, Integer>) mtlDb.get(eType).clone();
+								temp.put(eID, temp.get(eID) + 1);
+								mtlDb.put(eType, temp);
+								displaymtlDbContents();
+								displayCustomerInfo();
+								return new Response("Event successfully cancelled",true);
+							}
 						}
 					}
 				}
-			}
-		} else {
-			for (String eType : mtlDb.keySet()) {
-				for (String eID : mtlDb.get(eType).keySet()) {
-					if (eID.equalsIgnoreCase(eventID)) {
-						HashMap<String, Integer> temp = (HashMap<String, Integer>) mtlDb.get(eType).clone();
-						temp.put(eID, temp.get(eID) + 1);
-						mtlDb.put(eType, temp);
+			} else {
+				for (String eType : mtlDb.keySet()) {
+					for (String eID : mtlDb.get(eType).keySet()) {
+						if (eID.equalsIgnoreCase(eventID)) {
+							HashMap<String, Integer> temp = (HashMap<String, Integer>) mtlDb.get(eType).clone();
+							temp.put(eID, temp.get(eID) + 1);
+							mtlDb.put(eType, temp);
+						}
 					}
 				}
+				UDPclient(customerID, eventID, "", "cancel");
+				ArrayList<String> temp1 = mtlCustomerInfo.get(customerID);
+				temp1.remove(eventID);
+				displaymtlDbContents();
+				return new Response("Event successfully cancelled",true);
 			}
-			UDPclient(customerID, eventID, "","cancel");
-			ArrayList<String> temp1 = mtlCustomerInfo.get(customerID);
-			temp1.remove(eventID);
-			displaymtlDbContents();
-			return "Cancelled";
+			return new Response("This event cannot be cancelled",false);
 		}
-		return "This event cannot be cancelled";
-		}
-		return "Event doesn't exist";
+		return new Response("Event doesn't exist",false);
 	}
-	
-	public synchronized static String dispEventAvailability(String eventType) {
-		System.out.println("Entered Montreal");
+
+	public synchronized static Response dispEventAvailability(String eventType) {
 		String msg = "";
-		System.out.println("\n------------EVENTS------------");
-		msg += "\n------------EVENTS------------";
-		System.out.println(eventType + ": ");
-		msg += "\n" + eventType + ": ";
 		HashMap<String, Integer> temp = mtlDb.getOrDefault(eventType, new HashMap<String, Integer>());
-		
-		for(String EventID:temp.keySet()) {
-			msg+= "\n"+EventID + " "+ temp.get(EventID);
+		msg += "MTL|";
+		for (String EventID : temp.keySet()) {
+			msg += EventID + ":" + temp.get(EventID)+",";
 		}
-	
-		
-//		System.out.println(temp.keySet().toString());
-		
-//		msg += "\n" + temp.keySet().toString();
-		
-//		System.out.println(temp.values());
-		
-//		msg += "\n" + temp.values();
-		
-		System.out.println("-----------------------------------");
-		msg += "\n" + "-----------------------------------";
-//		UDPclient("MTL", "MTL", eventType, "disp");
-//		UDPclient("OTW", "OTW", eventType, "disp");
-		return msg;
+		msg+="||";
+		return new Response(msg,true);
 	}
-	
 
 	public static void displaymtlDbContents() {
 		System.out.println("\n------------DATABASE CONT.------------");
@@ -350,20 +322,20 @@ public class RDEMSMontrealServer {
 		}
 		System.out.println("-----------------------------------");
 	}
-	
-	public static void logOperation(String name, String eventID, String eventType,String customerID, String bookingCap, String status) {
-		
+
+	public static void logOperation(String name, String eventID, String eventType, String customerID, String bookingCap,
+			String status) {
+
 		try {
 			FileWriter fw = new FileWriter("MontrealLogs.txt", true);
 			BufferedWriter bw = new BufferedWriter(fw);
 			writer = new PrintWriter(bw);
 		} catch (IOException e) {
 			e.printStackTrace();
-		}String timeStamp = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
-		String log = "\n"+name + "Performed.\nTime: " + timeStamp 
-				+ "\nCustomerID: " + customerID+ "\nEventID: " 
-				+ eventID +  "\nEventType: " + eventType +  "\nBooking Capacity: " + bookingCap
-				+"\nStatus: "+status ;
+		}
+		String timeStamp = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
+		String log = "\n" + name + "Performed.\nTime: " + timeStamp + "\nCustomerID: " + customerID + "\nEventID: "
+				+ eventID + "\nEventType: " + eventType + "\nBooking Capacity: " + bookingCap + "\nStatus: " + status;
 		writer.println(log);
 		writer.close();
 	}
@@ -424,7 +396,7 @@ public class RDEMSMontrealServer {
 			aSocket = new DatagramSocket(1001);
 			byte[] buffer = new byte[1000];// to stored the received data from
 			// the client.
-			System.out.println("Listener Server Started for Toronto...");
+//			System.out.println("Listener Server Started for Toronto...");
 			while (true) {// non-terminating loop as the server is always in listening mode.
 				DatagramPacket request = new DatagramPacket(buffer, buffer.length);
 				// Server waits for the request to come
@@ -443,12 +415,12 @@ public class RDEMSMontrealServer {
 					reply = new DatagramPacket(replied, replied.length, request.getAddress(), request.getPort());// reply
 				} else if (list[0].equals("cancel")) {
 					cancelEvent(list[1], list[2]);
-					String buff = list[3] + ":" + list[2] + " successfully cancelled by tor to mon for " + list[1];
+					String buff = list[3] + ":" + list[2] + " successfully cancelled for " + list[1];
 					byte[] replied = buff.getBytes();
 					reply = new DatagramPacket(replied, replied.length, request.getAddress(), request.getPort());// reply
-				}else if (list[0].equals("disp")) {
+				} else if (list[0].equals("disp")) {
 					System.out.println("recieved sdispo");
-					dispEventAvailability( list[3]);
+					dispEventAvailability(list[3]);
 					String buff = list[3] + ":" + list[2] + "Availability displayed for " + list[3];
 					byte[] replied = buff.getBytes();
 					reply = new DatagramPacket(replied, replied.length, request.getAddress(), request.getPort());// reply
@@ -467,14 +439,13 @@ public class RDEMSMontrealServer {
 		return false;
 	}
 
-	public static String ottawaListener() {
+	public static boolean ottawaListener() {
 		DatagramSocket aSocket = null;
-		String res="null";
 		try {
 			aSocket = new DatagramSocket(1002);
 			byte[] buffer = new byte[1000];// to stored the received data from
 			// the client.
-			System.out.println("Listener Server Started for Ottawa...");
+//			System.out.println("Listener Server Started for Ottawa...");
 			while (true) {// non-terminating loop as the server is always in listening mode.
 				DatagramPacket request = new DatagramPacket(buffer, buffer.length);
 
@@ -488,8 +459,8 @@ public class RDEMSMontrealServer {
 				DatagramPacket reply = null;
 				if (list[0].equals("book")) {
 					System.out.println("listener booked for :" + list[1] + list[2] + list[3]);
-					 res=bookEvent(list[1], list[2], list[3]);
-					String buff = res;
+					bookEvent(list[1], list[2], list[3]);
+					String buff = list[3] + ":" + list[2] + " successfully booked for " + list[1];
 					byte[] replied = buff.getBytes();
 					reply = new DatagramPacket(replied, replied.length, request.getAddress(), request.getPort());// reply
 																													// packet
@@ -514,10 +485,8 @@ public class RDEMSMontrealServer {
 				aSocket.close();
 
 		}
-		return res;
+		return false;
 	}
-
-	
 
 
 

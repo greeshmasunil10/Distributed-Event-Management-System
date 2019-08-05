@@ -2062,3 +2062,155 @@ EventID: MTLM123123
 EventType: Seminars
 Booking Capacity: NA
 Status: This event does not exist!                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+
+addEventPerformed.
+Time: 2019/08/03 19:05:45
+CustomerID: NA
+EventID: TORM020202
+EventType: Seminars
+Booking Capacity: NA
+Status: Event TORM020202 Added!
+
+bookEventPerformed.
+Time: 2019/08/03 19:05:51
+CustomerID: NA
+EventID: NA
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/03 19:14:04
+CustomerID: NA
+EventID: TORM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: TORM112211 Successfully Booked!
+
+swapEventPerformed.
+Time: 2019/08/03 19:14:27
+CustomerID: TORC12
+EventID: TORM112211
+EventType: OTW112211
+Booking Capacity: NA
+Status: Event could not be swapped!
+
+bookEventPerformed.
+Time: 2019/08/03 19:17:24
+CustomerID: NA
+EventID: TORM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: TORM112211 Successfully Booked!
+
+bookEventPerformed.
+Time: 2019/08/03 19:17:30
+CustomerID: NA
+EventID: TORM332233
+EventType: Seminars
+Booking Capacity: NA
+Status: TORM332233 Successfully Booked!
+
+bookEventPerformed.
+Time: 2019/08/03 19:20:49
+CustomerID: NA
+EventID: TORM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: TORM112211 Successfully Booked!
+
+bookEventPerformed.
+Time: 2019/08/03 19:23:17
+CustomerID: NA
+EventID: TORM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked"
+
+bookEventPerformed.
+Time: 2019/08/03 19:24:03
+CustomerID: NA
+EventID: TORM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/03 19:25:51
+CustomerID: NA
+EventID: TORM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/03 19:28:52
+CustomerID: NA
+EventID: TORM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/03 19:31:23
+CustomerID: NA
+EventID: TORM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/03 19:32:44
+CustomerID: NA
+EventID: OTWM222222
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/03 19:32:56
+CustomerID: NA
+EventID: OTWM332233
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/03 19:33:26
+CustomerID: NA
+EventID: MTLM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/03 19:35:18
+CustomerID: NA
+EventID: OTWM222222
+EventType: Seminars
+Booking Capacity: NA
+Status: This event was already booked!
+
+bookEventPerformed.
+Time: 2019/08/03 21:14:31
+CustomerID: NA
+EventID: NA
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/03 21:15:17
+CustomerID: NA
+EventID: NA
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/04 21:27:39
+CustomerID: NA
+EventID: NA
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded

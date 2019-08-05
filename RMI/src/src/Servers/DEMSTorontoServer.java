@@ -1,4 +1,5 @@
 package Servers;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -24,10 +25,16 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 
-import RMI.RDEMSInterfaceImpl;
+import Helper.Ports;
+import Helper.Response;
+import Model.Messages;
+import Model.Messages.add;
+import Model.Messages.remove;
+import Servers.DEMSMontrealServer;
+import Servers.DEMSOttawaServer;
+import Shared.DEMSInterfaceImpl;
 
-
-public class RDEMSTorontoServer {
+public class DEMSTorontoServer {
 
 	public static HashMap<String, HashMap<String, Integer>> torDb = new HashMap<>();
 	public static HashMap<String, ArrayList<String>> torCustomerInfo = new HashMap<>();
@@ -35,17 +42,16 @@ public class RDEMSTorontoServer {
 	static String[] eventTypes = { "Conferences", "Seminars", "Trade Shows" };
 	static PrintWriter writer;
 	static String sample = "abc";
-	public static RDEMSInterfaceImpl ImpObj;
-
+	public static DEMSInterfaceImpl ImpObj;
 
 	public static void startServer() throws RemoteException {
 
-		System.out.println("Starting Toronto Server....");
-		ImpObj = new RDEMSInterfaceImpl();
-		
+//		System.out.println("Starting Toronto Server....");
+		ImpObj = new DEMSInterfaceImpl();
+
 //		Seminars, Conferences and Trade Shows keys are populated with dummy event data
 		torManagers.addAll(Arrays.asList("TORM1221", "TORM1000", "TORM2222"));
-		
+
 		HashMap<String, Integer> dummyValsConf = new HashMap<>();
 //		dummyValsConf.put("TORM100519", 5);
 //		dummyValsConf.put("TORA100519", 10);
@@ -67,23 +73,22 @@ public class RDEMSTorontoServer {
 //		sample = "greeshma";
 //		System.out.println("added:" + sample);
 
-		displayTorDbContents();
-		System.out.println("Toronto Server ready.");
-		
+//		displayTorDbContents();
+//		System.out.println("Toronto Server is ready.");
+
 		String registryURL;
 		try {
-			int RMIPortNum = 4001;
+			int RMIPortNum = Ports.TORONTO_SERVER_PORT;
 			startRegistry(RMIPortNum);
-			RDEMSInterfaceImpl exportedObj = new RDEMSInterfaceImpl();
-			registryURL = "rmi://localhost:4001/toronto";
+			DEMSInterfaceImpl exportedObj = new DEMSInterfaceImpl();
+			registryURL = "rmi://localhost:"+RMIPortNum+"/toronto";
 			Naming.rebind(registryURL, exportedObj);
-			System.out.println("Server registered.  Registry currently contains:");
+//			System.out.println("Server registered.  Registry currently contains:");
 			listRegistry(registryURL);
-			System.out.println("Toronto Server ready.");
+			System.out.println("Toronto Server is ready.");
 		} catch (Exception re) {
 			System.out.println("Exception in TorontoServer.main: " + re);
 		}
-		
 
 		Runnable task2 = () -> {
 			montrealListener();
@@ -104,9 +109,9 @@ public class RDEMSTorontoServer {
 			registry.list();
 		} catch (RemoteException e) {
 
-			System.out.println("RMI registry cannot be located at port " + RMIPortNum);
+//			System.out.println("RMI registry scannot be located at port " + RMIPortNum);
 			Registry registry = LocateRegistry.createRegistry(RMIPortNum);
-			System.out.println("RMI registry created at port " + RMIPortNum);
+//			System.out.println("RMI registry created at port " + RMIPortNum);
 		}
 	}
 
@@ -115,53 +120,49 @@ public class RDEMSTorontoServer {
 	}
 
 	private static void listRegistry(String registryURL) throws RemoteException, MalformedURLException {
-		System.out.println("Registry " + registryURL + " contains: ");
+//		System.out.println("Registry " + registryURL + " contains: ");
 		String[] names = Naming.list(registryURL);
-		for (int i = 0; i < names.length; i++)
-			System.out.println(names[i]);
+//		for (int i = 0; i < names.length; i++)
+//			System.out.println(names[i]);
 	}
-	public synchronized static String swapEvent(String customerID, String newEventID, String newEventType,
+
+	public synchronized static Response swapEvent(String customerID, String newEventID, String newEventType,
 			String oldEventID, String oldEventType) {
-		String res = "Event could not be swapped!";
+		Response res = new Response("Event could not be swapped!", false);
 		HashMap<String, Integer> temp1 = (HashMap<String, Integer>) torDb.get(oldEventType).clone();
-		HashMap<String, Integer> temp2 = (HashMap<String, Integer>) RDEMSMontrealServer.returnDb().get(oldEventType)
+		HashMap<String, Integer> temp2 = (HashMap<String, Integer>) DEMSMontrealServer.returnDb().get(oldEventType)
 				.clone();
-		HashMap<String, Integer> temp3 = (HashMap<String, Integer>) RDEMSOttawaServer.returnDb().get(oldEventType)
+		HashMap<String, Integer> temp3 = (HashMap<String, Integer>) DEMSOttawaServer.returnDb().get(oldEventType)
 				.clone();
-		if (temp1.containsKey(oldEventID) || temp2.containsKey(oldEventID) 
-				|| temp3.containsKey(oldEventID)) {
-			if (torCustomerInfo.containsKey(customerID) 
-					&& torCustomerInfo.get(customerID).contains(oldEventID)) {
-				String msg1=bookEvent(customerID, newEventID,newEventType );
-				if(!msg1.equals("Event successfully Booked"))
-				{
+		if (temp1.containsKey(oldEventID) || temp2.containsKey(oldEventID) || temp3.containsKey(oldEventID)) {
+			if (torCustomerInfo.containsKey(customerID) && torCustomerInfo.get(customerID).contains(oldEventID)) {
+				Response msg1 = bookEvent(customerID, newEventID, newEventType);
+				if (!msg1.getMessage().equals("Event successfully Booked")) {
 //					res="Event cannot be swapped since customer cannot book more than 3 outside city events in the same month";
-					return "Event could not be swapped since:"+msg1;
-				}				
-				String msg2=cancelEvent(customerID, oldEventID);
-				if(!msg2.equals("Event successfully cancelled")) {
-					res="Event could not be swapped: "+msg2;
+					return new Response("Event could not be swapped since:" + msg1.getMessage(), false);
+				}
+				Response msg2 = cancelEvent(customerID, oldEventID);
+				if (!msg2.getMessage().equals("Event successfully cancelled")) {
+					res = new Response("Event could not be swapped: " + msg2.getMessage(), false);
 					cancelEvent(customerID, oldEventID);
 					return res;
 				}
-					
-				res = "Event succesfully swapped";
+
+				res = new Response("Event succesfully swapped", true);
 				logOperation("Swap Performed", newEventID, newEventType, "NA", "NA", "Succeeded");
 				displayTorDbContents();
 				displayCustomerInfo();
+			} else {
+				res = new Response("Event could not be swapped since this event wasnt booked!", false);
 			}
-			else {
-				 res = "Event could not be swapped since this event wasnt booked!";
-			}
-		}
-		else {
-			 res = "Event could not be swapped since this event wasnt booked!";
+		} else {
+			res = new Response("Event could not be swapped since this event wasnt booked!", false);
 		}
 
 		return res;
 	}
 
-	public synchronized static String addEvent(String eventID, String eventType, int bookingCapacity) {
+	public synchronized static Response addEvent(String eventID, String eventType, int bookingCapacity) {
 //		dummyVals always stored in the DB so no need to check for an empty sub-HashMap for any eventType
 		HashMap<String, Integer> temp = (HashMap<String, Integer>) torDb.get(eventType).clone();
 
@@ -175,15 +176,15 @@ public class RDEMSTorontoServer {
 		torDb.put(eventType, temp);
 		displayTorDbContents();
 		displayCustomerInfo();
-		return "Added!";
+		return new Response(add.SUCCESS.message, true);
 	}
 
-	public synchronized static String removeEvent(String eventID, String eventType) {
+	public synchronized static Response removeEvent(String eventID, String eventType) {
 //		dummyVals always stored in the DB so no need to check for an empty sub-HashMap for any eventType
 		HashMap<String, Integer> temp = (HashMap<String, Integer>) torDb.get(eventType).clone();
 
 		if (!temp.containsKey(eventID)) {
-			return "Event doesn't exist";
+			return new Response(remove.DOESNTEXIST.message, false);
 		}
 		for (ArrayList<String> al : torCustomerInfo.values()) {
 			if (al.contains(eventID)) {
@@ -198,44 +199,24 @@ public class RDEMSTorontoServer {
 		torDb.put(eventType, temp);
 		displayTorDbContents();
 		displayCustomerInfo();
-		return "Event successfully removed!";
+		return new Response(remove.SUCCESS.message, true);
 	}
 
-	public synchronized static String dispEventAvailability(String eventType) {
-		System.out.println("entered toronto");
+	public synchronized static Response dispEventAvailability(String eventType) {
 		String msg = "";
-		System.out.println("\n------------EVENTS------------");
-		msg += "\n------------EVENTS------------";
-		System.out.println(eventType + ": ");
-		msg += "\n" + eventType + ": ";
 		HashMap<String, Integer> temp = torDb.getOrDefault(eventType, new HashMap<String, Integer>());
-
+		msg += "TOR|";
 		for (String EventID : temp.keySet()) {
-			msg += "\n" + EventID + " " + temp.get(EventID);
+			msg += EventID + ":" + temp.get(EventID) + ",";
 		}
-
-//		System.out.println(temp.keySet().toString());
-
-//		msg += "\n" + temp.keySet().toString();
-
-//		System.out.println(temp.values());
-
-//		msg += "\n" + temp.values();
-
-		System.out.println("-----------------------------------");
-		msg += "\n" + "-----------------------------------";
-		msg+=RDEMSMontrealServer.dispEventAvailability(eventType);
-		msg+=RDEMSOttawaServer.dispEventAvailability(eventType);
-//		UDPclient("MTL", "MTL", eventType, "disp");
-//		UDPclient("OTW", "OTW", eventType, "disp");
-		return msg;
+		msg += "||";
+		return new Response(msg, true);
 	}
 
-	public synchronized static String bookEvent(String customerID, String eventID, String eventType) {
-		if (torCustomerInfo.containsKey(customerID) 
-				&& torCustomerInfo.get(customerID) != null
+	public synchronized static Response bookEvent(String customerID, String eventID, String eventType) {
+		if (torCustomerInfo.containsKey(customerID) && torCustomerInfo.get(customerID) != null
 				&& torCustomerInfo.get(customerID).contains(eventID)) {
-			return "This event was already booked!";
+			return new Response("This event was already booked!", false);
 		}
 		String month = eventID.substring(6, 8);
 		if (torCustomerInfo.containsKey(customerID) && !eventID.contains("TOR")) {
@@ -252,35 +233,42 @@ public class RDEMSTorontoServer {
 			}
 
 			if (count >= 3) {
-				return "customer cannot book more than 3 outside city events in the same month";
-				
+				return new Response("customer cannot book more than 3 outside city events in the same month", false);
 			}
 
 		}
 		if (eventID.contains("TOR")) {
+			System.out.println(eventTypes[0]);
+			System.out.println(sample);
 			HashMap<String, Integer> temp = (HashMap<String, Integer>) torDb.get(eventType).clone();
-			if (!temp.containsKey(eventID) ) {
-				return "This event does not exist!";
-			}
-			else if(temp.get(eventID) == 0)
-				return "Event capacity is zero";
+			if (!temp.containsKey(eventID)) {
+				return new Response("This event does not exist!", false);
+			} else if (temp.get(eventID) == 0)
+				return new Response("Event capacity is zero", false);
 			temp.put(eventID, temp.get(eventID) - 1);
 			torDb.put(eventType, temp);
 			displayTorDbContents();
-		} else {
-			UDPclient(customerID, eventID, eventType, "book");
+		} else if (eventID.contains("MTL")) {
+			DEMSMontrealServer.bookEvent(customerID, eventID, eventType);
+		} else if (eventID.contains("OTW")) {
+			DEMSOttawaServer.bookEvent(customerID, eventID, eventType);
 		}
+
+//		{
+
+//			UDPclient(customerID, eventID, eventType, "book");
+//		}
 		ArrayList<String> temp1 = torCustomerInfo.get(customerID) == null ? (new ArrayList<>())
 				: torCustomerInfo.get(customerID);
 		temp1.add(eventID);
 		torCustomerInfo.put(customerID, temp1);
 		displayTorDbContents();
 		displayCustomerInfo();
-		return "Event successfully Booked";
+		return new Response("Event successfully Booked", false);
 
 	}
 
-	public synchronized static String cancelEvent(String customerID, String eventID) {
+	public synchronized static Response cancelEvent(String customerID, String eventID) {
 
 		if (torCustomerInfo.containsKey(customerID) && torCustomerInfo.get(customerID) != null
 				&& torCustomerInfo.get(customerID).contains(eventID)) {
@@ -300,7 +288,7 @@ public class RDEMSTorontoServer {
 							temp.put(eID, temp.get(eID) + 1);
 							torDb.put(eType, temp);
 							displayTorDbContents();
-							return "Event successfully cancelled";
+							return new Response("Event successfully cancelled", true);
 						}
 					}
 				}
@@ -318,25 +306,46 @@ public class RDEMSTorontoServer {
 				ArrayList<String> temp1 = torCustomerInfo.get(customerID);
 				temp1.remove(eventID);
 				displayCustomerInfo();
-				return "Cancelled";
+				return new Response("Event successfully cancelled", true);
 
 			}
-			return "This event cannot be cancelled!";
+			return new Response("This event cannot be cancelled!", false);
 		}
-		return "The event doesn't exist/ not in your schedule!";
+		return new Response("The event doesn't exist/ not in your schedule!", false);
 	}
 
-	public synchronized static String getBookingSchedule(String customerID) {
+	public synchronized static Response getBookingSchedule(String customerID) {
 
-		String msg = "";
+		String msg="";
 		if (!torCustomerInfo.containsKey(customerID)) {
 			System.out.println("No events to display!");
-			return "No events to display!";
+			return new Response("No events to display!", false);
 		}
 //		TODO: Get events from other servers for this customerID.
-		System.out.println(customerID + ":" + torCustomerInfo.get(customerID).toString());
-		msg += "\n" + customerID + ":" + torCustomerInfo.get(customerID).toString();
-		return msg;
+//		System.out.println(customerID + ":" + torCustomerInfo.get(customerID).toString());
+		ArrayList<String> al = torCustomerInfo.get(customerID);
+		msg += "OTW|";
+		for (String id : al) {
+			if(id.contains("OTW")) {
+				msg +=id+",";
+			}
+		}
+		msg+="||";
+		msg += "MTL|";
+		for (String id : al) {
+			if(id.contains("MTL")) {
+				msg +=id+",";
+			}
+		}
+		msg+="||";
+		msg += "TOR|";
+		for (String id : al) {
+			if(id.contains("TOR")) {
+				msg +=id+",";
+			}
+		}
+		msg+="||";
+		return new Response(msg, true);
 	}
 
 //	Helper Method to print contents of the modified DB after an operation done on it
@@ -434,7 +443,7 @@ public class RDEMSTorontoServer {
 			aSocket = new DatagramSocket(3002);
 			byte[] buffer = new byte[1000];// to stored the received data from
 			// the client.
-			System.out.println("Listener Server Started for Ottawa...");
+//			System.out.println("Listener Server Started for Ottawa...");
 			while (true) {// non-terminating loop as the server is always in listening mode.
 				DatagramPacket request = new DatagramPacket(buffer, buffer.length);
 
@@ -483,7 +492,7 @@ public class RDEMSTorontoServer {
 			aSocket = new DatagramSocket(3001);
 			byte[] buffer = new byte[1000];// to stored the received data from
 			// the client.
-			System.out.println("Listener Server Started for Montreal...");
+//			System.out.println("Listener Server Started for Montreal...");
 			while (true) {// non-terminating loop as the server is always in listening mode.
 				DatagramPacket request = new DatagramPacket(buffer, buffer.length);
 

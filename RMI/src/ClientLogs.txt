@@ -4247,3 +4247,528 @@ CustomerID: TORM123
 EventID: NA
 EventType: Seminars
 Status: Succeeded
+
+addEventPerformed.
+Time: 2019/08/03 19:05:45
+CustomerID: TORM
+EventID: TORM020202
+EventType: Seminars
+Status: Event TORM020202 Added!
+
+listEventAvailabilityPerformed.
+Time: 2019/08/03 19:05:51
+CustomerID: TORM
+EventID: NA
+EventType: Seminars
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/03 19:14:04
+CustomerID: TORC12
+EventID: TORM112211
+EventType: Seminars
+Status: TORM112211 Successfully Booked!
+
+Swap EventPerformed.
+Time: 2019/08/03 19:14:27
+CustomerID: TORC12
+EventID: TORM112211
+EventType: Seminars
+Status: Event could not be swapped!
+
+bookEventPerformed.
+Time: 2019/08/03 19:17:24
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: TORM112211 Successfully Booked!
+
+bookEventPerformed.
+Time: 2019/08/03 19:17:30
+CustomerID: TORC123
+EventID: TORM332233
+EventType: Seminars
+Status: TORM332233 Successfully Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:17:30
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/08/03 19:17:40
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event could not be swapped since:Helpers.Response@6c17679b
+
+bookEventPerformed.
+Time: 2019/08/03 19:20:49
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: TORM112211 Successfully Booked!
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:20:51
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/08/03 19:21:12
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event could not be swapped since:OTWM112211 Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:21:18
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/03 19:23:17
+CustomerID: TORC13
+EventID: TORM112211
+EventType: Seminars
+Status: Event successfully Booked"
+
+bookEventPerformed.
+Time: 2019/08/03 19:24:03
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+Swap EventPerformed.
+Time: 2019/08/03 19:24:24
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event could not be swapped: TORM112211 successfully Cancelled
+
+bookEventPerformed.
+Time: 2019/08/03 19:25:51
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:25:53
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/08/03 19:26:10
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event could not be swapped: TORM112211Event successfully cancelled
+
+bookEventPerformed.
+Time: 2019/08/03 19:28:52
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:28:53
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/08/03 19:29:07
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event could not be swapped: TORM112211Event successfully cancelled
+
+bookEventPerformed.
+Time: 2019/08/03 19:31:23
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+Swap EventPerformed.
+Time: 2019/08/03 19:31:39
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event succesfully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:31:45
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:32:26
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/03 19:32:44
+CustomerID: TORC123
+EventID: OTWM222222
+EventType: Seminars
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/03 19:32:56
+CustomerID: TORC123
+EventID: OTWM332233
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:32:57
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:33:01
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/03 19:33:26
+CustomerID: TORC123
+EventID: MTLM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:33:27
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:35:08
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/03 19:35:18
+CustomerID: TORC123
+EventID: OTWM222222
+EventType: Seminars
+Status: This event was already booked!
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:35:20
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:35:54
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/03 19:36:04
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:36:05
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/03 19:36:11
+CustomerID: TORC123
+EventID: OTWM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:36:13
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/03 19:36:19
+CustomerID: TORC123
+EventID: OTWM222222
+EventType: Seminars
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/03 19:36:24
+CustomerID: TORC123
+EventID: OTWM332233
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:36:25
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/03 19:36:33
+CustomerID: TORC123
+EventID: OTWM442244
+EventType: Seminars
+Status: customer cannot book more than 3 outside city events in the same month
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:36:35
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+cancelEventPerformed.
+Time: 2019/08/03 19:36:52
+CustomerID: TORC123
+EventID: OTWM332233
+EventType: NA
+Status: Event successfully cancelled
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:36:53
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/08/03 19:37:12
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event succesfully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:37:13
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/03 19:37:24
+CustomerID: TORC123
+EventID: OTWM442244
+EventType: Seminars
+Status: customer cannot book more than 3 outside city events in the same month
+
+Swap EventPerformed.
+Time: 2019/08/03 19:37:47
+CustomerID: TORC123
+EventID: MTLM112211
+EventType: Seminars
+Status: Event could not be swapped since:customer cannot book more than 3 outside city events in the same month
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:40:06
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/03 19:40:24
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/03 19:40:37
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/08/03 19:40:47
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event could not be swapped since:customer cannot book more than 3 outside city events in the same month
+
+listEventAvailabilityPerformed.
+Time: 2019/08/03 21:12:32
+CustomerID: TORM123
+EventID: NA
+EventType: Seminars
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/08/03 21:13:10
+CustomerID: TORM123
+EventID: NA
+EventType: Conferences
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/08/03 21:14:31
+CustomerID: OTWM123
+EventID: NA
+EventType: Seminars
+Status: Succeeded
+
+listEventAvailabilityPerformed.
+Time: 2019/08/03 21:15:17
+CustomerID: TORM123
+EventID: NA
+EventType: Seminars
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/08/04 21:27:35
+CustomerID: TORM123
+EventID: TORM112211
+EventType: Seminars
+Status: Event is created
+
+listEventAvailabilityPerformed.
+Time: 2019/08/04 21:27:39
+CustomerID: TORM123
+EventID: NA
+EventType: Seminars
+Status: Succeeded
+
+getBookingSchedulePerformed.
+Time: 2019/08/04 21:28:40
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/04 21:28:53
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/04 21:29:04
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/04 21:50:15
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/04 21:50:27
+CustomerID: TORC123
+EventID: MTLM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/04 21:50:35
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/04 21:52:25
+CustomerID: TORC23
+EventID: TORM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+cancelEventPerformed.
+Time: 2019/08/04 21:52:31
+CustomerID: TORC23
+EventID: 2
+EventType: NA
+Status: The event doesn't exist/ not in your schedule!
+
+getBookingSchedulePerformed.
+Time: 2019/08/04 21:52:33
+CustomerID: TORC23
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/04 21:53:21
+CustomerID: TORC213
+EventID: TORM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/04 21:53:22
+CustomerID: TORC213
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/04 21:53:41
+CustomerID: TORC213
+EventID: OTWM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/04 21:53:43
+CustomerID: TORC213
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+addEventPerformed.
+Time: 2019/08/04 22:14:51
+CustomerID: TORM123
+EventID: TORM456456
+EventType: Seminars
+Status: Event is created
+
+addEventPerformed.
+Time: 2019/08/05 01:38:17
+CustomerID: TORM123
+EventID: TORM112211
+EventType: Seminars
+Status: Event is created

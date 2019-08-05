@@ -1,9 +1,9 @@
-package Helpers;
+package Helper;
 
 import java.rmi.RemoteException;
 import java.util.Scanner;
 
-import RMI.RDEMSInterface;
+import Shared.DEMSInterface;
 
 public class ThreadTestCases {
 	static Scanner sc = new Scanner(System.in);
@@ -13,7 +13,7 @@ public class ThreadTestCases {
 	}
 
 	
-	public  void startThreads(RDEMSInterface serverobj) {
+	public  void startThreads(DEMSInterface serverobj) {
 		threads t = new threads();
 		synchronized (t) {
 
@@ -66,29 +66,29 @@ public class ThreadTestCases {
 		}
 	}
 class threads{
-	private synchronized void bookthread(RDEMSInterface serverobj) throws RemoteException {
+	private synchronized void bookthread(DEMSInterface serverobj) throws RemoteException {
 		System.out.println("\nThread booked starting....");
-		String res = serverobj.bookEvent("TORC1234", "TORA110519", "Seminars");
+		Response res = serverobj.bookEvent("TORC1234", "TORA110519", "Seminars");
 		System.out.println(res);
 	}
 
-	private synchronized void swapthread1(RDEMSInterface serverobj) throws RemoteException {
+	private synchronized void swapthread1(DEMSInterface serverobj) throws RemoteException {
 		System.out.println("\nThread 1 starting..");
 		serverobj.bookEvent("TORC1234", "TORA110519", "Seminars");
 
-		String res = serverobj.swapEvent("TORC1234", "TORE110519", "Seminars", "TORA110519", "Seminars");
+		Response res = serverobj.swapEvent("TORC1234", "TORE110519", "Seminars", "TORA110519", "Seminars");
 		System.out.println(res + " by thread 1!");
 	}
 
-	private synchronized void swapthread2(RDEMSInterface serverobj) throws RemoteException {
+	private synchronized void swapthread2(DEMSInterface serverobj) throws RemoteException {
 		System.out.println("\nThread 2 starting..");
-		String res = serverobj.swapEvent("TORC1234", "TORM110519", "Seminars", "TORE110519", "Seminars");
+		Response res = serverobj.swapEvent("TORC1234", "TORM110519", "Seminars", "TORE110519", "Seminars");
 		System.out.println(res + " by thread 2!");
 
 	}
 
-	private synchronized void schedthread(RDEMSInterface serverobj) throws RemoteException {
-		String res = serverobj.getBookingSchedule("TORC1234");
+	private synchronized void schedthread(DEMSInterface serverobj) throws RemoteException {
+		Response res = serverobj.getBookingSchedule("TORC1234");
 		System.out.println(res);
 	}
 }
