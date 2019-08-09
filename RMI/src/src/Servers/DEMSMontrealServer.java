@@ -2,8 +2,8 @@ package Servers;
 import java.io.BufferedReader;
 import javax.xml.ws.Endpoint;
 
-import Helper.Ports;
-import Helper.Response;
+import Model.Ports;
+import Model.Response;
 import Servers.DEMSOttawaServer;
 import Servers.DEMSTorontoServer;
 import Shared.DEMSInterfaceImpl;
@@ -30,7 +30,7 @@ import java.util.HashMap;
 
 public class DEMSMontrealServer {
 	private static HashMap<String, HashMap<String, Integer>> mtlDb = new HashMap<>();
-	private static HashMap<String, ArrayList<String>> mtlCustomerInfo = new HashMap<>();
+	static HashMap<String, ArrayList<String>> mtlCustomerInfo = new HashMap<>();
 	static String[] eventTypes = { "Conferences", "Seminars", "Trade Shows" };
 	static PrintWriter writer;
 
@@ -147,19 +147,49 @@ public class DEMSMontrealServer {
 		HashMap<String, Integer> temp3 = (HashMap<String, Integer>) DEMSOttawaServer.returnDb().get(oldEventType)
 				.clone();
 		if (temp1.containsKey(oldEventID) || temp2.containsKey(oldEventID) || temp3.containsKey(oldEventID)) {
-			Response temp = bookEvent(customerID, newEventID, newEventType);
-			if (temp.getMessage().equals("customer cannot book more than 3 outside city events in the same month")) {
-				res = new Response(
-						"Event cannot be swapped since customer cannot book more than 3 outside city events in the same month",
-						false);
-				return res;
+			if (mtlCustomerInfo.containsKey(customerID) && mtlCustomerInfo.get(customerID).contains(oldEventID)) {
+				Response msg1 = bookEvent(customerID, newEventID, newEventType);
+				if (!msg1.getMessage().equals("Event successfully Booked")) {
+					if (!DEMSTorontoServer.checkbooklimit(customerID, newEventID) && !DEMSTorontoServer.checkbooklimit(customerID, oldEventID))
+					{
+						Response msg2 = cancelEvent(customerID, oldEventID);
+						if (!msg2.getMessage().equals("Event successfully cancelled")) {
+							res = new Response("Event could not be swapped: " + msg2.getMessage(), false);
+							cancelEvent(customerID, newEventID);
+							return res;
+						}
+						Response msg3 = bookEvent(customerID, newEventID, newEventType);
+						if (msg3.getResult())
+							return new Response("Event succesfully swapped", true);
+						else {
+							 bookEvent(customerID, oldEventID, oldEventType);
+							res = new Response("Event could not be swapped: " + msg3.getMessage(), false);
+							return res;
+
+						}
+					}
+						
+					else
+						return new Response("Event could not be swapped since:" + msg1.getMessage(), false);
+				}
+				Response msg2 = cancelEvent(customerID, oldEventID);
+				if (!msg2.getMessage().equals("Event successfully cancelled")) {
+					res = new Response("Event could not be swapped: " + msg2.getMessage(), false);
+					cancelEvent(customerID, newEventID);
+					return res;
+				}
+
+				res = new Response("Event succesfully swapped", true);
+				logOperation("Swap Performed", newEventID, newEventType, "NA", "NA", "Succeeded");
+				displaymtlDbContents();
+				displayCustomerInfo();
+			} else {
+				res = new Response("Event could not be swapped since this event wasnt booked!", false);
 			}
-			cancelEvent(customerID, oldEventID);
-			res = new Response("Event succefully swapped",true);
-			logOperation("Swap Performed", newEventID, newEventType, "NA", "NA", "Succeeded");
-			displaymtlDbContents();
-			displayCustomerInfo();
+		} else {
+			res = new Response("Event could not be swapped since this event wasnt booked!", false);
 		}
+
 		return res;
 	}
 

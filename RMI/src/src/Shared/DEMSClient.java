@@ -17,9 +17,8 @@ import org.omg.CosNaming.NamingContextExtHelper;
 import org.omg.CosNaming.NamingContextPackage.CannotProceed;
 import org.omg.CosNaming.NamingContextPackage.NotFound;
 
-import Helper.Ports;
-import Helper.Response;
-import Helper.ThreadTestCases;
+import Model.Ports;
+import Model.Response;
 
 
 public class DEMSClient {

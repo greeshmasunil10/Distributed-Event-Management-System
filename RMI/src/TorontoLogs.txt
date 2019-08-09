@@ -4142,3 +4142,331 @@ EventID: TORM112211
 EventType: Seminars
 Booking Capacity: NA
 Status: Event is created
+
+bookEventPerformed.
+Time: 2019/08/08 17:13:48
+CustomerID: NA
+EventID: OTWM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:13:49
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/08 17:13:57
+CustomerID: NA
+EventID: OTWM222222
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/08 17:14:02
+CustomerID: NA
+EventID: MTLM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/08 17:14:06
+CustomerID: NA
+EventID: MTLM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: This event was already booked!
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:14:07
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+swapEventPerformed.
+Time: 2019/08/08 17:14:25
+CustomerID: TORC123
+EventID: MTLM112211
+EventType: OTWM332233
+Booking Capacity: NA
+Status: Event could not be swapped since:customer cannot book more than 3 outside city events in the same month
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:14:27
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+Swap PerformedPerformed.
+Time: 2019/08/08 17:15:03
+CustomerID: NA
+EventID: TORM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded
+
+swapEventPerformed.
+Time: 2019/08/08 17:15:03
+CustomerID: TORC123
+EventID: MTLM112211
+EventType: TORM112211
+Booking Capacity: NA
+Status: Event succesfully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:15:05
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/08 17:15:19
+CustomerID: NA
+EventID: MTLM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:15:21
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/08 17:15:27
+CustomerID: NA
+EventID: MTLM222222
+EventType: Seminars
+Booking Capacity: NA
+Status: customer cannot book more than 3 outside city events in the same month
+
+swapEventPerformed.
+Time: 2019/08/08 17:15:36
+CustomerID: TORC123
+EventID: MTLM112211
+EventType: MTLM222222
+Booking Capacity: NA
+Status: Event could not be swapped since:customer cannot book more than 3 outside city events in the same month
+
+bookEventPerformed.
+Time: 2019/08/08 17:24:07
+CustomerID: NA
+EventID: OTWM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/08 17:24:12
+CustomerID: NA
+EventID: OTWM222222
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:24:13
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/08 17:24:20
+CustomerID: NA
+EventID: TORM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:24:22
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/08 17:24:27
+CustomerID: NA
+EventID: MTLM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:24:27
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/08 17:24:32
+CustomerID: NA
+EventID: MTLM222222
+EventType: Seminars
+Booking Capacity: NA
+Status: customer cannot book more than 3 outside city events in the same month
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:24:33
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+swapEventPerformed.
+Time: 2019/08/08 17:24:48
+CustomerID: TORC123
+EventID: MTLM112211
+EventType: MTLM222222
+Booking Capacity: NA
+Status: Event could not be swapped: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:24:52
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+swapEventPerformed.
+Time: 2019/08/08 17:25:46
+CustomerID: TORC123
+EventID: OTWM222222
+EventType: MTLM112211
+Booking Capacity: NA
+Status: Event could not be swapped: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:25:48
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+swapEventPerformed.
+Time: 2019/08/08 17:25:59
+CustomerID: TORC123
+EventID: TORM112211
+EventType: MTLM332233
+Booking Capacity: NA
+Status: Event could not be swapped: customer cannot book more than 3 outside city events in the same month
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:26:00
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/08 17:26:17
+CustomerID: NA
+EventID: OTWA123123
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/08 23:18:07
+CustomerID: NA
+EventID: OTWM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/08 23:18:12
+CustomerID: NA
+EventID: OTWM332233
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/08 23:18:18
+CustomerID: NA
+EventID: TORM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/08 23:18:23
+CustomerID: NA
+EventID: MTLM112211
+EventType: Seminars
+Booking Capacity: NA
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 23:18:23
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/08 23:18:28
+CustomerID: NA
+EventID: MTLM222222
+EventType: Seminars
+Booking Capacity: NA
+Status: customer cannot book more than 3 outside city events in the same month
+
+swapEventPerformed.
+Time: 2019/08/08 23:18:50
+CustomerID: TORC123
+EventID: MTLM222222
+EventType: MTLM112211
+Booking Capacity: NA
+Status: Event could not be swapped since this event wasnt booked!
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 23:18:53
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded
+
+swapEventPerformed.
+Time: 2019/08/08 23:19:06
+CustomerID: TORC123
+EventID: MTLM112211
+EventType: OTWM222222
+Booking Capacity: NA
+Status: Event could not be swapped: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 23:19:09
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Booking Capacity: NA
+Status: Succeeded

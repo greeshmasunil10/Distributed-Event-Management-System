@@ -4772,3 +4772,304 @@ CustomerID: TORM123
 EventID: TORM112211
 EventType: Seminars
 Status: Event is created
+
+listEventAvailabilityPerformed.
+Time: 2019/08/08 17:12:51
+CustomerID: TORM123
+EventID: NA
+EventType: Seminars
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/08 17:13:41
+CustomerID: TORC123
+EventID: OWTM112211
+EventType: Seminars
+Status: Invalid input
+
+bookEventPerformed.
+Time: 2019/08/08 17:13:48
+CustomerID: TORC123
+EventID: OTWM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:13:49
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/08 17:13:57
+CustomerID: TORC123
+EventID: OTWM222222
+EventType: Seminars
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/08 17:14:02
+CustomerID: TORC123
+EventID: MTLM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/08 17:14:06
+CustomerID: TORC123
+EventID: MTLM112211
+EventType: Seminars
+Status: This event was already booked!
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:14:07
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/08/08 17:14:25
+CustomerID: TORC123
+EventID: MTLM112211
+EventType: Seminars
+Status: Event could not be swapped since:customer cannot book more than 3 outside city events in the same month
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:14:27
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/08/08 17:15:03
+CustomerID: TORC123
+EventID: MTLM112211
+EventType: Seminars
+Status: Event succesfully swapped
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:15:05
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/08 17:15:13
+CustomerID: TORC123
+EventID: MLM112211
+EventType: Seminars
+Status: Invalid input
+
+bookEventPerformed.
+Time: 2019/08/08 17:15:19
+CustomerID: TORC123
+EventID: MTLM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:15:21
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/08 17:15:27
+CustomerID: TORC123
+EventID: MTLM222222
+EventType: Seminars
+Status: customer cannot book more than 3 outside city events in the same month
+
+Swap EventPerformed.
+Time: 2019/08/08 17:15:36
+CustomerID: TORC123
+EventID: MTLM112211
+EventType: Seminars
+Status: Event could not be swapped since:customer cannot book more than 3 outside city events in the same month
+
+bookEventPerformed.
+Time: 2019/08/08 17:24:07
+CustomerID: TORC123
+EventID: OTWM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/08 17:24:12
+CustomerID: TORC123
+EventID: OTWM222222
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:24:13
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/08 17:24:20
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:24:22
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/08 17:24:27
+CustomerID: TORC123
+EventID: MTLM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:24:27
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/08 17:24:32
+CustomerID: TORC123
+EventID: MTLM222222
+EventType: Seminars
+Status: customer cannot book more than 3 outside city events in the same month
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:24:33
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/08/08 17:24:48
+CustomerID: TORC123
+EventID: MTLM112211
+EventType: Seminars
+Status: Event could not be swapped: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:24:52
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/08/08 17:25:46
+CustomerID: TORC123
+EventID: OTWM222222
+EventType: Seminars
+Status: Event could not be swapped: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:25:48
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/08/08 17:25:59
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event could not be swapped: customer cannot book more than 3 outside city events in the same month
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 17:26:00
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/08 17:26:17
+CustomerID: TORC123
+EventID: OTWA123123
+EventType: Seminars
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/08 23:18:08
+CustomerID: TORC123
+EventID: OTWM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/08 23:18:12
+CustomerID: TORC123
+EventID: OTWM332233
+EventType: Seminars
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/08 23:18:18
+CustomerID: TORC123
+EventID: TORM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+bookEventPerformed.
+Time: 2019/08/08 23:18:23
+CustomerID: TORC123
+EventID: MTLM112211
+EventType: Seminars
+Status: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 23:18:23
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/08 23:18:28
+CustomerID: TORC123
+EventID: MTLM222222
+EventType: Seminars
+Status: customer cannot book more than 3 outside city events in the same month
+
+Swap EventPerformed.
+Time: 2019/08/08 23:18:50
+CustomerID: TORC123
+EventID: MTLM222222
+EventType: Seminars
+Status: Event could not be swapped since this event wasnt booked!
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 23:18:53
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded
+
+Swap EventPerformed.
+Time: 2019/08/08 23:19:06
+CustomerID: TORC123
+EventID: MTLM112211
+EventType: Seminars
+Status: Event could not be swapped: Event successfully Booked
+
+getBookingSchedulePerformed.
+Time: 2019/08/08 23:19:09
+CustomerID: TORC123
+EventID: NA
+EventType: NA
+Status: Succeeded

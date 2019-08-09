@@ -2,7 +2,7 @@ package Shared;
 
 import java.rmi.Remote;
 
-import Helper.Response;
+import Model.Response;
 
 public interface DEMSInterface extends Remote{
 	public Response addEvent(String eventID, String eventType, int bookingCapacity) throws java.rmi.RemoteException;

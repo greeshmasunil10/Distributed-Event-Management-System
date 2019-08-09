@@ -1,0 +1,8 @@
+1 down
+2 failure
+
+
+failF
+
+true F F
+false F F

@@ -1,9 +1,9 @@
-package Helper;
+package Shared;
 
 import java.rmi.RemoteException;
 import java.util.Scanner;
 
-import Shared.DEMSInterface;
+import Model.Response;
 
 public class ThreadTestCases {
 	static Scanner sc = new Scanner(System.in);

@@ -7,3 +7,7 @@ should work
 
 
 add case ignore to everything
+
+0:c 1:t 2:s
+
+			System.out.println("Event Manager of this city cannot remove event in the another city");

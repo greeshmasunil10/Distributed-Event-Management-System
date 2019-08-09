@@ -2214,3 +2214,11 @@ EventID: NA
 EventType: Seminars
 Booking Capacity: NA
 Status: Succeeded
+
+bookEventPerformed.
+Time: 2019/08/08 17:12:51
+CustomerID: NA
+EventID: NA
+EventType: Seminars
+Booking Capacity: NA
+Status: Succeeded

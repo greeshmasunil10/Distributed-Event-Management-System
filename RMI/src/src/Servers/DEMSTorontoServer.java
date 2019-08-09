@@ -25,9 +25,9 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 
-import Helper.Ports;
-import Helper.Response;
 import Model.Messages;
+import Model.Ports;
+import Model.Response;
 import Model.Messages.add;
 import Model.Messages.remove;
 import Servers.DEMSMontrealServer;
@@ -139,12 +139,33 @@ public class DEMSTorontoServer {
 				Response msg1 = bookEvent(customerID, newEventID, newEventType);
 				if (!msg1.getMessage().equals("Event successfully Booked")) {
 //					res="Event cannot be swapped since customer cannot book more than 3 outside city events in the same month";
-					return new Response("Event could not be swapped since:" + msg1.getMessage(), false);
+					if (!checkbooklimit(customerID, newEventID) && !checkbooklimit(customerID, oldEventID))
+					{
+
+						Response msg2 = cancelEvent(customerID, oldEventID);
+						if (!msg2.getMessage().equals("Event successfully cancelled")) {
+							res = new Response("Event could not be swapped: " + msg2.getMessage(), false);
+							cancelEvent(customerID, newEventID);
+							return res;
+						}
+						Response msg3 = bookEvent(customerID, newEventID, newEventType);
+						if (msg3.getResult())
+							return new Response("Event succesfully swapped", true);
+						else {
+						     bookEvent(customerID, oldEventID, oldEventType);
+							res = new Response("Event could not be swapped: " + msg3.getMessage(), false);
+							return res;
+
+						}
+						
+					}
+					else
+						return new Response("Event could not be swapped since:" + msg1.getMessage(), false);
 				}
 				Response msg2 = cancelEvent(customerID, oldEventID);
 				if (!msg2.getMessage().equals("Event successfully cancelled")) {
 					res = new Response("Event could not be swapped: " + msg2.getMessage(), false);
-					cancelEvent(customerID, oldEventID);
+					cancelEvent(customerID, newEventID);
 					return res;
 				}
 
@@ -161,6 +182,65 @@ public class DEMSTorontoServer {
 
 		return res;
 	}
+	public synchronized static boolean checkbooklimit(String customerID, String eventID) {
+		if (customerID.contains("TOR")) {
+			String month = eventID.substring(6, 8);
+			ArrayList<String> al = DEMSTorontoServer.torCustomerInfo.get(customerID);
+			int count = 0;
+			for (String id : al) {
+
+				if (!id.contains("TOR")) {
+					String m = id.substring(6, 8);
+					if (m.equals(month))
+						count++;
+
+				}
+			}
+
+			if (count >= 3) {
+				return false;
+			} else
+				return true;
+		} else if (customerID.contains("MTL")) {
+			String month = eventID.substring(6, 8);
+			ArrayList<String> al = DEMSMontrealServer.mtlCustomerInfo.get(customerID);
+			int count = 0;
+			for (String id : al) {
+
+				if (!id.contains("MTL")) {
+					String m = id.substring(6, 8);
+					if (m.equals(month))
+						count++;
+
+				}
+			}
+
+			if (count >= 3) {
+				return false;
+			} else
+				return true;
+		} else {
+			String month = eventID.substring(6, 8);
+			ArrayList<String> al = DEMSOttawaServer.otwCustomerInfo.get(customerID);
+			int count = 0;
+			for (String id : al) {
+
+				if (!id.contains("OTW")) {
+					String m = id.substring(6, 8);
+					if (m.equals(month))
+						count++;
+
+				}
+			}
+
+			if (count >= 3) {
+				return false;
+			} else
+				return true;
+		}
+
+	}
+
 
 	public synchronized static Response addEvent(String eventID, String eventType, int bookingCapacity) {
 //		dummyVals always stored in the DB so no need to check for an empty sub-HashMap for any eventType

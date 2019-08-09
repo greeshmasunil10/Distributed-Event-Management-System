@@ -3,7 +3,7 @@ package Shared;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-import Helper.Response;
+import Model.Response;
 import Servers.DEMSMontrealServer;
 import Servers.DEMSOttawaServer;
 import Servers.DEMSTorontoServer;

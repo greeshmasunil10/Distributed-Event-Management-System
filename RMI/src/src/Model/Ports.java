@@ -1,4 +1,4 @@
-package Helper;
+package Model;
 
 public class Ports {
 	public static int TORONTO_SERVER_PORT=9001;
