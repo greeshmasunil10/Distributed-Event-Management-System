@@ -1,0 +1,2 @@
+# Distributed-Event-Management-System
+Design and develop a distributed system which provides an infrastructure for Event Management System shared across three data centers. Implement webservices API’s to the user which abstract the underlying distributed nature of the platform and provides the network transparency. Implement multi-threading with proper synchronization to handle concurrent requests safely.
