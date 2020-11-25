@@ -1,2 +1,16 @@
 # Distributed-Event-Management-System
-Design and develop a distributed system which provides an infrastructure for Event Management System shared across three data centers. Implement webservices API’s to the user which abstract the underlying distributed nature of the platform and provides the network transparency. Implement multi-threading with proper synchronization to handle concurrent requests safely.
+## Introduction
+A Simulated corporate event management company
+* Can manage clients located in 3 different branches with their own servers.
+* Created 3 versions using web services and Java-RMI
+
+## Screenshots
+![](Screenshots/add.PNG)
+![](Screenshots/customerbooks.PNG)
+
+## Running instructions
+* Run using Java- RMI or Webservices
+* [Start Servers](/RMI/src/src/Shared/DEMSStartServers.java)
+* [Run Client](/RMI/src/src/Shared/RMI/src/src/Shared/DEMSClient.java)
+
+
