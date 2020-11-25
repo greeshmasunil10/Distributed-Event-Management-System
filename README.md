@@ -11,6 +11,6 @@ A Simulated corporate event management company
 ## Running instructions
 * Run using Java- RMI or Webservices
 * [Start Servers](/RMI/src/src/Shared/DEMSStartServers.java)
-* [Run Client](/RMI/src/src/Shared/RMI/src/src/Shared/DEMSClient.java)
+* [Run Client](/RMI/src/src/Shared/DEMSClient.java)
 
 
