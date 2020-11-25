@@ -14,8 +14,8 @@ A Simulated corporate event management company
 * [Start](/RMI/src/src/Shared/DEMSStartServers.java) Servers
 * [Run](/RMI/src/src/Shared/DEMSClient.java) Client
 ### Webservices
-* [Start](/Web Service/src/src/com/web/service/WDEMSStartServers.java) Servers
-* [Run](/Web Service/src/src/com/web/service/WDEMSClient.java) Client
+* [Start](/Web-Service/src/src/com/web/service/WDEMSStartServers.java) Servers
+* [Run](/Web-Service/src/src/com/web/service/WDEMSClient.java) Client
 
 
 
