@@ -9,8 +9,13 @@ A Simulated corporate event management company
 ![](Screenshots/customerbooks.PNG)
 
 ## Running instructions
-* Run using Java- RMI or Webservices
-* [Start Servers](/RMI/src/src/Shared/DEMSStartServers.java)
-* [Run Client](/RMI/src/src/Shared/DEMSClient.java)
+
+### Java- RMI
+* [Start](/RMI/src/src/Shared/DEMSStartServers.java) Servers
+* [Run](/RMI/src/src/Shared/DEMSClient.java) Client
+### Webservices
+* [Start](/Web Service/src/src/com/web/service/WDEMSStartServers.java) Servers
+* [Run](/Web Service/src/src/com/web/service/WDEMSClient.java) Client
+
 
 
