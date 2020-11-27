@@ -2,7 +2,7 @@
 ## Introduction
 A Simulated corporate event management company
 * Can manage clients located in 3 different branches with their own servers.
-* Created 3 versions using web services and Java-RMI
+* Created 2 versions using web services and Java-RMI
 
 ## Screenshots
 ![](Screenshots/add.PNG)
